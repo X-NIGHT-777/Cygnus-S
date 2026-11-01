@@ -430,7 +430,7 @@
         COFFEE_BASE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                         &kp W                       &kp R  &kp Y  &kp M  &kp P
-&trans  &trans  &trans  &trans  &trans  &trans      &kp H      &kp N                       &kp T  &kp S  &kp K  &kp CAPSLOCK
+&trans  &trans  &trans  &trans  &trans  &trans      &kp H      &kp N                       &kp T  &kp S  &kp K  &kp RCTRL
 &trans  &trans  &trans  &trans  &trans  &trans      &kp J      &kp G                       &kp B  &kp D  &kp Z  &kp RSHFT
 &trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER  &lt_spc COFFEE_VOWEL SPACE                       &tog 0
             >;
