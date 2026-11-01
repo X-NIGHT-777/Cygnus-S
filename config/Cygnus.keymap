@@ -97,6 +97,14 @@
             label = "MACRO_SI";
         }; // し
 
+        // S + H + I (し)
+        macro_shi: macro_shi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp H &kp I>;
+            label = "MACRO_SHI";
+        }; // し (SHI)
+
         // S + U (す)
         macro_su: macro_su {
             compatible = "zmk,behavior-macro";
@@ -139,6 +147,14 @@
             label = "MACRO_TI";
         }; // ち
 
+        // C + H + I (ち)
+        macro_chi: macro_chi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp H &kp I>;
+            label = "MACRO_CHI";
+        }; // ち (CHI)
+
         // T + U (つ)
         macro_tu: macro_tu {
             compatible = "zmk,behavior-macro";
@@ -146,6 +162,14 @@
             bindings = <&kp T &kp U>;
             label = "MACRO_TU";
         }; // つ
+
+        // T + S + U (つ)
+        macro_tsu: macro_tsu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp T &kp S &kp U>;
+            label = "MACRO_TSU";
+        }; // つ (TSU)
 
         // T + E (て)
         macro_te: macro_te {
@@ -222,6 +246,14 @@
             bindings = <&kp H &kp I>;
             label = "MACRO_HI";
         }; // ひ
+
+        // F + U (ふ)
+        macro_fu: macro_fu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F &kp U>;
+            label = "MACRO_FU";
+        }; // ふ (FU)
 
         // H + U (ふ)
         macro_hu: macro_hu {
@@ -629,6 +661,30 @@
 
         // --- しゃ行 ---
 
+        // S + H + A (しゃ)
+        macro_sha: macro_sha {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp H &kp A>;
+            label = "MACRO_SHA";
+        }; // しゃ (SHA)
+
+        // S + H + U (しゅ)
+        macro_shu: macro_shu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp H &kp U>;
+            label = "MACRO_SHU";
+        }; // しゅ (SHU)
+
+        // S + H + O (しょ)
+        macro_sho: macro_sho {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp H &kp O>;
+            label = "MACRO_SHO";
+        }; // しょ (SHO)
+
         // S + Y + A (しゃ)
         macro_sya: macro_sya {
             compatible = "zmk,behavior-macro";
@@ -654,6 +710,30 @@
         }; // しょ
 
         // --- ちゃ行 ---
+
+        // C + H + A (ちゃ)
+        macro_cha: macro_cha {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp H &kp A>;
+            label = "MACRO_CHA";
+        }; // ちゃ (CHA)
+
+        // C + H + U (ちゅ)
+        macro_chu: macro_chu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp H &kp U>;
+            label = "MACRO_CHU";
+        }; // ちゅ (CHU)
+
+        // C + H + O (ちょ)
+        macro_cho: macro_cho {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp H &kp O>;
+            label = "MACRO_CHO";
+        }; // ちょ (CHO)
 
         // T + Y + A (ちゃ)
         macro_tya: macro_tya {
@@ -934,7 +1014,226 @@
             label = "MACRO_PYO";
         }; // ぴょ
 
+        // F + A (ふぁ)
+        macro_fa: macro_fa {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F &kp A>;
+            label = "MACRO_FA";
+        }; // ふぁ
+
+        // F + I (ふぃ)
+        macro_fi: macro_fi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F &kp I>;
+            label = "MACRO_FI";
+        }; // ふぃ
+
+        // F + E (ふぇ)
+        macro_fe: macro_fe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F &kp E>;
+            label = "MACRO_FE";
+        }; // ふぇ
+
+        // F + O (ふぉ)
+        macro_fo: macro_fo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F &kp O>;
+            label = "MACRO_FO";
+        }; // ふぉ
+
+        // D + H + I (でぃ)
+        macro_dhi: macro_dhi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp H &kp I>;
+            label = "MACRO_DHI";
+        }; // でぃ
+
+        // T + H + I (てぃ)
+        macro_thi: macro_thi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp T &kp H &kp I>;
+            label = "MACRO_THI";
+        }; // てぃ
+
+        // T + H + E (てぇ)
+        macro_the: macro_the {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp T &kp H &kp E>;
+            label = "MACRO_THE";
+        }; // てぇ
+
+        // D + H + E (でぇ)
+        macro_dhe: macro_dhe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp H &kp E>;
+            label = "MACRO_DHE";
+        }; // でぇ
+
+        // W + E (うぇ)
+        macro_we: macro_we {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp W &kp E>;
+            label = "MACRO_WE";
+        }; // うぇ
+
+        // W + I (うぃ)
+        macro_wi: macro_wi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp W &kp I>;
+            label = "MACRO_WI";
+        }; // うぃ
+
+        macro_va: macro_va {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp A>;
+            label = "MACRO_VA";
+        }; // ヴァ
+
+        macro_vi: macro_vi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp I>;
+            label = "MACRO_VI";
+        }; // ヴィ
+
+        macro_vu: macro_vu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp U>;
+            label = "MACRO_VU";
+        }; // ヴ
+
+        macro_ve: macro_ve {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp E>;
+            label = "MACRO_VE";
+        }; // ヴェ
+
+        macro_vo: macro_vo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp O>;
+            label = "MACRO_VO";
+        }; // ヴォ
+
+        // --- 捨て仮名 (小文字) ---
+
+        // L + T + U (っ)
+        macro_ltu: macro_ltu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp L &kp T &kp U>;
+            label = "MACRO_LTU";
+        }; // っ
+
+        // X + T + U (っ)
+        macro_xtu: macro_xtu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp X &kp T &kp U>;
+            label = "MACRO_XTU";
+        }; // っ
+
+        // L + A (ぁ)
+        macro_la: macro_la {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp L &kp A>;
+            label = "MACRO_LA";
+        }; // ぁ
+
+        // L + I (ぃ)
+        macro_li: macro_li {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp L &kp I>;
+            label = "MACRO_LI";
+        }; // ぃ
+
+        // L + U (ぅ)
+        macro_lu: macro_lu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp L &kp U>;
+            label = "MACRO_LU";
+        }; // ぅ
+
+        // L + E (ぇ)
+        macro_le: macro_le {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp L &kp E>;
+            label = "MACRO_LE";
+        }; // ぇ
+
+        // L + O (ぉ)
+        macro_lo: macro_lo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp L &kp O>;
+            label = "MACRO_LO";
+        }; // ぉ
+
+        // X + A (ぁ)
+        macro_xa: macro_xa {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp X &kp A>;
+            label = "MACRO_XA";
+        }; // ぁ
+
+        // X + I (ぃ)
+        macro_xi: macro_xi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp X &kp I>;
+            label = "MACRO_XI";
+        }; // ぃ
+
+        // X + U (ぅ)
+        macro_xu: macro_xu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp X &kp U>;
+            label = "MACRO_XU";
+        }; // ぅ
+
+        // X + E (ぇ)
+        macro_xe: macro_xe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp X &kp E>;
+            label = "MACRO_XE";
+        }; // ぇ
+
+        // X + O (ぉ)
+        macro_xo: macro_xo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp X &kp O>;
+            label = "MACRO_XO";
+        }; // ぉ
+
     };
+
+
+
+
+
+
 
 
 
