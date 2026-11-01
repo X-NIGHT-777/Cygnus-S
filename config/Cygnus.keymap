@@ -17,14 +17,192 @@
 };
 
 / {
+
+
+
     combos {
         compatible = "zmk,combos";
 
+        // --- 既存のコンボ --- //
         double_quotation {
             bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <20 21>;
         };
+
+        // =============================================================
+        // 風神配列：文字キー同士の同時代行・ロールオーバーコンボ
+        // =============================================================
+
+        // --- 子音 + 無変換キー (35) = 'u' ---
+        combo_c_muhenkan {
+            timeout-ms = <50>;
+            key-positions = <26 35>; // C(26) + 無変換(35)
+            bindings = <&kp U>;
+            layers = <FUJIN_BASE>;
+        };
+
+        combo_b_muhenkan {
+            timeout-ms = <50>;
+            key-positions = <28 35>; // B(28) + 無変換(35)
+            bindings = <&kp U>;
+            layers = <FUJIN_BASE>;
+        };
+
+        // --- 子音 + 母音行キー (A, S, D, F) の同時代行 ---
+        
+        // C (B) + S (13) = 'u' (「ぶ」入力用)
+        combo_c_s {
+            timeout-ms = <50>;
+            key-positions = <26 13>;
+            bindings = <&kp U>;
+            layers = <FUJIN_BASE>;
+        };
+
+        // B (J) + S (13) = 'u' (「じゅ」入力用)
+        combo_b_s {
+            timeout-ms = <50>;
+            key-positions = <28 13>;
+            bindings = <&kp U>;
+            layers = <FUJIN_BASE>;
+        };
+
+        // =============================================================
+        // 風神配列：子音キー + Space の全コンボ定義 (レイヤー7限定)
+        // =============================================================
+
+        // --- 上段 (Top Row) ---
+        // Q (M) + Space -> e
+        combo_q_spc {
+            timeout-ms = <50>;
+            key-positions = <0 38>;
+            bindings = <&kp E>;
+            layers = <FUJIN_BASE>;
+        };
+
+        // W (Y) + Space -> i
+        combo_w_spc {
+            timeout-ms = <50>;
+            key-positions = <1 38>;
+            bindings = <&kp I>;
+            layers = <FUJIN_BASE>;
+        };
+
+        // E (R) + Space -> o
+        combo_e_spc {
+            timeout-ms = <50>;
+            key-positions = <2 38>;
+            bindings = <&kp O>;
+            layers = <FUJIN_BASE>;
+        };
+
+        // R (W) + Space -> a
+        combo_r_spc {
+            timeout-ms = <50>;
+            key-positions = <3 38>;
+            bindings = <&kp A>;
+            layers = <FUJIN_BASE>;
+        };
+
+        // T (P) + Space -> a
+        combo_t_spc {
+            timeout-ms = <50>;
+            key-positions = <4 38>;
+            bindings = <&kp A>;
+            layers = <FUJIN_BASE>;
+        };
+
+        // Y (X) + Space -> a
+        combo_y_spc {
+            timeout-ms = <50>;
+            key-positions = <5 38>;
+            bindings = <&kp A>;
+            layers = <FUJIN_BASE>;
+        };
+
+        // --- 中段 (Home Row) ---
+        // A (K) + Space -> e
+        combo_a_spc {
+            timeout-ms = <50>;
+            key-positions = <12 38>;
+            bindings = <&kp E>;
+            layers = <FUJIN_BASE>;
+        };
+
+        // S (S) + Space -> i
+        combo_s_spc {
+            timeout-ms = <50>;
+            key-positions = <13 38>;
+            bindings = <&kp I>;
+            layers = <FUJIN_BASE>;
+        };
+
+        // D (T) + Space -> o
+        combo_d_spc {
+            timeout-ms = <50>;
+            key-positions = <14 38>;
+            bindings = <&kp O>;
+            layers = <FUJIN_BASE>;
+        };
+
+        // F (N) + Space -> a (「な」)
+        combo_f_spc {
+            timeout-ms = <50>;
+            key-positions = <15 38>;
+            bindings = <&kp A>;
+            layers = <FUJIN_BASE>;
+        };
+
+        // G (H) + Space -> a
+        combo_g_spc {
+            timeout-ms = <50>;
+            key-positions = <16 38>;
+            bindings = <&kp A>;
+            layers = <FUJIN_BASE>;
+        };
+
+        // --- 下段 (Bottom Row) ---
+        // Z (Z) + Space -> e
+        combo_z_spc {
+            timeout-ms = <50>;
+            key-positions = <24 38>;
+            bindings = <&kp E>;
+            layers = <FUJIN_BASE>;
+        };
+
+        // X (D) + Space -> i
+        combo_x_spc {
+            timeout-ms = <50>;
+            key-positions = <25 38>;
+            bindings = <&kp I>;
+            layers = <FUJIN_BASE>;
+        };
+
+        // C (B) + Space -> u (spaceVowel = "u")
+        combo_c_spc {
+            timeout-ms = <50>;
+            key-positions = <26 38>;
+            bindings = <&kp U>;
+            layers = <FUJIN_BASE>;
+        };
+
+        // V (G) + Space -> a
+        combo_v_spc {
+            timeout-ms = <50>;
+            key-positions = <27 38>;
+            bindings = <&kp A>;
+            layers = <FUJIN_BASE>;
+        };
+
+        // B (J) + Space -> u (spaceVowel = "u")
+        combo_b_spc {
+            timeout-ms = <50>;
+            key-positions = <28 38>;
+            bindings = <&kp U>;
+            layers = <FUJIN_BASE>;
+        };
     };
+
+
 
     macros {
         to_layer_0: to_layer_0 {
@@ -34,6 +212,8 @@
             label = "TO_LAYER_0";
         };
     };
+
+
 
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
@@ -64,6 +244,8 @@
             bindings = <&mo>, <&kp>;
         };
     };
+
+
 
     keymap {
         compatible = "zmk,keymap";
