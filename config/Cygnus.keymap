@@ -17,6 +17,9 @@
 };
 
 / {
+
+
+
     macros {
         // --- レイヤー切替用マクロ（roBa既存機能） ---
         // 引数で受け取ったキーコードを入力しつつレイヤー0に戻る動作
@@ -40,97 +43,115 @@
             bindings = <&kp M &kp E>;
             label = "MACRO_ME";
         }; // M + E (め)
+
         macro_yi: macro_yi {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp Y &kp I>;
             label = "MACRO_YI";
         }; // Y + I (い)
+
         macro_ro: macro_ro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp R &kp O>;
             label = "MACRO_RO";
         }; // R + O (ろ)
+
         macro_wa: macro_wa {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp W &kp A>;
             label = "MACRO_WA";
         }; // W + A (わ)
+
         macro_pa: macro_pa {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp P &kp A>;
             label = "MACRO_PA";
         }; // P + A (ぱ)
+
         macro_xa: macro_xa {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp X &kp A>;
             label = "MACRO_XA";
         }; // X + A (ぁ)
+
         macro_ke: macro_ke {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp K &kp E>;
             label = "MACRO_KE";
         }; // K + E (け)
+
         macro_si: macro_si {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp S &kp I>;
             label = "MACRO_SI";
         }; // S + I (し)
+
         macro_to: macro_to {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp T &kp O>;
             label = "MACRO_TO";
         }; // T + O (と)
+
         macro_na: macro_na {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp N &kp A>;
             label = "MACRO_NA";
         }; // N + A (な)
+
         macro_ha: macro_ha {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp H &kp A>;
             label = "MACRO_HA";
         }; // H + A (は)
+
         macro_ze: macro_ze {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp Z &kp E>;
             label = "MACRO_ZE";
         }; // Z + E (ぜ)
+
         macro_di: macro_di {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp D &kp I>;
             label = "MACRO_DI";
         }; // D + I (ぢ)
+
         macro_bu: macro_bu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp B &kp U>;
             label = "MACRO_BU";
         }; // B + U (ぶ)
+
         macro_ga: macro_ga {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp G &kp A>;
             label = "MACRO_GA";
         }; // G + A (が)
+
         macro_ju: macro_ju {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp J &kp U>;
             label = "MACRO_JU";
         }; // J + U (じゅ)
+
     };
+
+
 
     combos {
         compatible = "zmk,combos";
@@ -163,6 +184,7 @@
             layers = <COFFEE_BASE>;
             slow-release;
         }; // Q(0) + Space(38) -> め
+
         combo_w_spc {
             timeout-ms = <50>;
             key-positions = <1 38>;
@@ -170,6 +192,7 @@
             layers = <COFFEE_BASE>;
             slow-release;
         }; // W(1) + Space(38) -> い
+
         combo_e_spc {
             timeout-ms = <50>;
             key-positions = <2 38>;
@@ -177,6 +200,7 @@
             layers = <COFFEE_BASE>;
             slow-release;
         }; // E(2) + Space(38) -> ろ
+
         combo_r_spc {
             timeout-ms = <50>;
             key-positions = <3 38>;
@@ -184,6 +208,7 @@
             layers = <COFFEE_BASE>;
             slow-release;
         }; // R(3) + Space(38) -> わ
+
         combo_t_spc {
             timeout-ms = <50>;
             key-positions = <4 38>;
@@ -191,6 +216,7 @@
             layers = <COFFEE_BASE>;
             slow-release;
         }; // T(4) + Space(38) -> ぱ
+
         combo_y_spc {
             timeout-ms = <50>;
             key-positions = <5 38>;
@@ -198,6 +224,7 @@
             layers = <COFFEE_BASE>;
             slow-release;
         }; // Y(5) + Space(38) -> ぁ
+
         // --- 中段 (Home Row) ---
 
         combo_a_spc {
@@ -207,6 +234,7 @@
             layers = <COFFEE_BASE>;
             slow-release;
         }; // A(12) + Space(38) -> け
+
         combo_s_spc {
             timeout-ms = <50>;
             key-positions = <13 38>;
@@ -214,6 +242,7 @@
             layers = <COFFEE_BASE>;
             slow-release;
         }; // S(13) + Space(38) -> し
+
         combo_d_spc {
             timeout-ms = <50>;
             key-positions = <14 38>;
@@ -221,6 +250,7 @@
             layers = <COFFEE_BASE>;
             slow-release;
         }; // D(14) + Space(38) -> と
+
         combo_f_spc {
             timeout-ms = <50>;
             key-positions = <15 38>;
@@ -228,6 +258,7 @@
             layers = <COFFEE_BASE>;
             slow-release;
         }; // F(15) + Space(38) -> な
+
         combo_g_spc {
             timeout-ms = <50>;
             key-positions = <16 38>;
@@ -235,6 +266,7 @@
             layers = <COFFEE_BASE>;
             slow-release;
         }; // G(16) + Space(38) -> は
+
         // --- 下段 (Bottom Row) ---
 
         combo_z_spc {
@@ -244,6 +276,7 @@
             layers = <COFFEE_BASE>;
             slow-release;
         }; // Z(24) + Space(38) -> ぜ
+
         combo_x_spc {
             timeout-ms = <50>;
             key-positions = <25 38>;
@@ -251,6 +284,7 @@
             layers = <COFFEE_BASE>;
             slow-release;
         }; // X(25) + Space(38) -> ぢ
+
         combo_c_spc {
             timeout-ms = <50>;
             key-positions = <26 38>;
@@ -258,6 +292,7 @@
             layers = <COFFEE_BASE>;
             slow-release;
         }; // C(26) + Space(38) -> ぶ
+
         combo_v_spc {
             timeout-ms = <50>;
             key-positions = <27 38>;
@@ -265,6 +300,7 @@
             layers = <COFFEE_BASE>;
             slow-release;
         }; // V(27) + Space(38) -> が
+
         combo_b_spc {
             timeout-ms = <50>;
             key-positions = <28 38>;
@@ -272,6 +308,7 @@
             layers = <COFFEE_BASE>;
             slow-release;
         }; // B(28) + Space(38) -> じゅ
+
         // =============================================================
         // 風神配列：文字キー同士の同時代行・ロールオーバーコンボ
         // AHK版の機能再現用（親指無変換キーやSキーとの組み合せ）
@@ -312,6 +349,8 @@
             layers = <COFFEE_BASE>;
         };
     };
+
+
 
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
