@@ -21,7 +21,7 @@
 
 
     macros {
-        // --- レイヤー切替用マクロ（roBa既存機能） ---
+        // --- レイヤー切替用マクロ（Cygnus既存機能） ---
         // 引数で受け取ったキーコードを入力しつつレイヤー0に戻る動作
 
         to_layer_0: to_layer_0 {
@@ -37,19 +37,12 @@
         // 子音と母音の2キーコードを一括送信するマクロ
         // =============================================================
 
-        macro_me: macro_me {
+        macro_wa: macro_wa {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp M &kp E>;
-            label = "MACRO_ME";
-        }; // M + E (め)
-
-        macro_yi: macro_yi {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp Y &kp I>;
-            label = "MACRO_YI";
-        }; // Y + I (い)
+            bindings = <&kp W &kp A>;
+            label = "MACRO_WA";
+        }; // W + A (わ)
 
         macro_ro: macro_ro {
             compatible = "zmk,behavior-macro";
@@ -58,12 +51,19 @@
             label = "MACRO_RO";
         }; // R + O (ろ)
 
-        macro_wa: macro_wa {
+        macro_yi: macro_yi {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp W &kp A>;
-            label = "MACRO_WA";
-        }; // W + A (わ)
+            bindings = <&kp Y &kp I>;
+            label = "MACRO_YI";
+        }; // Y + I (い)
+
+        macro_me: macro_me {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp M &kp E>;
+            label = "MACRO_ME";
+        }; // M + E (め)
 
         macro_pa: macro_pa {
             compatible = "zmk,behavior-macro";
@@ -72,33 +72,12 @@
             label = "MACRO_PA";
         }; // P + A (ぱ)
 
-        macro_xa: macro_xa {
+        macro_ha: macro_ha {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp X &kp A>;
-            label = "MACRO_XA";
-        }; // X + A (ぁ)
-
-        macro_ke: macro_ke {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp K &kp E>;
-            label = "MACRO_KE";
-        }; // K + E (け)
-
-        macro_si: macro_si {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp S &kp I>;
-            label = "MACRO_SI";
-        }; // S + I (し)
-
-        macro_to: macro_to {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp T &kp O>;
-            label = "MACRO_TO";
-        }; // T + O (と)
+            bindings = <&kp H &kp A>;
+            label = "MACRO_HA";
+        }; // H + A (は)
 
         macro_na: macro_na {
             compatible = "zmk,behavior-macro";
@@ -107,40 +86,26 @@
             label = "MACRO_NA";
         }; // N + A (な)
 
-        macro_ha: macro_ha {
+        macro_to: macro_to {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp H &kp A>;
-            label = "MACRO_HA";
-        }; // H + A (は)
+            bindings = <&kp T &kp O>;
+            label = "MACRO_TO";
+        }; // T + O (と)
 
-        macro_ze: macro_ze {
+        macro_si: macro_si {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp Z &kp E>;
-            label = "MACRO_ZE";
-        }; // Z + E (ぜ)
+            bindings = <&kp S &kp I>;
+            label = "MACRO_SI";
+        }; // S + I (し)
 
-        macro_di: macro_di {
+        macro_ke: macro_ke {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp D &kp I>;
-            label = "MACRO_DI";
-        }; // D + I (ぢ)
-
-        macro_bu: macro_bu {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp B &kp U>;
-            label = "MACRO_BU";
-        }; // B + U (ぶ)
-
-        macro_ga: macro_ga {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp G &kp A>;
-            label = "MACRO_GA";
-        }; // G + A (が)
+            bindings = <&kp K &kp E>;
+            label = "MACRO_KE";
+        }; // K + E (け)
 
         macro_ju: macro_ju {
             compatible = "zmk,behavior-macro";
@@ -149,6 +114,34 @@
             label = "MACRO_JU";
         }; // J + U (じゅ)
 
+        macro_ga: macro_ga {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp A>;
+            label = "MACRO_GA";
+        }; // G + A (が)
+
+        macro_bu: macro_bu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp B &kp U>;
+            label = "MACRO_BU";
+        }; // B + U (ぶ)
+
+        macro_di: macro_di {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp I>;
+            label = "MACRO_DI";
+        }; // D + I (ぢ)
+
+        macro_ze: macro_ze {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp E>;
+            label = "MACRO_ZE";
+        }; // Z + E (ぜ)
+
     };
 
 
@@ -156,7 +149,7 @@
     combos {
         compatible = "zmk,combos";
 
-        // --- roBa 既存のコンボ ---
+        // --- Cygnus 既存のコンボ ---
         // 物理20(N)と物理21(M)の同時押しでダブルクォーテーション(")を出力
 
         double_quotation {
@@ -175,6 +168,7 @@
         // - slow-release;            : Space(38)が先に押された場合はコンボを解除し、
         //                              母音レイヤー（単体母音「あ」「い」等）を優先出力する
         // =============================================================
+
         // --- 上段 (Top Row) ---
 
         combo_q_spc {
@@ -313,6 +307,7 @@
         // 風神配列：文字キー同士の同時代行・ロールオーバーコンボ
         // AHK版の機能再現用（親指無変換キーやSキーとの組み合せ）
         // =============================================================
+
         // 子音C(26) + 左親指無変換キー(35) の同時押し -> 「ぶ」(BU) を出力
 
         combo_c_muhenkan {
@@ -382,6 +377,8 @@
             bindings = <&mo>, <&kp>;
         };
     };
+
+
 
     keymap {
         compatible = "zmk,keymap";
@@ -463,7 +460,7 @@
         };
 
         // -------------------------------------------------------------
-        // レイヤー 7: 風神・子音レイヤー (COFFEE_BASE)
+        // レイヤー 7: 珈琲・子音レイヤー (COFFEE_BASE)
         // -------------------------------------------------------------
 
         COFFEE_BASE {
@@ -476,7 +473,7 @@
         };
 
         // -------------------------------------------------------------
-        // レイヤー 8: 風神・母音レイヤー (COFFEE_VOWEL)
+        // レイヤー 8: 珈琲・母音レイヤー (COFFEE_VOWEL)
         // -------------------------------------------------------------
 
         COFFEE_VOWEL {
