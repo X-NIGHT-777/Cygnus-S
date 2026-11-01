@@ -123,7 +123,7 @@
             >;
         };
 
-        coffee-base {
+        FUJIN_BASE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                         &kp W      &kp R  &kp Y  &kp M  &kp P
 &trans  &trans  &trans  &trans  &trans  &trans      &kp H      &kp N      &kp T  &kp S  &kp K  &kp RCTRL
@@ -132,7 +132,7 @@
             >;
         };
 
-        coffee-vowel {
+        FUJIN_VOWEL {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &kp U   &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp O   &kp A   &kp I   &kp E   &trans
