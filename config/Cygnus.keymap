@@ -1364,10 +1364,10 @@
 
         // --- 上段 (Top Row) ---
 
-        // W(6) + T(18) -> わ
+        // W(5) + T(18) -> わ
         combo_w_t {
             timeout-ms = <50>;
-            key-positions = <6 18>;
+            key-positions = <5 18>;
             bindings = <&macro_wa>;
             layers = <COFFEE_BASE>;
         };
@@ -1386,10 +1386,34 @@
             layers = <COFFEE_BASE>;
         };
 
-        // N(17) + Space(40) -> の
-        combo_n_space {
+        // N(17) + S(19) -> に
+        combo_n_s {
             timeout-ms = <50>;
-            key-positions = <17 40>;
+            key-positions = <17 19>;
+            bindings = <&macro_ni>;
+            layers = <COFFEE_BASE>;
+        };
+
+        // N(17) + R(6) -> ぬ
+        combo_n_r {
+            timeout-ms = <50>;
+            key-positions = <17 6>;
+            bindings = <&macro_nu>;
+            layers = <COFFEE_BASE>;
+        };
+
+        // N(17) + k(20) -> ね
+        combo_n_k {
+            timeout-ms = <50>;
+            key-positions = <17 20>;
+            bindings = <&macro_ne>;
+            layers = <COFFEE_BASE>;
+        };
+
+        // N(17) + Space(41) -> の
+        combo_n_spc {
+            timeout-ms = <50>;
+            key-positions = <17 41>;
             bindings = <&macro_no>;
             layers = <COFFEE_BASE>;
             slow-release;
@@ -1496,7 +1520,7 @@
 
         // -------------------------------------------------------------
         // レイヤー 0: デフォルト (QWERTY)
-        // ※ 右下キー（tog 7）で風神配列（レイヤー7）へトグル切替
+        // ※ 右下キー（tog 7）で珈琲配列（レイヤー7）へトグル切替
         // -------------------------------------------------------------
 
         default_layer {
@@ -1511,7 +1535,7 @@
         };
 
         // -------------------------------------------------------------
-        // レイヤー 1〜6: roBa オリジナルレイヤー
+        // レイヤー 1〜6: Cygnus オリジナルレイヤー
         // -------------------------------------------------------------
 
         FUNCTION {
