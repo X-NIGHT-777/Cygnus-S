@@ -383,29 +383,224 @@
             label = "MACRO_NN";
         }; // ん
 
+        // --- が行 ---
 
-
-
-
-
-
-
-
-
-
-        macro_yi: macro_yi {
+        // G + A (が)
+        macro_ga: macro_ga {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp Y &kp I>;
-            label = "MACRO_YI";
-        }; // Y + I (い)
+            bindings = <&kp G &kp A>;
+            label = "MACRO_GA";
+        }; // が
 
-        macro_me: macro_me {
+        // G + I (ぎ)
+        macro_gi: macro_gi {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp M &kp E>;
-            label = "MACRO_ME";
-        }; // M + E (め)
+            bindings = <&kp G &kp I>;
+            label = "MACRO_GI";
+        }; // ぎ
+
+        // G + U (ぐ)
+        macro_gu: macro_gu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp U>;
+            label = "MACRO_GU";
+        }; // ぐ
+
+        // G + E (げ)
+        macro_ge: macro_ge {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp E>;
+            label = "MACRO_GE";
+        }; // げ
+
+        // G + O (ご)
+        macro_go: macro_go {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp O>;
+            label = "MACRO_GO";
+        }; // ご
+
+        // --- ざ行 ---
+
+        // Z + A (ざ)
+        macro_za: macro_za {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp A>;
+            label = "MACRO_ZA";
+        }; // ざ
+
+        // Z + I (じ)
+        macro_zi: macro_zi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp I>;
+            label = "MACRO_ZI";
+        }; // じ
+
+        // Z + U (ず)
+        macro_zu: macro_zu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp U>;
+            label = "MACRO_ZU";
+        }; // ず
+
+        // Z + E (ぜ)
+        macro_ze: macro_ze {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp E>;
+            label = "MACRO_ZE";
+        }; // ぜ
+
+        // Z + O (ぞ)
+        macro_zo: macro_zo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp O>;
+            label = "MACRO_ZO";
+        }; // ぞ
+
+        // --- だ行 ---
+
+        // D + A (だ)
+        macro_da: macro_da {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp A>;
+            label = "MACRO_DA";
+        }; // だ
+
+        // D + I (ぢ)
+        macro_di: macro_di {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp I>;
+            label = "MACRO_DI";
+        }; // ぢ
+
+        // D + U (づ)
+        macro_du: macro_du {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp U>;
+            label = "MACRO_DU";
+        }; // づ
+
+        // D + E (で)
+        macro_de: macro_de {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp E>;
+            label = "MACRO_DE";
+        }; // で
+
+        // D + O (ど)
+        macro_do: macro_do {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp O>;
+            label = "MACRO_DO";
+        }; // ど
+
+        // --- ば行 ---
+
+        // B + A (ば)
+        macro_ba: macro_ba {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp B &kp A>;
+            label = "MACRO_BA";
+        }; // ば
+
+        // B + I (び)
+        macro_bi: macro_bi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp B &kp I>;
+            label = "MACRO_BI";
+        }; // び
+
+        // B + U (ぶ)
+        macro_bu: macro_bu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp B &kp U>;
+            label = "MACRO_BU";
+        }; // ぶ
+
+        // B + E (べ)
+        macro_be: macro_be {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp B &kp E>;
+            label = "MACRO_BE";
+        }; // べ
+
+        // B + O (ぼ)
+        macro_bo: macro_bo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp B &kp O>;
+            label = "MACRO_BO";
+        }; // ぼ
+
+        // --- ぱ行 ---
+
+        // P + A (ぱ)
+        macro_pa: macro_pa {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp P &kp A>;
+            label = "MACRO_PA";
+        }; // ぱ
+
+        // P + I (ぴ)
+        macro_pi: macro_pi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp P &kp I>;
+            label = "MACRO_PI";
+        }; // ぴ
+
+        // P + U (ぷ)
+        macro_pu: macro_pu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp P &kp U>;
+            label = "MACRO_PU";
+        }; // ぷ
+
+        // P + E (ぺ)
+        macro_pe: macro_pe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp P &kp E>;
+            label = "MACRO_PE";
+        }; // ぺ
+
+        // P + O (ぽ)
+        macro_po: macro_po {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp P &kp O>;
+            label = "MACRO_PO";
+        }; // ぽ
+
+
+
+
+
+
+
+
+
 
         macro_pa: macro_pa {
             compatible = "zmk,behavior-macro";
