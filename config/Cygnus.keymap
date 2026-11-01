@@ -20,197 +20,101 @@
 
 
 
-    combos {
-        compatible = "zmk,combos";
-
-        // --- 既存のコンボ --- //
-        double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
-        };
-
-        // =============================================================
-        // 風神配列：文字キー同士の同時代行・ロールオーバーコンボ
-        // =============================================================
-
-        // --- 子音 + 無変換キー (35) = 'u' ---
-        combo_c_muhenkan {
-            timeout-ms = <50>;
-            key-positions = <26 35>; // C(26) + 無変換(35)
-            bindings = <&kp U>;
-            layers = <FUJIN_BASE>;
-        };
-
-        combo_b_muhenkan {
-            timeout-ms = <50>;
-            key-positions = <28 35>; // B(28) + 無変換(35)
-            bindings = <&kp U>;
-            layers = <FUJIN_BASE>;
-        };
-
-        // --- 子音 + 母音行キー (A, S, D, F) の同時代行 ---
-        
-        // C (B) + S (13) = 'u' (「ぶ」入力用)
-        combo_c_s {
-            timeout-ms = <50>;
-            key-positions = <26 13>;
-            bindings = <&kp U>;
-            layers = <FUJIN_BASE>;
-        };
-
-        // B (J) + S (13) = 'u' (「じゅ」入力用)
-        combo_b_s {
-            timeout-ms = <50>;
-            key-positions = <28 13>;
-            bindings = <&kp U>;
-            layers = <FUJIN_BASE>;
-        };
-
-        // =============================================================
-        // 風神配列：子音キー + Space の全コンボ定義 (レイヤー7限定)
-        // =============================================================
-
-        // --- 上段 (Top Row) ---
-        // Q (M) + Space -> e
-        combo_q_spc {
-            timeout-ms = <50>;
-            key-positions = <0 38>;
-            bindings = <&kp E>;
-            layers = <FUJIN_BASE>;
-        };
-
-        // W (Y) + Space -> i
-        combo_w_spc {
-            timeout-ms = <50>;
-            key-positions = <1 38>;
-            bindings = <&kp I>;
-            layers = <FUJIN_BASE>;
-        };
-
-        // E (R) + Space -> o
-        combo_e_spc {
-            timeout-ms = <50>;
-            key-positions = <2 38>;
-            bindings = <&kp O>;
-            layers = <FUJIN_BASE>;
-        };
-
-        // R (W) + Space -> a
-        combo_r_spc {
-            timeout-ms = <50>;
-            key-positions = <3 38>;
-            bindings = <&kp A>;
-            layers = <FUJIN_BASE>;
-        };
-
-        // T (P) + Space -> a
-        combo_t_spc {
-            timeout-ms = <50>;
-            key-positions = <4 38>;
-            bindings = <&kp A>;
-            layers = <FUJIN_BASE>;
-        };
-
-        // Y (X) + Space -> a
-        combo_y_spc {
-            timeout-ms = <50>;
-            key-positions = <5 38>;
-            bindings = <&kp A>;
-            layers = <FUJIN_BASE>;
-        };
-
-        // --- 中段 (Home Row) ---
-        // A (K) + Space -> e
-        combo_a_spc {
-            timeout-ms = <50>;
-            key-positions = <12 38>;
-            bindings = <&kp E>;
-            layers = <FUJIN_BASE>;
-        };
-
-        // S (S) + Space -> i
-        combo_s_spc {
-            timeout-ms = <50>;
-            key-positions = <13 38>;
-            bindings = <&kp I>;
-            layers = <FUJIN_BASE>;
-        };
-
-        // D (T) + Space -> o
-        combo_d_spc {
-            timeout-ms = <50>;
-            key-positions = <14 38>;
-            bindings = <&kp O>;
-            layers = <FUJIN_BASE>;
-        };
-
-        // F (N) + Space -> a (「な」)
-        combo_f_spc {
-            timeout-ms = <50>;
-            key-positions = <15 38>;
-            bindings = <&kp A>;
-            layers = <FUJIN_BASE>;
-        };
-
-        // G (H) + Space -> a
-        combo_g_spc {
-            timeout-ms = <50>;
-            key-positions = <16 38>;
-            bindings = <&kp A>;
-            layers = <FUJIN_BASE>;
-        };
-
-        // --- 下段 (Bottom Row) ---
-        // Z (Z) + Space -> e
-        combo_z_spc {
-            timeout-ms = <50>;
-            key-positions = <24 38>;
-            bindings = <&kp E>;
-            layers = <FUJIN_BASE>;
-        };
-
-        // X (D) + Space -> i
-        combo_x_spc {
-            timeout-ms = <50>;
-            key-positions = <25 38>;
-            bindings = <&kp I>;
-            layers = <FUJIN_BASE>;
-        };
-
-        // C (B) + Space -> u (spaceVowel = "u")
-        combo_c_spc {
-            timeout-ms = <50>;
-            key-positions = <26 38>;
-            bindings = <&kp U>;
-            layers = <FUJIN_BASE>;
-        };
-
-        // V (G) + Space -> a
-        combo_v_spc {
-            timeout-ms = <50>;
-            key-positions = <27 38>;
-            bindings = <&kp A>;
-            layers = <FUJIN_BASE>;
-        };
-
-        // B (J) + Space -> u (spaceVowel = "u")
-        combo_b_spc {
-            timeout-ms = <50>;
-            key-positions = <28 38>;
-            bindings = <&kp U>;
-            layers = <FUJIN_BASE>;
-        };
-    };
-
-
-
-    macros {
+macros {
+        // --- レイヤー切替用マクロ（roBa既存機能） ---
+        // 引数で受け取ったキーコードを入力しつつレイヤー0に戻る動作
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        // =============================================================
+        // 風神配列：子音＋母音の2文字一括送出マクロ定義
+        // 同時押し・逆順打鍵時にPC側で「あ」等へ誤変換されるのを防ぐため
+        // 子音と母音の2キーコードを一括送信するマクロ
+        // =============================================================
+        macro_me: macro_me { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp M &kp E>; label = "MACRO_ME"; }; // M + E (め)
+        macro_yi: macro_yi { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp Y &kp I>; label = "MACRO_YI"; }; // Y + I (い)
+        macro_ro: macro_ro { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp R &kp O>; label = "MACRO_RO"; }; // R + O (ろ)
+        macro_wa: macro_wa { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp W &kp A>; label = "MACRO_WA"; }; // W + A (わ)
+        macro_pa: macro_pa { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp P &kp A>; label = "MACRO_PA"; }; // P + A (ぱ)
+        macro_xa: macro_xa { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp X &kp A>; label = "MACRO_XA"; }; // X + A (ぁ)
+
+        macro_ke: macro_ke { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp K &kp E>; label = "MACRO_KE"; }; // K + E (け)
+        macro_si: macro_si { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp S &kp I>; label = "MACRO_SI"; }; // S + I (し)
+        macro_to: macro_to { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp T &kp O>; label = "MACRO_TO"; }; // T + O (と)
+        macro_na: macro_na { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp A>; label = "MACRO_NA"; }; // N + A (な)
+        macro_ha: macro_ha { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp H &kp A>; label = "MACRO_HA"; }; // H + A (は)
+
+        macro_ze: macro_ze { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp Z &kp E>; label = "MACRO_ZE"; }; // Z + E (ぜ)
+        macro_di: macro_di { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp I>; label = "MACRO_DI"; }; // D + I (ぢ)
+        macro_bu: macro_bu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp B &kp U>; label = "MACRO_BU"; }; // B + U (ぶ)
+        macro_ga: macro_ga { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp G &kp A>; label = "MACRO_GA"; }; // G + A (が)
+        macro_ju: macro_ju { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp J &kp U>; label = "MACRO_JU"; }; // J + U (じゅ)
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        // --- roBa/Cygnus 既存のコンボ ---
+        // 物理20(N)と物理21(M)の同時押しでダブルクォーテーション(")を出力
+        double_quotation {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <20 21>;
+        };
+
+        // =============================================================
+        // 風神配列：子音キー + Space (38) の全コンボ定義 (レイヤー7限定)
+        //
+        // 【各属性の説明】
+        // - timeout-ms = <50>;       : 2つのキーを50ミリ秒以内に押した場合に同時押しと判定
+        // - key-positions = <X 38>;  : 対象の物理キー位置(X)とSpaceキー(38)の組み合わせ
+        // - bindings = <&macro_xx>;   : 条件を満たした時に実行するマクロ（2文字一括出力）
+        // - layers = <FUJIN_BASE>;   : 風神配列モード（レイヤー7）の時のみこのコンボを有効化
+        // - slow-release;            : Space(38)が先に押された場合はコンボを解除し、
+        //                              母音レイヤー（単体母音「あ」「い」等）を優先出力する
+        // =============================================================
+
+        // --- 上段 (Top Row) ---
+        combo_q_spc { timeout-ms = <50>; key-positions = <0 38>;  bindings = <&macro_me>; layers = <FUJIN_BASE>; slow-release; }; // Q(0) + Space(38) -> め
+        combo_w_spc { timeout-ms = <50>; key-positions = <1 38>;  bindings = <&macro_yi>; layers = <FUJIN_BASE>; slow-release; }; // W(1) + Space(38) -> い
+        combo_e_spc { timeout-ms = <50>; key-positions = <2 38>;  bindings = <&macro_ro>; layers = <FUJIN_BASE>; slow-release; }; // E(2) + Space(38) -> ろ
+        combo_r_spc { timeout-ms = <50>; key-positions = <3 38>;  bindings = <&macro_wa>; layers = <FUJIN_BASE>; slow-release; }; // R(3) + Space(38) -> わ
+        combo_t_spc { timeout-ms = <50>; key-positions = <4 38>;  bindings = <&macro_pa>; layers = <FUJIN_BASE>; slow-release; }; // T(4) + Space(38) -> ぱ
+        combo_y_spc { timeout-ms = <50>; key-positions = <5 38>;  bindings = <&macro_xa>; layers = <FUJIN_BASE>; slow-release; }; // Y(5) + Space(38) -> ぁ
+
+        // --- 中段 (Home Row) ---
+        combo_a_spc { timeout-ms = <50>; key-positions = <12 38>; bindings = <&macro_ke>; layers = <FUJIN_BASE>; slow-release; }; // A(12) + Space(38) -> け
+        combo_s_spc { timeout-ms = <50>; key-positions = <13 38>; bindings = <&macro_si>; layers = <FUJIN_BASE>; slow-release; }; // S(13) + Space(38) -> し
+        combo_d_spc { timeout-ms = <50>; key-positions = <14 38>; bindings = <&macro_to>; layers = <FUJIN_BASE>; slow-release; }; // D(14) + Space(38) -> と
+        combo_f_spc { timeout-ms = <50>; key-positions = <15 38>; bindings = <&macro_na>; layers = <FUJIN_BASE>; slow-release; }; // F(15) + Space(38) -> な
+        combo_g_spc { timeout-ms = <50>; key-positions = <16 38>; bindings = <&macro_ha>; layers = <FUJIN_BASE>; slow-release; }; // G(16) + Space(38) -> は
+
+        // --- 下段 (Bottom Row) ---
+        combo_z_spc { timeout-ms = <50>; key-positions = <24 38>; bindings = <&macro_ze>; layers = <FUJIN_BASE>; slow-release; }; // Z(24) + Space(38) -> ぜ
+        combo_x_spc { timeout-ms = <50>; key-positions = <25 38>; bindings = <&macro_di>; layers = <FUJIN_BASE>; slow-release; }; // X(25) + Space(38) -> ぢ
+        combo_c_spc { timeout-ms = <50>; key-positions = <26 38>; bindings = <&macro_bu>; layers = <FUJIN_BASE>; slow-release; }; // C(26) + Space(38) -> ぶ
+        combo_v_spc { timeout-ms = <50>; key-positions = <27 38>; bindings = <&macro_ga>; layers = <FUJIN_BASE>; slow-release; }; // V(27) + Space(38) -> が
+        combo_b_spc { timeout-ms = <50>; key-positions = <28 38>; bindings = <&macro_ju>; layers = <FUJIN_BASE>; slow-release; }; // B(28) + Space(38) -> じゅ
+
+        // =============================================================
+        // 風神配列：文字キー同士の同時代行・ロールオーバーコンボ
+        // AHK版の機能再現用（親指無変換キーやSキーとの組み合せ）
+        // =============================================================
+
+        // 子音C(26) + 左親指無変換キー(35) の同時押し -> 「ぶ」(BU) を出力
+        combo_c_muhenkan { timeout-ms = <50>; key-positions = <26 35>; bindings = <&macro_bu>; layers = <FUJIN_BASE>; };
+
+        // 子音B(28) + 左親指無変換キー(35) の同時押し -> 「じゅ」(JU) を出力
+        combo_b_muhenkan { timeout-ms = <50>; key-positions = <28 35>; bindings = <&macro_ju>; layers = <FUJIN_BASE>; };
+
+        // 子音C(26) + Sキー(13) の同時押し -> 「ぶ」(BU) を出力
+        combo_c_s { timeout-ms = <50>; key-positions = <26 13>; bindings = <&macro_bu>; layers = <FUJIN_BASE>; };
+
+        // 子音B(28) + Sキー(13) の同時押し -> 「じゅ」(JU) を出力
+        combo_b_s { timeout-ms = <50>; key-positions = <28 13>; bindings = <&macro_ju>; layers = <FUJIN_BASE>; };
     };
 
 
@@ -220,7 +124,6 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to_layer_0>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
@@ -230,7 +133,6 @@
             label = "ROTATE";
             #sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
-
             tap-ms = <20>;
         };
 
@@ -250,6 +152,10 @@
     keymap {
         compatible = "zmk,keymap";
 
+        // -------------------------------------------------------------
+        // レイヤー 0: デフォルト (QWERTY)
+        // ※ 右下キー（tog 7）で風神配列（レイヤー7）へトグル切替
+        // -------------------------------------------------------------
         default_layer {
             bindings = <
 &kp Q             &kp W         &kp E         &kp R                 &kp T                                                                 &kp Y        &kp U  &kp I      &kp O    &kp P
@@ -261,6 +167,9 @@
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
         };
 
+        // -------------------------------------------------------------
+        // レイヤー 1〜6: roBa オリジナルレイヤー
+        // -------------------------------------------------------------
         FUNCTION {
             bindings = <
 &kp F1   &kp F2  &kp F3  &kp F4  &kp F5                        &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
@@ -317,6 +226,9 @@
             >;
         };
 
+        // -------------------------------------------------------------
+        // レイヤー 7: 風神・子音レイヤー (FUJIN_BASE)
+        // -------------------------------------------------------------
         FUJIN_BASE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &kp W                      &kp R      &kp Y  &kp M  &kp P
@@ -326,6 +238,9 @@
             >;
         };
 
+        // -------------------------------------------------------------
+        // レイヤー 8: 風神・母音レイヤー (FUJIN_VOWEL)
+        // -------------------------------------------------------------
         FUJIN_VOWEL {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &kp U   &trans  &trans  &trans
