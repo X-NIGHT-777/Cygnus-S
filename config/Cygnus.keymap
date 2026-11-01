@@ -122,5 +122,23 @@
 &trans  &trans        &trans        &trans        &trans     &trans      &trans          &trans                                                  &bt BT_CLR_ALL
             >;
         };
+
+        coffee-base {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                         &kp W      &kp R  &kp Y  &kp M  &kp P
+&trans  &trans  &trans  &trans  &trans  &trans      &kp H      &kp N      &kp T  &kp S  &kp K  &kp RCTRL
+&trans  &trans  &trans  &trans  &trans  &trans      &kp J      &kp G      &kp B  &kp D  &kp Z  &kp RSHFT
+&trans  &trans  &trans  &trans  &trans  &trans      &kp SPACE  &kp ENTER                       &trans
+            >;
+        };
+
+        coffee-vowel {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &kp U   &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp O   &kp A   &kp I   &kp E   &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
     };
 };
