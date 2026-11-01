@@ -32,7 +32,7 @@
         };
 
         // =============================================================
-        // 風神配列：子音＋母音の2文字一括送出マクロ定義
+        // 珈琲配列：子音＋母音の2文字一括送出マクロ定義
         // 同時押し・逆順打鍵時にPC側で「あ」等へ誤変換されるのを防ぐため
         // 子音と母音の2キーコードを一括送信するマクロ
         // =============================================================
@@ -1364,137 +1364,55 @@
 
         // --- 上段 (Top Row) ---
 
-        combo_q_spc {
+        // W(6) + T(18) -> わ
+        combo_w_t {
             timeout-ms = <50>;
-            key-positions = <0 38>;
-            bindings = <&macro_me>;
-            layers = <COFFEE_BASE>;
-            slow-release;
-        }; // Q(0) + Space(38) -> め
-
-        combo_w_spc {
-            timeout-ms = <50>;
-            key-positions = <1 38>;
-            bindings = <&macro_yi>;
-            layers = <COFFEE_BASE>;
-            slow-release;
-        }; // W(1) + Space(38) -> い
-
-        combo_e_spc {
-            timeout-ms = <50>;
-            key-positions = <2 38>;
-            bindings = <&macro_ro>;
-            layers = <COFFEE_BASE>;
-            slow-release;
-        }; // E(2) + Space(38) -> ろ
-
-        combo_r_spc {
-            timeout-ms = <50>;
-            key-positions = <3 38>;
+            key-positions = <6 18>;
             bindings = <&macro_wa>;
             layers = <COFFEE_BASE>;
-            slow-release;
-        }; // R(3) + Space(38) -> わ
+        };
 
-        combo_t_spc {
-            timeout-ms = <50>;
-            key-positions = <4 38>;
-            bindings = <&macro_pa>;
-            layers = <COFFEE_BASE>;
-            slow-release;
-        }; // T(4) + Space(38) -> ぱ
 
-        combo_y_spc {
-            timeout-ms = <50>;
-            key-positions = <5 38>;
-            bindings = <&macro_xa>;
-            layers = <COFFEE_BASE>;
-            slow-release;
-        }; // Y(5) + Space(38) -> ぁ
+
+
 
         // --- 中段 (Home Row) ---
 
-        combo_a_spc {
+        // N(17) + T(18) -> な
+        combo_n_t {
             timeout-ms = <50>;
-            key-positions = <12 38>;
-            bindings = <&macro_ke>;
-            layers = <COFFEE_BASE>;
-            slow-release;
-        }; // A(12) + Space(38) -> け
-
-        combo_s_spc {
-            timeout-ms = <50>;
-            key-positions = <13 38>;
-            bindings = <&macro_si>;
-            layers = <COFFEE_BASE>;
-            slow-release;
-        }; // S(13) + Space(38) -> し
-
-        combo_d_spc {
-            timeout-ms = <50>;
-            key-positions = <14 38>;
-            bindings = <&macro_to>;
-            layers = <COFFEE_BASE>;
-            slow-release;
-        }; // D(14) + Space(38) -> と
-
-        combo_f_spc {
-            timeout-ms = <50>;
-            key-positions = <15 38>;
+            key-positions = <17 18>;
             bindings = <&macro_na>;
             layers = <COFFEE_BASE>;
-            slow-release;
-        }; // F(15) + Space(38) -> な
+        };
 
-        combo_g_spc {
+        // N(17) + Space(40) -> の
+        combo_n_space {
             timeout-ms = <50>;
-            key-positions = <16 38>;
-            bindings = <&macro_ha>;
+            key-positions = <17 40>;
+            bindings = <&macro_no>;
             layers = <COFFEE_BASE>;
             slow-release;
-        }; // G(16) + Space(38) -> は
+        };
+
+
+
+
 
         // --- 下段 (Bottom Row) ---
 
-        combo_z_spc {
-            timeout-ms = <50>;
-            key-positions = <24 38>;
-            bindings = <&macro_ze>;
-            layers = <COFFEE_BASE>;
-            slow-release;
-        }; // Z(24) + Space(38) -> ぜ
 
-        combo_x_spc {
-            timeout-ms = <50>;
-            key-positions = <25 38>;
-            bindings = <&macro_di>;
-            layers = <COFFEE_BASE>;
-            slow-release;
-        }; // X(25) + Space(38) -> ぢ
 
-        combo_c_spc {
-            timeout-ms = <50>;
-            key-positions = <26 38>;
-            bindings = <&macro_bu>;
-            layers = <COFFEE_BASE>;
-            slow-release;
-        }; // C(26) + Space(38) -> ぶ
 
-        combo_v_spc {
-            timeout-ms = <50>;
-            key-positions = <27 38>;
-            bindings = <&macro_ga>;
-            layers = <COFFEE_BASE>;
-            slow-release;
-        }; // V(27) + Space(38) -> が
 
-        combo_b_spc {
-            timeout-ms = <50>;
-            key-positions = <28 38>;
-            bindings = <&macro_ju>;
-            layers = <COFFEE_BASE>;
-            slow-release;
-        }; // B(28) + Space(38) -> じゅ
+
+
+
+
+
+
+
+
 
         // =============================================================
         // 風神配列：文字キー同士の同時代行・ロールオーバーコンボ
