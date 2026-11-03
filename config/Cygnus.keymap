@@ -8,14 +8,15 @@
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
-#define L_COFFEE_BASE   7                          // 子音レイヤーの番号
-#define L_COFFEE_VOWEL  8                          // 母音レイヤーの番号
-#define L_GRP_A     9                              // 母音aグループ用レイヤー
-#define L_GRP_I     10                             // 母音iグループ用レイヤー
-#define L_GRP_E     11                             // 母音eグループ用レイヤー
-#define L_GRP_O     12                             // 母音oグループ用レイヤー
-#define L_GRP_U     13                             // 母音uグループ用レイヤー（追加）
-#define L_GRP_NONE  L_COFFEE_VOWEL                 // 逆押し母音なし（母音面のみ）（追加）
+#define L_COFFEE_BASE      7                             // 子音レイヤー
+#define L_COFFEE_VOWEL     8                             // 子音を押している間の母音面
+#define L_COFFEE_VOWEL_SP  9                             // Space長押しで入る母音面（L/Q/V/C/X/F入り）
+#define L_GRP_A            10                            // 母音aグループ用レイヤー
+#define L_GRP_I            11                            // 母音iグループ用レイヤー
+#define L_GRP_E            12                            // 母音eグループ用レイヤー
+#define L_GRP_O            13                            // 母音oグループ用レイヤー
+#define L_GRP_U            14                            // 母音uグループ用レイヤー
+#define L_GRP_NONE         L_COFFEE_VOWEL                // 逆押し母音なし（母音面のみ）
 
 &mt {
     flavor = "balanced";
@@ -166,10 +167,10 @@
 
         COFFEE_BASE {
             bindings = <
-&to 0   &trans  &trans  &trans  &trans                                  &cons W L_GRP_NONE            &cons R L_GRP_U     &cons Y L_GRP_NONE  &cons M L_GRP_NONE  &cons P L_GRP_NONE
-&trans  &trans  &trans  &trans  &trans  &trans      &cons H L_GRP_NONE  &cons N L_GRP_O               &cons T L_GRP_A     &cons S L_GRP_I     &cons K L_GRP_E     &kp RCTRL
-&trans  &trans  &trans  &trans  &trans  &trans      &cons J L_GRP_NONE  &cons G L_GRP_NONE            &cons B L_GRP_NONE  &cons D L_GRP_NONE  &cons Z L_GRP_NONE  &kp RSHFT
-&trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER           &lt_spc L_COFFEE_VOWEL SPACE                                                              &none
+&trans  &trans  &trans  &trans  &trans                              &cons W L_GRP_NONE  &cons R L_GRP_U     &cons Y L_GRP_NONE  &cons M L_GRP_NONE  &cons P L_GRP_NONE
+&trans  &trans  &trans  &trans  &trans  &trans  &cons H L_GRP_NONE  &cons N L_GRP_O     &cons T L_GRP_A     &cons S L_GRP_I     &cons K L_GRP_E     &kp RCTRL
+&trans  &trans  &trans  &trans  &trans  &trans  &cons J L_GRP_NONE  &cons G L_GRP_NONE  &cons B L_GRP_NONE  &cons D L_GRP_NONE  &cons Z L_GRP_NONE  &kp RSHFT
+&trans  &trans  &trans  &trans  &trans  &trans  &kp ENTER           &lt_spc L_COFFEE_VOWEL_SP SPACE  &trans
             >;
         };
 
@@ -183,6 +184,15 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp O   &kp A  &kp I  &kp E  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp V   &kp C  &kp X  &kp F  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                       &trans
+            >;
+        };
+
+        COFFEE_VOWEL_SP {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &kp U   &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp O   &kp A   &kp I   &kp E   &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp V   &kp C   &kp X   &kp F   &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
 
