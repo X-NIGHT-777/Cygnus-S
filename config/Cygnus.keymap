@@ -23,9 +23,6 @@
 };
 
 / {
-
-
-
     combos {
         compatible = "zmk,combos";
 
@@ -34,8 +31,6 @@
             key-positions = <20 21>;
         };
     };
-
-
 
     macros {
         to_layer_0: to_layer_0 {
@@ -46,26 +41,25 @@
         };
 
         cons: cons {
-            compatible     = "zmk,behavior-macro-two-param";
-            label          = "CONS";
+            compatible = "zmk,behavior-macro-two-param";
+            label = "CONS";
             #binding-cells = <2>;                        // 引数1=子音キー, 引数2=母音グループ用レイヤー
-            wait-ms        = <0>;                        // 実機で調整
-            tap-ms         = <5>;                        // 実機で調整
-            bindings
-                = <&macro_press &mo L_COFFEE_VOWEL>      // 母音面（8番）をオン
-                , <&macro_param_2to1>
-                , <&macro_press &mo MACRO_PLACEHOLDER>   // 子音グループ面をオン
-                , <&macro_param_1to1>
-                , <&macro_tap &kp MACRO_PLACEHOLDER>     // 子音を1回出力
-                , <&macro_pause_for_release>             // 物理キーを離すまで待つ
-                , <&macro_release &mo L_COFFEE_VOWEL>    // 母音面をオフ
-                , <&macro_param_2to1>
-                , <&macro_release &mo MACRO_PLACEHOLDER> // 子音グループ面をオフ
-                ;
+            wait-ms = <0>;                        // 実機で調整
+            tap-ms = <5>;                        // 実機で調整
+            bindings =
+                <&macro_press>,
+                <&mo L_COFFEE_VOWEL &macro_param_2to1>,
+                <&macro_press>,
+                <&mo MACRO_PLACEHOLDER &macro_param_1to1>,
+                <&macro_tap>,
+                <&kp MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo L_COFFEE_VOWEL &macro_param_2to1>,
+                <&macro_release>,
+                <&mo MACRO_PLACEHOLDER>;
         };
     };
-
-
 
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
@@ -87,16 +81,14 @@
         };
 
         lt_spc: lt_spc {
-            compatible      = "zmk,behavior-hold-tap";
-            label           = "LT_SPC";
-            #binding-cells  = <2>;
-            flavor          = "balanced";
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_SPC";
+            #binding-cells = <2>;
+            flavor = "balanced";
             tapping-term-ms = <200>;
-            bindings        = <&mo>, <&kp>;
+            bindings = <&mo>, <&kp>;
         };
     };
-
-
 
     keymap {
         compatible = "zmk,keymap";
@@ -168,29 +160,29 @@
             >;
         };
 
-// -------------------------------------------------------------
-// レイヤー 7: 珈琲・子音レイヤー (COFFEE_BASE)
-// -------------------------------------------------------------
+        // -------------------------------------------------------------
+        // レイヤー 7: 珈琲・子音レイヤー (COFFEE_BASE)
+        // -------------------------------------------------------------
 
         COFFEE_BASE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                              &cons W L_GRP_NONE  &cons R L_GRP_U     &cons Y L_GRP_NONE  &cons M L_GRP_NONE  &cons P L_GRP_NONE
-&trans  &trans  &trans  &trans  &trans  &trans  &cons H L_GRP_NONE  &cons N L_GRP_O     &cons T L_GRP_A     &cons S L_GRP_I     &cons K L_GRP_E     &kp RCTRL
-&trans  &trans  &trans  &trans  &trans  &trans  &cons J L_GRP_NONE  &cons G L_GRP_NONE  &cons B L_GRP_NONE  &cons D L_GRP_NONE  &cons Z L_GRP_NONE  &kp RSHFT
-&trans  &trans  &trans  &trans  &trans  &trans  &kp ENTER           &lt_spc L_COFFEE_VOWEL SPACE  &trans
+&trans  &trans  &trans  &trans  &trans                                  &cons W L_GRP_NONE            &cons R L_GRP_U     &cons Y L_GRP_NONE  &cons M L_GRP_NONE  &cons P L_GRP_NONE
+&trans  &trans  &trans  &trans  &trans  &trans      &cons H L_GRP_NONE  &cons N L_GRP_O               &cons T L_GRP_A     &cons S L_GRP_I     &cons K L_GRP_E     &kp RCTRL
+&trans  &trans  &trans  &trans  &trans  &trans      &cons J L_GRP_NONE  &cons G L_GRP_NONE            &cons B L_GRP_NONE  &cons D L_GRP_NONE  &cons Z L_GRP_NONE  &kp RSHFT
+&trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER           &lt_spc L_COFFEE_VOWEL SPACE                                                              &none
             >;
         };
 
-// -------------------------------------------------------------
-// レイヤー 8: 珈琲・母音レイヤー (COFFEE_VOWEL)
-// -------------------------------------------------------------
+        // -------------------------------------------------------------
+        // レイヤー 8: 珈琲・母音レイヤー (COFFEE_VOWEL)
+        // -------------------------------------------------------------
 
         COFFEE_VOWEL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &kp U   &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp O   &kp A   &kp I   &kp E   &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &kp U  &kp L  &kp Q  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp O   &kp A  &kp I  &kp E  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &kp F   &kp V   &kp C  &kp X  &kp F  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                       &trans
             >;
         };
 
@@ -238,6 +230,5 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp U                           &trans
             >;
         };
-
     };
 };
