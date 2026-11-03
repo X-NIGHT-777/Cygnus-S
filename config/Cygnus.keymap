@@ -181,7 +181,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &kp U  &kp L  &kp Q  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp O   &kp A  &kp I  &kp E  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &kp F   &kp V   &kp C  &kp X  &kp F  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp V   &kp C  &kp X  &kp F  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                       &trans
             >;
         };
