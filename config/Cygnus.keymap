@@ -237,10 +237,10 @@
 
         KEYBOARD_MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &none          &mmv MOVE_UP    &none            &none   &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &none   &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none   &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &none   &mkp LCLK      &mkp MCLK       &mkp RCLK        &none   &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                  &trans
+&trans  &trans  &trans  &trans  &trans                        &none          &mmv MOVE_UP    &none            &none   &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &none     &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none   &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &none     &mkp LCLK      &mkp MCLK       &mkp RCLK        &none   &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &mo FAST  &mo PRECISION                                                  &trans
             >;
         };
 
