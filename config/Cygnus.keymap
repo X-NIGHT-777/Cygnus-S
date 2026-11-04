@@ -5,13 +5,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define L_QWERTY                  0
-#define L_NUM                     1
-#define L_ARROW                   2
-#define L_MOUSE                   3
-#define L_SCROLL                  4
-#define L_FUNCTION                5
-#define L_BT_SETTING              6
+#define L_QWERTY                   0
+#define L_NUM                      1
+#define L_ARROW                    2
+#define L_MOUSE                    3
+#define L_SCROLL                   4
+#define L_FUNCTION                 5
+#define L_BT_SETTING               6
 #define L_COFFEE_BASE              7 // 子音レイヤー
 #define L_COFFEE_VOWEL             8 // 子音を押している間の母音面
 #define L_COFFEE_VOWEL_SP          9 // Space長押しで入る母音面(L/Q/V/C/X/F入り)
