@@ -18,7 +18,7 @@
 #define L_GRP_U                  10 // 母音uグループ用レイヤー
 #define L_GRP_O                  11 // 母音oグループ用レイヤー
 #define L_GRP_A                  12 // 母音aグループ用レイヤー
-#define L_GRP_I                  13 // 母音iグループ用レイヤー
+#define L_GRP_I                   13 // 母音iグループ用レイヤー
 #define L_GRP_E                   14 // 母音eグループ用レイヤー
 #define L_GRP_NONE L_COFFEE_VOWEL    // 逆押し母音なし(母音面のみ)
 
