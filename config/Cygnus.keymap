@@ -25,12 +25,6 @@
 
 / {
     combos {
-        compatible = "zmk,combos";
-
-        double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
-        };
     };
 
     macros {
@@ -167,7 +161,7 @@
 
         COFFEE_BASE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                  &cons W L_GRP_NONE               &cons R L_GRP_U     &cons Y L_GRP_NONE  &cons M L_GRP_NONE  &cons P L_GRP_NONE
+&to 0  &trans  &trans  &trans  &trans                                  &cons W L_GRP_NONE               &cons R L_GRP_U     &cons Y L_GRP_NONE  &cons M L_GRP_NONE  &cons P L_GRP_NONE
 &trans  &trans  &trans  &trans  &trans  &trans      &cons H L_GRP_NONE  &cons N L_GRP_O                  &cons T L_GRP_A     &cons S L_GRP_I     &cons K L_GRP_E     &kp RCTRL
 &trans  &trans  &trans  &trans  &trans  &trans      &cons J L_GRP_NONE  &cons G L_GRP_NONE               &cons B L_GRP_NONE  &cons D L_GRP_NONE  &cons Z L_GRP_NONE  &kp RSHFT
 &trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER           &lt_spc L_COFFEE_VOWEL_SP SPACE                                                              &none
