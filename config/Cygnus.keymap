@@ -236,5 +236,14 @@
             >;
         };
 
+        KEYBOARD_FLICK {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                        &kp N3     &kp T   &kp X  &none     &none
+&trans  &trans  &trans  &trans  &trans  &trans      &kp Y     &kp Q      &kp U   &kp F  &kp UP    &none
+&trans  &trans  &trans  &trans  &trans  &trans      &kp N0    &kp J      &kp N7  &kp O  &kp DOWN  &none
+&trans  &trans  &trans  &trans  &trans  &trans      &kp LEFT  &kp RIGHT                           &none
+            >;
+        };
+
     };
 };
