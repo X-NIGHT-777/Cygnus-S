@@ -21,7 +21,7 @@
 #define L_GRP_I                   13 // 母音iグループ用
 #define L_GRP_E                   14 // 母音eグループ用
 #define L_GRP_NONE L_COFFEE_VOWEL    // 逆押し母音なし(母音面のみ)
-#define L_KEYBOARD_FLICK          15 // フリック
+#define L_COFFEE                  15 // フリック
 
 &mt {
     flavor = "balanced";
