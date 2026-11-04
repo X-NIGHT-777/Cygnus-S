@@ -240,7 +240,7 @@
 &trans  &trans  &trans  &trans  &trans                         &none          &mmv MOVE_UP    &none            &none                &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &none      &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mo FAST             &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &none      &none          &none           &none            &mo PRECISION        &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &mkp LCLK  &mkp RCLK  // mod-tap LCLK+RCKL -> MCLK                              &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &mkp LCLK  &mkp RCLK                               &trans
             >;
         };
 
