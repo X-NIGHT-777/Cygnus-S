@@ -13,6 +13,7 @@
 #define L_FUNCTION_DEFAULT         5
 #define L_BT_SETTING               6
 
+// 珈琲配列
 #define L_COFFEE                   7
 #define L_QWERTY_RIGHT             8
 #define L_QWERTY_LEFT              9
