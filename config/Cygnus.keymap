@@ -311,19 +311,19 @@
 
         MOUSE_SLOW {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &mmv SLOW_UP  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                      &trans          &mmv SLOW_UP    &trans           &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &mmv SLOW_LEFT  &mmv SLOW_DOWN  &mmv SLOW_RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans          &trans          &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                           &trans
             >;
         };
 
         MOUSE_FAST {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &mmv FAST_UP  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                      &trans          &mmv FAST_UP    &trans           &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &mmv FAST_LEFT  &mmv FAST_DOWN  &mmv FAST_RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans          &trans          &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                   &trans
             >;
         };
 
