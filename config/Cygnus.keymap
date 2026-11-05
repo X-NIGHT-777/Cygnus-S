@@ -241,6 +241,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans           &kp LG(LS(RIGHT_ARROW))  &trans       &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans                  &trans           &trans                   &trans       &trans
             >;
+        };
 
     };
 };
