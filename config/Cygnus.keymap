@@ -24,60 +24,61 @@
     combos {
         timeout-ms = <120>;
 
-        // あ行：N3
-        combo_a_i { key-positions = <5 40>; layers = <L_COFFEE>; bindings = <&kp E>; };
-        combo_a_u { key-positions = <5 41>; layers = <L_COFFEE>; bindings = <&kp N4>; };
-        combo_a_e { key-positions = <5 20>; layers = <L_COFFEE>; bindings = <&kp N5>; };
-        combo_a_o { key-positions = <5 32>; layers = <L_COFFEE>; bindings = <&kp N6>; };
+    // あ行：N3
+    combo_a_i { key-positions = <5 40>; layers = <L_COFFEE>; bindings = <&kp E>; };
+    combo_a_u { key-positions = <5 20>; layers = <L_COFFEE>; bindings = <&kp N4>; };
+    combo_a_e { key-positions = <5 41>; layers = <L_COFFEE>; bindings = <&kp N5>; };
+    combo_a_o { key-positions = <5 32>; layers = <L_COFFEE>; bindings = <&kp N6>; };
 
-        // か行：T
-        combo_ka_i { key-positions = <6 40>; layers = <L_COFFEE>; bindings = <&kp G>; };
-        combo_ka_u { key-positions = <6 41>; layers = <L_COFFEE>; bindings = <&kp H>; };
-        combo_ka_e { key-positions = <6 20>; layers = <L_COFFEE>; bindings = <&kp LS(SEMICOLON)>; };
-        combo_ka_o { key-positions = <6 32>; layers = <L_COFFEE>; bindings = <&kp B>; };
+    // か行：T
+    combo_ka_i { key-positions = <6 40>; layers = <L_COFFEE>; bindings = <&kp G>; };
+    combo_ka_u { key-positions = <6 20>; layers = <L_COFFEE>; bindings = <&kp H>; };
+    combo_ka_e { key-positions = <6 41>; layers = <L_COFFEE>; bindings = <&kp LS(SEMICOLON)>; };
+    combo_ka_o { key-positions = <6 32>; layers = <L_COFFEE>; bindings = <&kp B>; };
 
-        // さ行：X
-        combo_sa_i { key-positions = <7 40>; layers = <L_COFFEE>; bindings = <&kp D>; };
-        combo_sa_u { key-positions = <7 41>; layers = <L_COFFEE>; bindings = <&kp R>; };
-        combo_sa_e { key-positions = <7 20>; layers = <L_COFFEE>; bindings = <&kp P>; };
-        combo_sa_o { key-positions = <7 32>; layers = <L_COFFEE>; bindings = <&kp C>; };
+    // さ行：X
+    combo_sa_i { key-positions = <7 40>; layers = <L_COFFEE>; bindings = <&kp D>; };
+    combo_sa_u { key-positions = <7 20>; layers = <L_COFFEE>; bindings = <&kp R>; };
+    combo_sa_e { key-positions = <7 41>; layers = <L_COFFEE>; bindings = <&kp P>; };
+    combo_sa_o { key-positions = <7 32>; layers = <L_COFFEE>; bindings = <&kp C>; };
 
-        // た行：Q
-        combo_ta_i { key-positions = <17 40>; layers = <L_COFFEE>; bindings = <&kp A>; };
-        combo_ta_u { key-positions = <17 41>; layers = <L_COFFEE>; bindings = <&kp Z>; };
-        combo_ta_e { key-positions = <17 20>; layers = <L_COFFEE>; bindings = <&kp W>; };
-        combo_ta_o { key-positions = <17 32>; layers = <L_COFFEE>; bindings = <&kp S>; };
+    // た行：Q
+    combo_ta_i { key-positions = <17 40>; layers = <L_COFFEE>; bindings = <&kp A>; };
+    combo_ta_u { key-positions = <17 20>; layers = <L_COFFEE>; bindings = <&kp Z>; };
+    combo_ta_e { key-positions = <17 41>; layers = <L_COFFEE>; bindings = <&kp W>; };
+    combo_ta_o { key-positions = <17 32>; layers = <L_COFFEE>; bindings = <&kp S>; };
 
-        // な行：U
-        combo_na_i { key-positions = <18 40>; layers = <L_COFFEE>; bindings = <&kp I>; };
-        combo_na_u { key-positions = <18 41>; layers = <L_COFFEE>; bindings = <&kp N1>; };
-        combo_na_e { key-positions = <18 20>; layers = <L_COFFEE>; bindings = <&kp COMMA>; };
-        combo_na_o { key-positions = <18 32>; layers = <L_COFFEE>; bindings = <&kp K>; };
+    // な行：U
+    combo_na_i { key-positions = <18 40>; layers = <L_COFFEE>; bindings = <&kp I>; };
+    combo_na_u { key-positions = <18 20>; layers = <L_COFFEE>; bindings = <&kp N1>; };
+    combo_na_e { key-positions = <18 41>; layers = <L_COFFEE>; bindings = <&kp COMMA>; };
+    combo_na_o { key-positions = <18 32>; layers = <L_COFFEE>; bindings = <&kp K>; };
 
-        // は行：F
-        combo_ha_i { key-positions = <19 40>; layers = <L_COFFEE>; bindings = <&kp V>; };
-        combo_ha_u { key-positions = <19 41>; layers = <L_COFFEE>; bindings = <&kp N2>; };
-        combo_ha_e { key-positions = <19 20>; layers = <L_COFFEE>; bindings = <&kp EQUAL>; };
-        combo_ha_o { key-positions = <19 32>; layers = <L_COFFEE>; bindings = <&kp MINUS>; };
+    // は行：F
+    combo_ha_i { key-positions = <19 40>; layers = <L_COFFEE>; bindings = <&kp V>; };
+    combo_ha_u { key-positions = <19 20>; layers = <L_COFFEE>; bindings = <&kp N2>; };
+    combo_ha_e { key-positions = <19 41>; layers = <L_COFFEE>; bindings = <&kp EQUAL>; };
+    combo_ha_o { key-positions = <19 32>; layers = <L_COFFEE>; bindings = <&kp MINUS>; };
 
-        // ま行：J
-        combo_ma_i { key-positions = <29 40>; layers = <L_COFFEE>; bindings = <&kp N>; };
-        combo_ma_u { key-positions = <29 41>; layers = <L_COFFEE>; bindings = <&kp BACKSLASH>; };
-        combo_ma_e { key-positions = <29 20>; layers = <L_COFFEE>; bindings = <&kp SLASH>; };
-        combo_ma_o { key-positions = <29 32>; layers = <L_COFFEE>; bindings = <&kp M>; };
+    // ま行：J
+    combo_ma_i { key-positions = <29 40>; layers = <L_COFFEE>; bindings = <&kp N>; };
+    combo_ma_u { key-positions = <29 20>; layers = <L_COFFEE>; bindings = <&kp BACKSLASH>; };
+    combo_ma_e { key-positions = <29 41>; layers = <L_COFFEE>; bindings = <&kp SLASH>; };
+    combo_ma_o { key-positions = <29 32>; layers = <L_COFFEE>; bindings = <&kp M>; };
 
-        // や行：N7（ゆ・よのみ）
-        combo_ya_u { key-positions = <30 41>; layers = <L_COFFEE>; bindings = <&kp N8>; };
-        combo_ya_o { key-positions = <30 32>; layers = <L_COFFEE>; bindings = <&kp N9>; };
+    // や行：N7（ゆ・よのみ）
+    combo_ya_u { key-positions = <30 20>; layers = <L_COFFEE>; bindings = <&kp N8>; };
+    combo_ya_o { key-positions = <30 32>; layers = <L_COFFEE>; bindings = <&kp N9>; };
 
-        // ら行：O
-        combo_ra_i { key-positions = <31 40>; layers = <L_COFFEE>; bindings = <&kp L>; };
-        combo_ra_u { key-positions = <31 41>; layers = <L_COFFEE>; bindings = <&kp PERIOD>; };
-        combo_ra_e { key-positions = <31 20>; layers = <L_COFFEE>; bindings = <&kp SEMICOLON>; };
-        combo_ra_o { key-positions = <31 32>; layers = <L_COFFEE>; bindings = <&kp BACKSLASH>; };
+    // ら行：O
+    combo_ra_i { key-positions = <31 40>; layers = <L_COFFEE>; bindings = <&kp L>; };
+    combo_ra_u { key-positions = <31 20>; layers = <L_COFFEE>; bindings = <&kp PERIOD>; };
+    combo_ra_e { key-positions = <31 41>; layers = <L_COFFEE>; bindings = <&kp SEMICOLON>; };
+    combo_ra_o { key-positions = <31 32>; layers = <L_COFFEE>; bindings = <&kp BACKSLASH>; };
 
-        // わ行：N0（を）
-        combo_wa_o { key-positions = <28 32>; layers = <L_COFFEE>; bindings = <&kp LS(N0)>; };
+    // わ行：N0（を）
+    combo_wa_o { key-positions = <28 32>; layers = <L_COFFEE>; bindings = <&kp LS(N0)>; };
+
     };
 
     macros {
@@ -164,10 +165,10 @@
 
         COFFEE {
             bindings = <
-&to L_QWERTY   &trans  &trans  &trans  &trans                         &kp N3     &kp T   &kp X  &none      &none
-&trans         &trans  &trans  &trans  &trans  &trans      &kp Y      &kp Q      &kp U   &kp F  &kp RCTRL  &none
-&trans         &trans  &trans  &trans  &trans  &trans      &kp N0     &kp J      &kp N7  &kp O  &kp RSHFT  &none
-&trans         &trans  &trans  &trans  &trans  &trans      &kp ENTER  &kp SPACE                            &none
+&to L_QWERTY   &trans  &trans  &trans  &trans                         &kp N3     &kp T   &kp X  &kp LSHFT    &none
+&trans         &trans  &trans  &trans  &trans  &trans      &kp Y      &kp Q      &kp U   &kp F  &kp INT6     &kp RCTRL
+&trans         &trans  &trans  &trans  &trans  &trans      &kp N0     &kp J      &kp N7  &kp O  &kp DOT      &kp RSHFT
+&trans         &trans  &trans  &trans  &trans  &trans      &kp ENTER  &kp SPACE                              &none
             >;
         };
 
