@@ -29,6 +29,17 @@
 #define L_MOUSE_SLOW              17
 #define L_MOUSE_FAST              18
 
+// カーソル速度（標準は MOVE_UP 等の 600）
+#define SLOW_UP     MOVE_Y(-200)
+#define SLOW_DOWN   MOVE_Y(200)
+#define SLOW_LEFT   MOVE_X(-200)
+#define SLOW_RIGHT  MOVE_X(200)
+
+#define FAST_UP     MOVE_Y(-1800)
+#define FAST_DOWN   MOVE_Y(1800)
+#define FAST_LEFT   MOVE_X(-1800)
+#define FAST_RIGHT  MOVE_X(1800)
+
 
 
 &mt {
@@ -281,24 +292,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
-
-// マウスレイヤー
-#include <dt-bindings/zmk/pointing.h>
-
-#define L_MOUSE       16
-#define L_MOUSE_SLOW  17
-#define L_MOUSE_FAST  18
-
-// カーソル速度（標準は MOVE_UP 等の 600）
-#define SLOW_UP     MOVE_Y(-200)
-#define SLOW_DOWN   MOVE_Y(200)
-#define SLOW_LEFT   MOVE_X(-200)
-#define SLOW_RIGHT  MOVE_X(200)
-
-#define FAST_UP     MOVE_Y(-1800)
-#define FAST_DOWN   MOVE_Y(1800)
-#define FAST_LEFT   MOVE_X(-1800)
-#define FAST_RIGHT  MOVE_X(1800)
 
         MOUSE {
             bindings = <
