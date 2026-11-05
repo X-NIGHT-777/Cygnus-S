@@ -12,10 +12,11 @@
 #define L_SCROLL                   4
 #define L_FUNCTION                 5
 #define L_BT_SETTING               6
-#define L_COFFEE                   7  // フリック
+#define L_COFFEE                   7  // FLICK
 #define L_QWERTY_RIGHT             8  // QWERTY RIGHT
 #define L_QWERTY_LEFT              9  // QWERTY LEFT
 #define L_NUMBER                  10  // NUMBER
+#define L_SIMBOL                  11  // SIMBOL
 
 &mt {
     flavor = "balanced";
@@ -208,7 +209,7 @@
         QWERTY_LEFT {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                     &kp R  &kp E  &kp W  &kp Q  &kp T
-&trans  &trans  &trans  &trans  &trans  &trans      &kp G  &kp F  &kp D  &kp S  &kp A  &kp LCTRL
+&trans  &trans  &trans  &trans  &trans              &kp G  &kp F  &kp D  &kp S  &kp A  &kp LCTRL
 &none   &trans  &trans  &trans  &trans  &trans      &kp B  &kp V  &kp C  &kp X  &kp Z  &kp LSHFT
 &trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER  &kp SPACE               &kp none
             >;
@@ -216,10 +217,19 @@
 
         NUMBER {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                     &kp R  &kp E  &kp W  &kp Q  &kp T
-&trans  &trans  &trans  &trans  &trans  &trans      &kp G  &kp F  &kp D  &kp S  &kp A  &kp LCTRL
-&none   &trans  &trans  &trans  &trans  &trans      &kp B  &kp V  &kp C  &kp X  &kp Z  &kp LSHFT
-&trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER  &kp SPACE               &kp none
+&kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                                     &kp CARET         &kp AMPERSAND      &kp TILDE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &trans         &kp UNDERSCORE  &kp EXCLAMATION   &kp AT_SIGN        &kp HASH        &kp DOLLAR            &kp PERCENT
+&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL      &trans          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp BACKSLASH
+&trans                      &trans           &trans           &trans           &trans        &trans         &trans          &trans                                                                     &kp PIPE
+            >;
+        };
+
+        SIMBOL {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                                    &kp CARET         &kp AMPERSAND      &kp TILDE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&trans  &trans  &trans  &trans  &trans         &kp UNDERSCORE  &kp EXCLAMATION   &kp AT_SIGN        &kp HASH        &kp DOLLAR            &kp PERCENT
+&trans  &trans  &trans  &trans  &trans      &trans          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp BACKSLASH
+&trans  &trans  &trans  &trans  &trans      &trans         &trans          &trans                                                                     &kp PIPE
             >;
         };
 
