@@ -12,9 +12,10 @@
 #define L_SCROLL                   4
 #define L_FUNCTION                 5
 #define L_BT_SETTING               6
-#define L_COFFEE                   7 // フリック
-#define L_QWERTY_RIGHT             8 // QWERTY RIGHT
-#define L_QWERTY_LEFT              9 // QWERTY LEFT
+#define L_COFFEE                   7  // フリック
+#define L_QWERTY_RIGHT             8  // QWERTY RIGHT
+#define L_QWERTY_LEFT              9  // QWERTY LEFT
+#define L_NUMBER                  10  // NUMBER
 
 &mt {
     flavor = "balanced";
@@ -37,7 +38,7 @@
     // か行：T
     combo_ka_i { key-positions = <6 40>; layers = <L_COFFEE>; bindings = <&kp G>; };
     combo_ka_u { key-positions = <6 20>; layers = <L_COFFEE>; bindings = <&kp H>; };
-    combo_ka_e { key-positions = <6 41>;  layers = <L_COFFEE>; bindings = <&kp SQT>;  };
+    combo_ka_e { key-positions = <6 41>; layers = <L_COFFEE>; bindings = <&kp SQT>;  };
     combo_ka_o { key-positions = <6 32>; layers = <L_COFFEE>; bindings = <&kp B>; };
 
     // さ行：X
@@ -197,7 +198,7 @@
 
         QWERTY_RIGHT {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &kp U  &kp I  &kp O  &kp P  &kp Y
+&trans  &trans  &trans  &trans  &trans                     &kp U  &kp I  &kp O  &kp P  &kp Y
 &trans  &trans  &trans  &trans  &trans  &trans      &kp H  &kp J  &kp K  &kp L  &kp BACKSPACE  &kp RCTRL
 &none   &trans  &trans  &trans  &trans  &trans      &kp N  &kp M  &kp ,  &kp .  &kp none       &kp RSHFT
 &trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER  &kp SPACE                       &kp none
@@ -205,6 +206,15 @@
         };
 
         QWERTY_LEFT {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                     &kp R  &kp E  &kp W  &kp Q  &kp T
+&trans  &trans  &trans  &trans  &trans  &trans      &kp G  &kp F  &kp D  &kp S  &kp A  &kp LCTRL
+&none   &trans  &trans  &trans  &trans  &trans      &kp B  &kp V  &kp C  &kp X  &kp Z  &kp LSHFT
+&trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER  &kp SPACE               &kp none
+            >;
+        };
+
+        NUMBER {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                     &kp R  &kp E  &kp W  &kp Q  &kp T
 &trans  &trans  &trans  &trans  &trans  &trans      &kp G  &kp F  &kp D  &kp S  &kp A  &kp LCTRL
