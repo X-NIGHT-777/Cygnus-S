@@ -24,7 +24,7 @@
 
 
     combos {
-        timeout-ms = <120>;
+        compatible = "zmk,combos";
 
     // あ行：N3
     combo_a_i { key-positions = <5 40>; layers = <L_COFFEE>; bindings = <&kp E>; };
@@ -35,7 +35,7 @@
     // か行：T
     combo_ka_i { key-positions = <6 40>; layers = <L_COFFEE>; bindings = <&kp G>; };
     combo_ka_u { key-positions = <6 20>; layers = <L_COFFEE>; bindings = <&kp H>; };
-    combo_ka_e { key-positions = <6 41>; layers = <L_COFFEE>; bindings = <&kp LS(SEMICOLON)>; };
+    combo_ka_e { key-positions = <6 41>;  layers = <L_COFFEE>; bindings = <&kp SQT>;  };
     combo_ka_o { key-positions = <6 32>; layers = <L_COFFEE>; bindings = <&kp B>; };
 
     // さ行：X
@@ -64,7 +64,7 @@
 
     // ま行：J
     combo_ma_i { key-positions = <29 40>; layers = <L_COFFEE>; bindings = <&kp N>; };
-    combo_ma_u { key-positions = <29 20>; layers = <L_COFFEE>; bindings = <&kp BACKSLASH>; };
+    combo_ma_u { key-positions = <29 20>; layers = <L_COFFEE>; bindings = <&kp NON_US_HASH>; };
     combo_ma_e { key-positions = <29 41>; layers = <L_COFFEE>; bindings = <&kp SLASH>; };
     combo_ma_o { key-positions = <29 32>; layers = <L_COFFEE>; bindings = <&kp M>; };
 
@@ -76,7 +76,7 @@
     combo_ra_i { key-positions = <31 40>; layers = <L_COFFEE>; bindings = <&kp L>; };
     combo_ra_u { key-positions = <31 20>; layers = <L_COFFEE>; bindings = <&kp PERIOD>; };
     combo_ra_e { key-positions = <31 41>; layers = <L_COFFEE>; bindings = <&kp SEMICOLON>; };
-    combo_ra_o { key-positions = <31 32>; layers = <L_COFFEE>; bindings = <&kp BACKSLASH>; };
+    combo_ra_o { key-positions = <31 32>; layers = <L_COFFEE>; bindings = <&kp INT1>; };
 
     // わ行：N0（を）
     combo_wa_o { key-positions = <28 32>; layers = <L_COFFEE>; bindings = <&kp LS(N0)>; };
@@ -184,7 +184,7 @@
             bindings = <
 &to L_QWERTY   &trans  &trans  &trans  &trans                         &kp N3     &kp T   &kp X  &kp LSHFT    &none
 &trans         &trans  &trans  &trans  &trans  &trans      &kp Y      &kp Q      &kp U   &kp F  &kp INT6     &kp RCTRL
-&trans         &trans  &trans  &trans  &trans  &trans      &kp N0     &kp J      &kp N7  &kp O  &kp DOT      &kp RSHFT
+&trans         &trans  &trans  &trans  &trans  &trans      &kp N0     &kp J      &kp N7  &kp O  &kp LS(DOT)  &kp RSHFT
 &trans         &trans  &trans  &trans  &trans  &trans      &kp ENTER  &kp SPACE                              &none
             >;
         };
