@@ -92,14 +92,6 @@
 
 
     behaviors {
-        lt_to_layer_0: lt_to_layer_0 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
 
         ROTATE: ROTATE {
             compatible = "zmk,behavior-sensor-rotate-var";
@@ -110,14 +102,6 @@
             tap-ms = <20>;
         };
 
-        lt_spc: lt_spc {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LT_SPC";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&kp>;
-        };
     };
 
 
