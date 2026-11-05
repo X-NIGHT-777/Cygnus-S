@@ -13,6 +13,8 @@
 #define L_FUNCTION                 5
 #define L_BT_SETTING               6
 #define L_COFFEE                   7 // フリック
+#define L_QWERTY_RIGHT             8 // QWERTY RIGHT
+#define L_QWERTY_LEFT              9 // QWERTY LEFT
 
 &mt {
     flavor = "balanced";
@@ -80,6 +82,10 @@
 
     // わ行：N0（を）
     combo_wa_o { key-positions = <28 32>; layers = <L_COFFEE>; bindings = <&kp LS(N0)>; };
+
+    // 濁点・半濁点：LSHFT(8) との組み合わせ
+    combo_dakuten    { key-positions = <8 40>; layers = <L_COFFEE>; bindings = <&kp LEFT_BRACKET>;  };  // ゛
+    combo_handakuten { key-positions = <8 41>; layers = <L_COFFEE>; bindings = <&kp RIGHT_BRACKET>; };  // ゜
 
     };
 
@@ -182,10 +188,28 @@
 
         COFFEE {
             bindings = <
-&to L_QWERTY   &trans  &trans  &trans  &trans                         &kp N3     &kp T   &kp X  &kp LSHFT    &kp MINUS
+&to L_QWERTY   &trans  &trans  &trans  &trans                         &kp N3     &kp T   &kp X  &kp LSHFT    &kp INT3
 &trans         &trans  &trans  &trans  &trans  &trans      &kp Y      &kp Q      &kp U   &kp F  &kp INT6     &kp RCTRL
 &trans         &trans  &trans  &trans  &trans  &trans      &kp N0     &kp J      &kp N7  &kp O  &kp LS(DOT)  &kp RSHFT
 &trans         &trans  &trans  &trans  &trans  &trans      &kp ENTER  &kp SPACE                              &none
+            >;
+        };
+
+        QWERTY_RIGHT {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&none   &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+
+        QWERTY_LEFT {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&none   &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
 
