@@ -243,5 +243,32 @@
             >;
         };
 
+        FUNCTION {     // 未設定
+            bindings = <
+&kp F1   &kp F2  &kp F3  &kp F4  &kp F5                        &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
+&kp F6   &kp F7  &kp F8  &kp F9  &kp F10  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&kp F11  &trans  &trans  &trans  &trans   &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
+&kp F12  &trans  &trans  &trans  &trans   &trans      &trans   &trans                          &kp F12
+            >;
+        };
+
+        TRACKBALL {    // 未設定
+            bindings = <
+&trans                      &trans                     &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &kp LC(W)                         &kp LC(W)  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &trans                     &trans
+&lt L_SCROLL_DEFAULT SPACE  &lt L_MOUSE_DEFAULT SPACE  &mkp LCLK        &mkp RCLK          &mkp MCLK  &mkp RCLK      &trans  &mkp MCLK  &mkp LCLK        &mkp RCLK          &lt L_MOUSE_DEFAULT SPACE  &lt L_SCROLL_DEFAULT SPACE
+&trans                      &trans                     &trans           &trans             &trans     &mkp LCLK      &trans  &trans     &mkp MB4         &mkp MB5           &trans                     &trans
+&trans                      &trans                     &trans           &trans             &trans     &trans         &trans  &trans                                                                    &trans
+            >;
+        };
+
+        SCROLL {       // 未設定
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&none   &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+
     };
 };
