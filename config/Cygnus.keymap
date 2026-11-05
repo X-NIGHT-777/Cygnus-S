@@ -197,19 +197,19 @@
 
         QWERTY_RIGHT {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&none   &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                      &kp U  &kp I  &kp O  &kp P  &kp Y
+&trans  &trans  &trans  &trans  &trans  &trans      &kp H  &kp J  &kp K  &kp L  &kp BACKSPACE  &kp RCTRL
+&none   &trans  &trans  &trans  &trans  &trans      &kp N  &kp M  &kp ,  &kp .  &kp none       &kp RSHFT
+&trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER  &kp SPACE                       &kp none
             >;
         };
 
         QWERTY_LEFT {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&none   &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                     &kp R  &kp E  &kp W  &kp Q  &kp T
+&trans  &trans  &trans  &trans  &trans  &trans      &kp G  &kp F  &kp D  &kp S  &kp A  &kp LCTRL
+&none   &trans  &trans  &trans  &trans  &trans      &kp B  &kp V  &kp C  &kp X  &kp Z  &kp LSHFT
+&trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER  &kp SPACE               &kp none
             >;
         };
 
