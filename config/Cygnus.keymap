@@ -12,12 +12,19 @@
 #define L_SCROLL_DEFAULT           4
 #define L_FUNCTION_DEFAULT         5
 #define L_BT_SETTING               6
-#define L_COFFEE                   7  // COFFE FLICK
-#define L_QWERTY_RIGHT             8  // QWERTY RIGHT
-#define L_QWERTY_LEFT              9  // QWERTY LEFT
-#define L_NUMBER                  10  // NUMBER
-#define L_SIMBOL                  11  // SIMBOL
-#define L_ARROW                   12  // ARROW
+
+#define L_COFFEE                   7
+#define L_QWERTY_RIGHT             8
+#define L_QWERTY_LEFT              9
+#define L_NUMBER                  10
+#define L_SIMBOL                  11
+#define L_ARROW                   12
+#define L_FUNCTION                13
+#define L_TRACKBALL               14 
+#define L_SCROLL                  15
+#define L_MOUSE                   16
+
+
 
 &mt {
     flavor = "balanced";
