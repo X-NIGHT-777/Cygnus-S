@@ -209,10 +209,10 @@
 
         QWERTY_LEFT {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                         &kp R  &kp E  &kp W  &kp Q  &kp T
-&trans  &trans  &trans  &trans  &trans              &kp G      &kp F  &kp D  &kp S  &kp A  &kp LCTRL
-&none   &trans  &trans  &trans  &trans  &trans      &kp B      &kp V  &kp C  &kp X  &kp Z  &kp LSHFT
-&trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER  &kp SPACE                   &none
+&trans  &trans  &trans  &trans  &trans                         &kp R      &kp E  &kp W  &kp Q  &kp T
+&trans  &trans  &trans  &trans  &trans              &kp G      &kp F      &kp D  &kp S  &kp A  &kp LCTRL
+&none   &trans  &trans  &trans  &trans  &trans      &kp B      &kp V      &kp C  &kp X  &kp Z  &kp LSHFT
+&trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER  &kp SPACE                       &none
             >;
         };
 
