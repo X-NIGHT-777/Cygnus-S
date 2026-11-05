@@ -5,18 +5,19 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define L_QWERTY                   0
-#define L_NUM                      1
-#define L_ARROW                    2
+#define L_QWERTY_DEFAULT           0
+#define L_NUM_DEFAULT              1
+#define L_ARROW_DEFAULT            2
 #define L_MOUSE                    3
 #define L_SCROLL                   4
 #define L_FUNCTION                 5
 #define L_BT_SETTING               6
-#define L_COFFEE                   7  // FLICK
+#define L_COFFEE                   7  // COFFE FLICK
 #define L_QWERTY_RIGHT             8  // QWERTY RIGHT
 #define L_QWERTY_LEFT              9  // QWERTY LEFT
 #define L_NUMBER                  10  // NUMBER
 #define L_SIMBOL                  11  // SIMBOL
+#define L_ARROW                   12  // ARROW
 
 &mt {
     flavor = "balanced";
@@ -137,7 +138,7 @@
             >;
         };
 
-        ARROW {
+        ARROW_DEFAULT {
             bindings = <
 &kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                       &trans  &trans  &trans  &trans  &trans
 &kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &trans  &trans  &trans  &trans  &trans
@@ -232,6 +233,14 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER       &kp SPACE                                                                  &kp PIPE
             >;
         };
+
+        ARROW {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                              &kp ESCAPE              &kp LC(LS(TAB))  &kp UP_ARROW             &kp LC(TAB)  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW   &kp RIGHT_ARROW          &kp END      &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans           &kp LG(LS(RIGHT_ARROW))  &trans       &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans                  &trans           &trans                   &trans       &trans
+            >;
 
     };
 };
