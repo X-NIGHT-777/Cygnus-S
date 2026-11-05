@@ -21,6 +21,8 @@
 
 / {
 
+
+
     combos {
         timeout-ms = <120>;
 
@@ -81,13 +83,19 @@
 
     };
 
+
+
     macros {
-        };
+    // マクロエリア
     };
 
+
+
     behaviors {
-        };
+    // ビヘイバーエリア
     };
+
+
 
     keymap {
         compatible = "zmk,keymap";
