@@ -12,16 +12,7 @@
 #define L_SCROLL                   4
 #define L_FUNCTION                 5
 #define L_BT_SETTING               6
-#define L_COFFEE_BASE              7 // 子音
-#define L_COFFEE_VOWEL             8 // 子音を押している間の母音面
-#define L_COFFEE_VOWEL_SP          9 // Space長押しで入る母音面(L/Q/V/C/X/F入り)
-#define L_GRP_U                   10 // 母音uグループ用
-#define L_GRP_O                   11 // 母音oグループ用
-#define L_GRP_A                   12 // 母音aグループ用
-#define L_GRP_I                   13 // 母音iグループ用
-#define L_GRP_E                   14 // 母音eグループ用
-#define L_GRP_NONE L_COFFEE_VOWEL    // 逆押し母音なし(母音面のみ)
-#define L_COFFEE                  15 // フリック
+#define L_COFFEE                   7 // フリック
 
 &mt {
     flavor = "balanced";
@@ -90,60 +81,10 @@
     };
 
     macros {
-        to_layer_0: to_layer_0 {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0";
-        };
-
-        cons: cons {
-            compatible = "zmk,behavior-macro-two-param";
-            label = "CONS";
-            #binding-cells = <2>;                // 引数1=子音キー, 引数2=母音グループ用レイヤー
-            wait-ms = <0>;                       // 実機で調整
-            tap-ms = <5>;                        // 実機で調整
-            bindings =
-                <&macro_press>,
-                <&mo L_COFFEE_VOWEL &macro_param_2to1>,
-                <&macro_press>,
-                <&mo MACRO_PLACEHOLDER &macro_param_1to1>,
-                <&macro_tap>,
-                <&kp MACRO_PLACEHOLDER>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&mo L_COFFEE_VOWEL &macro_param_2to1>,
-                <&macro_release>,
-                <&mo MACRO_PLACEHOLDER>;
         };
     };
 
     behaviors {
-        lt_to_layer_0: lt_to_layer_0 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
-
-        ROTATE: ROTATE {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            label = "ROTATE";
-            #sensor-binding-cells = <2>;
-            bindings = <&msc>, <&msc>;
-
-            tap-ms = <20>;
-        };
-
-        lt_spc: lt_spc {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LT_SPC";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&kp>;
         };
     };
 
@@ -214,82 +155,6 @@
 &trans               &trans        &trans        &trans        &trans     &trans      &studio_unlock  &trans        &trans        &trans        &trans        &trans
 &trans               &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kt KP_N4  &trans      &bootloader     &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans               &trans        &trans        &trans        &trans     &trans      &trans          &trans                                                  &bt BT_CLR_ALL
-            >;
-        };
-
-// -------------------------------------------------------------
-// 🟩🟩🟩 珈琲配列 🟩🟩🟩 (風神配列ver)
-// -------------------------------------------------------------
-
-        COFFEE_BASE {
-            bindings = <
-&to L_QWERTY  &trans  &trans  &trans  &trans                                  &cons W L_GRP_NONE               &cons R L_GRP_U     &cons Y L_GRP_NONE  &cons M L_GRP_NONE  &cons P L_GRP_NONE
-&trans        &trans  &trans  &trans  &trans  &trans      &cons H L_GRP_NONE  &cons N L_GRP_O                  &cons T L_GRP_A     &cons S L_GRP_I     &cons K L_GRP_E     &kp RCTRL
-&trans        &trans  &trans  &trans  &trans  &trans      &cons J L_GRP_NONE  &cons G L_GRP_NONE               &cons B L_GRP_NONE  &cons D L_GRP_NONE  &cons Z L_GRP_NONE  &kp RSHFT
-&trans        &trans  &trans  &trans  &trans  &trans      &kp ENTER           &lt_spc L_COFFEE_VOWEL_SP SPACE                                                              &none
-            >;
-        };
-
-        COFFEE_VOWEL {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &kp U   &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp O   &kp A   &kp I   &kp E   &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
-            >;
-        };
-
-        COFFEE_VOWEL_SP {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &kp U  &kp L   &kp Q  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp O   &kp A  &kp I   &kp E   &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp V   &kp C  &kp X   &kp F   &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                         &trans
-            >;
-        };
-
-        GRP_U {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp U                           &trans
-            >;
-        };
-
-        GRP_O {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp O                           &trans
-            >;
-        };
-
-        GRP_A {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp A                           &trans
-            >;
-        };
-
-        GRP_I {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp I                           &trans
-            >;
-        };
-
-        GRP_E {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp E                           &trans
             >;
         };
 
