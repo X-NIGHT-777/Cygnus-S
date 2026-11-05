@@ -300,7 +300,7 @@
 #define FAST_LEFT   MOVE_X(-1800)
 #define FAST_RIGHT  MOVE_X(1800)
 
-        L_MOUSE {
+        MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &mmv MOVE_UP  &trans  &trans  &msc SCRL_UP
 &trans  &trans  &trans  &trans  &trans  &trans      &mo MOUSE_SLOW  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &msc SCRL_DOWN
@@ -309,7 +309,7 @@
             >;
         };
 
-        L_MOUSE_SLOW {
+        MOUSE_SLOW {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &mmv SLOW_UP  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &mmv SLOW_LEFT  &mmv SLOW_DOWN  &mmv SLOW_RIGHT  &trans  &trans
@@ -318,7 +318,7 @@
             >;
         };
 
-        L_MOUSE_FAST {
+        MOUSE_FAST {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &mmv FAST_UP  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &mmv FAST_LEFT  &mmv FAST_DOWN  &mmv FAST_RIGHT  &trans  &trans
