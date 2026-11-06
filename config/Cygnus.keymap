@@ -348,8 +348,6 @@
             layers        = <L_COFFEE>;
         };
 
-
-
     // ---- ←･→･↑･↓ = LALT (28) ----
         combo_cursor_left {
             timeout-ms    = <50>;
@@ -376,7 +374,7 @@
             layers        = <L_COFFEE>;
         };
 
-    // タップ: Ctrl+A / 長押し: Win+V
+    // ---- タップ: Ctrl+A / 長押し: Win+V ----
         // ---- RC(A) (42) ----
         combo_copy {
             timeout-ms    = <50>;
