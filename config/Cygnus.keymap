@@ -451,7 +451,7 @@
             bindings = <
 &to L_QWERTY_DEFAULT  &trans  &trans  &trans  &trans                         &kp N3     &kp T   &kp X  &kp LSHFT    &kp INT3
 &trans                &trans  &trans  &trans  &trans  &trans      &kp Y      &kp Q      &kp U   &kp F  &kp INT6     &kp RCTRL
-&trans                &trans  &trans  &trans  &trans  &trans      &kp N0     &kp J      &kp N7  &kp O  &kp LS(DOT)  &kp RSHFT
+&trans                &trans  &trans  &trans  &trans  &trans      &kp LALT   &kp J      &kp N7  &kp O  &kp LS(DOT)  &kp RSHFT
 &trans                &trans  &trans  &trans  &trans  &trans      &kp ENTER  &kp SPACE                              &none
             >;
         };
