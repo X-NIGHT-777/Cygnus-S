@@ -508,7 +508,7 @@
         QWERTY_LEFT {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                         &kp R      &kp E  &kp W  &kp Q  &kp T
-&trans  &trans  &trans  &trans  &trans              &kp G      &kp F      &kp D  &kp S  &kp A  &kp LCTRL
+&trans  &trans  &trans  &trans  &trans  &trans      &kp G      &kp F      &kp D  &kp S  &kp A  &kp LCTRL
 &none   &trans  &trans  &trans  &trans  &trans      &kp B      &kp V      &kp C  &kp X  &kp Z  &kp LSHFT
 &trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER  &kp SPACE                       &none
             >;
@@ -537,7 +537,7 @@
 &trans  &trans  &trans  &trans  &trans                              &kp LC(LS(TAB))         &kp UP_ARROW     &kp LC(TAB)              &kp ESCAPE   &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW   &kp RIGHT_ARROW          &kp END      &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans           &kp LG(LS(RIGHT_ARROW))  &trans       &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans                  &trans           &trans                   &trans       &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans                                                                         &trans
             >;
         };
 
