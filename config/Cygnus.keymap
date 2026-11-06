@@ -110,8 +110,50 @@
     combo_wa_o { key-positions = <28 32>; layers = <L_COFFEE>; bindings = <&kp LS(N0)>; };
 
     // 濁点・半濁点：LSHFT(8) との組み合わせ
-    combo_dakuten    { key-positions = <8 40>; layers = <L_COFFEE>; bindings = <&kp LEFT_BRACKET>;  };  // ゛
-    combo_handakuten { key-positions = <8 41>; layers = <L_COFFEE>; bindings = <&kp RIGHT_BRACKET>; };  // ゜
+    combo_dakuten    { key-positions = <8 40>; layers = <L_COFFEE>; bindings = <&kp LEFT_BRACKET>;  };   // ゛
+    combo_handakuten { key-positions = <8 41>; layers = <L_COFFEE>; bindings = <&kp RIGHT_BRACKET>; };   // ゜
+
+        // 「」：INT6 (20) 
+        combo_kagi_open {
+            timeout-ms    = <50>;
+            key-positions = <20 40>;        // INT6 + ENTER
+            bindings      = <&kp LS(RBKT)>; // 「
+            layers        = <L_COFFEE>;
+        };
+        combo_kagi_close {
+            timeout-ms    = <50>;
+            key-positions = <20 41>;        // INT6 + SPACE
+            bindings      = <&kp LS(NUHS)>; // 」
+            layers        = <L_COFFEE>;
+        };
+
+        // （）：LS(DOT) (32)
+        combo_paren_open {
+            timeout-ms    = <50>;
+            key-positions = <32 40>;        // LS(DOT) + ENTER
+            bindings      = <&kp LS(N8)>;   // （
+            layers        = <L_COFFEE>;
+        };
+        combo_paren_close {
+            timeout-ms    = <50>;
+            key-positions = <32 41>;        // LS(DOT) + SPACE
+            bindings      = <&kp LS(N9)>;   // ）
+            layers        = <L_COFFEE>;
+        };
+
+        // BackSpace･Delete：や = N7 (30)
+        combo_bspc {
+            timeout-ms    = <50>;
+            key-positions = <30 40>;        // や + ENTER
+            bindings      = <&kp BSPC>;     // BackSpace
+            layers        = <L_COFFEE>;
+        };
+        combo_del {
+            timeout-ms    = <50>;
+            key-positions = <30 41>;        // や + SPACE
+            bindings      = <&kp DEL>;      // Delete
+            layers        = <L_COFFEE>;
+        };
 
     };
 
