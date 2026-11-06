@@ -318,7 +318,7 @@
             layers        = <L_COFFEE>;
         };
 
-        // ---- （）：LS(DOT) (32) ...保留中
+        // ---- （）：LS(DOT) (32) ...🟥🟥🟥 保留中 🟥🟥🟥
 
     // BackSpace･Delete：や = N7 (30)
         combo_bspc {
@@ -344,7 +344,7 @@
         combo_question {
             timeout-ms    = <50>;
             key-positions = <16 32>;            // ん + 。
-            bindings      = <&kp LS(FSLH)>;     // ？（要確認）...現状｢・」が出力
+            bindings      = <&kp LS(FSLH)>;     // ？ 🟥🟥🟥 (要確認)...現状｢・」が出力 🟥🟥🟥
             layers        = <L_COFFEE>;
         };
 
