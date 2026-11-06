@@ -353,14 +353,14 @@
     // ---- ←･→･↑･↓ = LALT (28) ----
         combo_cursor_left {
             timeout-ms    = <50>;
-            key-positions = <28 40>;            // LALT + ENTER → ←
-            bindings      = <&kp LEFT>;
+            key-positions = <28 40>;            // LALT + ENTER → ← (長押し: Home)
+            bindings      = <&mt HOME LEFT>;
             layers        = <L_COFFEE>;
         };
         combo_cursor_right {
             timeout-ms    = <50>;
-            key-positions = <28 41>;            // LALT + SPACE → →
-            bindings      = <&kp RIGHT>;
+            key-positions = <28 41>;            // LALT + SPACE → → (長押し: End)
+            bindings      = <&mt END RIGHT>;
             layers        = <L_COFFEE>;
         };
         combo_cursor_up {
@@ -373,18 +373,6 @@
             timeout-ms    = <50>;
             key-positions = <28 32>;            // LALT + 。    → ↓
             bindings      = <&kp DOWN>;
-            layers        = <L_COFFEE>;
-        };
-        combo_cursor_left {
-            timeout-ms    = <50>;
-            key-positions = <28 40>;            // LALT + ENTER → ← (長押し: Home)
-            bindings      = <&mt HOME LEFT>;
-            layers        = <L_COFFEE>;
-        };
-        combo_cursor_right {
-            timeout-ms    = <50>;
-            key-positions = <28 41>;            // LALT + SPACE → → (長押し: End)
-            bindings      = <&mt END RIGHT>;
             layers        = <L_COFFEE>;
         };
 
