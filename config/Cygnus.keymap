@@ -388,10 +388,20 @@
             layers        = <L_COFFEE>;
         };
 
-
-
-
-
+    // &kp LC(A)  →  &mt LG(V) LC(A)    // タップ: Ctrl+A / 長押し: Win+V
+        // ---- LC(A) (42) ----
+        combo_copy {
+            timeout-ms    = <50>;
+            key-positions = <42 40>;            // LC(A) + ENTER → Ctrl+C (長押し: Ctrl+X)
+            bindings      = <&mt LC(X) LC(C)>;
+            layers        = <L_COFFEE>;
+        };
+        combo_paste {
+            timeout-ms    = <50>;
+            key-positions = <42 41>;            // LC(A) + SPACE → Ctrl+V (長押し: Ctrl+Z)
+            bindings      = <&mt LC(Z) LC(V)>;
+            layers        = <L_COFFEE>;
+        };
 
     };
 
@@ -497,7 +507,7 @@
 &to L_QWERTY_DEFAULT  &trans  &trans  &trans  &trans                         &kp N3     &kp T   &kp X  &kp LSHFT    &kp INT3
 &trans                &trans  &trans  &trans  &trans  &trans      &kp Y      &kp Q      &kp U   &kp F  &kp INT6     &kp RCTRL
 &trans                &trans  &trans  &trans  &trans  &trans      &kp LALT   &kp J      &kp N7  &kp O  &kp LS(DOT)  &kp RSHFT
-&trans                &trans  &trans  &trans  &trans  &trans      &kp ENTER  &kp SPACE                              &none
+&trans                &trans  &trans  &trans  &trans  &trans      &kp ENTER  &kp SPACE                              &mt LG(V) LC(A)
             >;
         };
 
