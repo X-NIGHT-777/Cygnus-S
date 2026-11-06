@@ -348,43 +348,42 @@
             layers        = <L_COFFEE>;
         };
 
-    // ---- ←･→･↑･↓ = LALT (28) ----
+    // ---- ←･→･↑･↓ = LC(A) (28) ----
         combo_cursor_left {
             timeout-ms    = <50>;
-            key-positions = <28 40>;            // LALT + ENTER → ← (長押し: Home)
+            key-positions = <28 40>;            // LC(A) + ENTER → ← (長押し: Home)
             bindings      = <&mt HOME LEFT>;
             layers        = <L_COFFEE>;
         };
         combo_cursor_right {
             timeout-ms    = <50>;
-            key-positions = <28 41>;            // LALT + SPACE → → (長押し: End)
+            key-positions = <28 41>;            // LC(A) + SPACE → → (長押し: End)
             bindings      = <&mt END RIGHT>;
             layers        = <L_COFFEE>;
         };
         combo_cursor_up {
             timeout-ms    = <50>;
-            key-positions = <28 20>;            // LALT + INT6  → ↑
+            key-positions = <28 20>;            // LC(A) + INT6  → ↑
             bindings      = <&kp UP>;
             layers        = <L_COFFEE>;
         };
         combo_cursor_down {
             timeout-ms    = <50>;
-            key-positions = <28 32>;            // LALT + 。    → ↓
+            key-positions = <28 32>;            // LC(A) + 。    → ↓
             bindings      = <&kp DOWN>;
             layers        = <L_COFFEE>;
         };
 
-    // ---- タップ: Ctrl+A / 長押し: Win+V ----
-        // ---- RC(A) (42) ----
+    // ---- CTRL+X,C,V,Z : RALT (42) ----
         combo_copy {
             timeout-ms    = <50>;
-            key-positions = <42 40>;            // RC(A) + ENTER → Ctrl+C (長押し: Ctrl+X)
+            key-positions = <42 40>;            // RALT + ENTER → Ctrl+C (長押し: Ctrl+X)
             bindings      = <&mt RC(X) RC(C)>;
             layers        = <L_COFFEE>;
         };
         combo_paste {
             timeout-ms    = <50>;
-            key-positions = <42 41>;            // RC(A) + SPACE → Ctrl+V (長押し: Ctrl+Z)
+            key-positions = <42 41>;            // RALT + SPACE → Ctrl+V (長押し: Ctrl+Z)
             bindings      = <&mt RC(Z) RC(V)>;
             layers        = <L_COFFEE>;
         };
@@ -490,10 +489,10 @@
 
         COFFEE {
             bindings = <
-&to L_QWERTY_DEFAULT  &trans  &trans  &trans  &trans                         &kp N3     &kp T   &kp X  &kp LSHFT    &kp INT3
-&trans                &trans  &trans  &trans  &trans  &trans      &kp Y      &kp Q      &kp U   &kp F  &kp INT6     &kp RCTRL
-&trans                &trans  &trans  &trans  &trans  &trans      &kp LALT   &kp J      &kp N7  &kp O  &kp LS(DOT)  &kp RSHFT
-&trans                &trans  &trans  &trans  &trans  &trans      &kp ENTER  &kp SPACE                              &mt RG(V) RC(A)
+&to L_QWERTY_DEFAULT  &trans  &trans  &trans  &trans                               &kp N3     &kp T   &kp X  &kp LSHFT    &kp INT3
+&trans                &trans  &trans  &trans  &trans  &trans      &kp Y            &kp Q      &kp U   &kp F  &kp INT6     &kp RCTRL
+&trans                &trans  &trans  &trans  &trans  &trans      &mt LG(V) LC(A)  &kp J      &kp N7  &kp O  &kp LS(DOT)  &kp RSHFT
+&trans                &trans  &trans  &trans  &trans  &trans      &kp ENTER        &kp SPACE                              &kp RALT
             >;
         };
 
