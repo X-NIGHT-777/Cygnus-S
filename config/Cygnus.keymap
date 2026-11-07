@@ -318,7 +318,7 @@
             layers        = <L_COFFEE>;
         };
 
-    // ---- （ ）：RS(DOT) (32) ...🟥🟥🟥 保留中 🟥🟥🟥
+    // ---- （ ）：RS(DOT) (32)   🟥🟥🟥 保留中 🟥🟥🟥
 
     // BackSpace･Delete･Undo：や = N7 (30)
         combo_bspc {
@@ -350,7 +350,7 @@
         combo_question {
             timeout-ms    = <50>;
             key-positions = <16 32>;            // ん + 。
-            bindings      = <&kp RS(FSLH)>;     // ？ 🟥🟥🟥 (要確認)...現状｢・」が出力 🟥🟥🟥
+            bindings      = <&kp RS(FSLH)>;     // ？   🟥🟥🟥 (要確認)...現状｢・」が出力 🟥🟥🟥
             layers        = <L_COFFEE>;
         };
 
@@ -380,7 +380,7 @@
             layers        = <L_COFFEE>;
         };
 
-    // ---- CTRL+X,C,V, WIN+V : RALT (42) ----       // 🟥🟥🟥 動作チェック 🟥🟥🟥
+    // ---- CTRL+X,C,V, WIN+V : RALT (42) ----   🟥🟥🟥 動作チェック 🟥🟥🟥
         combo_copy {
             timeout-ms    = <50>;
             key-positions = <42 40>;            // RALT + ENTER → Ctrl+C (長押し: Ctrl+X)
@@ -557,7 +557,7 @@
             >;
         };
 
-        FUNCTION {     // 🟥🟥🟥 未配置 🟥🟥🟥
+        FUNCTION {    // 🟥🟥🟥 未配置 🟥🟥🟥
             bindings = <
 &kp F1   &kp F2  &kp F3  &kp F4  &kp F5                        &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
 &kp F6   &kp F7  &kp F8  &kp F9  &kp F10  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
@@ -566,7 +566,7 @@
             >;
         };
 
-        TRACKBALL {    // 🟥🟥🟥 未配置 🟥🟥🟥
+        TRACKBALL {   // 🟥🟥🟥 未配置 🟥🟥🟥
             bindings = <
 &trans                      &trans                     &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &kp LC(W)                         &kp LC(W)  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &trans                     &trans
 &lt L_SCROLL_DEFAULT SPACE  &lt L_MOUSE_DEFAULT SPACE  &mkp LCLK        &mkp RCLK          &mkp MCLK  &mkp RCLK      &trans  &mkp MCLK  &mkp LCLK        &mkp RCLK          &lt L_MOUSE_DEFAULT SPACE  &lt L_SCROLL_DEFAULT SPACE
@@ -575,7 +575,7 @@
             >;
         };
 
-        SCROLL {       // 🟥🟥🟥 未配置 🟥🟥🟥
+        SCROLL {      // 🟥🟥🟥 未配置 🟥🟥🟥
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
