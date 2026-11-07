@@ -434,10 +434,10 @@
 
         QWERTY_DEFAULT {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R                  &kp T                                                                       &kp Y            &kp U  &kp I      &kp O                  &kp P
-&kp A             &kp S         &kp D         &kp F                  &kp G                         &mkp RCLK                     &kp UP_ARROW    &kp H            &kp J  &kp K      &lt L_MOUSE_DEFAULT L  &lt L_SCROLL_DEFAULT MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                  &kp B                         &mkp LCLK                     &kp DOWN_ARROW  &kp N            &kp M  &kp COMMA  &kp DOT                &mt LEFT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt L_BT_SETTING INT4  &lt L_FUNCTION_DEFAULT SPACE  &lt L_ARROW_DEFAULT INT5      &kp BACKSPACE   &lt L_NUM_DEFAULT ENTER                                   &kp DEL
+&kp Q             &kp W         &kp E         &kp R                  &kp T                                                                       &kp Y                    &kp U  &kp I      &kp O                  &kp P
+&kp A             &kp S         &kp D         &kp F                  &kp G                         &mkp RCLK                     &kp UP_ARROW    &kp H                    &kp J  &kp K      &lt L_MOUSE_DEFAULT L  &lt L_SCROLL_DEFAULT MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                  &kp B                         &mkp LCLK                     &kp DOWN_ARROW  &kp N                    &kp M  &kp COMMA  &kp DOT                &mt LEFT_SHIFT SLASH
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt L_BT_SETTING INT4  &lt L_FUNCTION_DEFAULT SPACE  &lt L_ARROW_DEFAULT INT5      &kp BACKSPACE   &lt L_NUM_DEFAULT ENTER                                           &kp DEL
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -533,7 +533,7 @@
         NUMBER {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                                          &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp MINUS   &kp SLASH                            
-&trans  &trans  &trans  &trans  &trans  &trans      &None                       &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS    &kp ASTERISK
+&trans  &trans  &trans  &trans  &trans  &trans      &none                       &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS    &kp ASTERISK
 &trans  &trans  &trans  &trans  &trans  &trans      &mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD  &kp EQUAL
 &trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER                   &kp SPACE                                                      &to L_COFFEE
             >;
@@ -542,7 +542,7 @@
         SIMBOL {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                              &kp CARET         &kp AMPERSAND      &kp TILDE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&trans  &trans  &trans  &trans  &trans  &trans      &None           &kp EXCLAMATION   &kp AT_SIGN        &kp HASH        &kp DOLLAR            &kp PERCENT
+&trans  &trans  &trans  &trans  &trans  &trans      &none           &kp EXCLAMATION   &kp AT_SIGN        &kp HASH        &kp DOLLAR            &kp PERCENT
 &trans  &trans  &trans  &trans  &trans  &trans      &kp PIPE        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp UNDERSCORE
 &trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER       &kp SPACE                                                                  &to L_COFFEE
             >;
