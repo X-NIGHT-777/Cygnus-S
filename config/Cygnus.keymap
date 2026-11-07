@@ -239,8 +239,8 @@
     // ---- や行 (30) ----
         combo_yu {
             timeout-ms    = <50>;
-            key-positions = <30 20>;            // や(30) + 、 → ゆ
-            bindings      = <&kp N8>;
+            key-positions = <30 20>;            // や(30) + 、 → ゆ (長押し: Undo)
+            bindings      = <&ht_kp RC(Z) N8>;  // 1番目=長押し(Undo)、2番目=タップ(ゆ)
             layers        = <L_COFFEE>;
         };
         combo_yo {
@@ -313,7 +313,7 @@
         };
         combo_kagi_close {
             timeout-ms    = <50>;
-            key-positions = <20 41>;        // 、 + SPACE → 」
+            key-positions = <20 41>;          // 、 + SPACE → 」
             bindings      = <&kp RS(NUHS)>;
             layers        = <L_COFFEE>;
         };
@@ -333,12 +333,7 @@
             bindings      = <&kp DEL>;
             layers        = <L_COFFEE>;
         };
-        combo_undo {
-            timeout-ms    = <50>;
-            key-positions = <20 30>;        // や + 、 → Undo
-            bindings      = <&kp RC(Z)>;
-            layers        = <L_COFFEE>;
-        };
+        // Undoは、[や行]の[combo_yu]にまとめて記述
 
     // ---- ！･？ = Y (16) ----
         combo_exclam {
@@ -413,6 +408,16 @@
             bindings = <&msc>, <&msc>;
 
             tap-ms = <20>;
+        };
+
+    // タップ=キー、ホールド=別キー（コンボ用。タップ優先＝重なり打ちでホールドに誤判定しない）
+        ht_kp: hold_tap_kp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_KP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <250>;
+            bindings = <&kp>, <&kp>;        // 1番目=ホールド、2番目=タップ
         };
 
     // タップ=キー、ホールド=レイヤーへ移動（離しても滞在）
@@ -493,9 +498,9 @@
         BT_SETTING {
             bindings = <
 &to L_COFFEE         &trans        &trans        &trans        &trans                                 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans               &trans        &trans        &trans        &trans     &trans      &studio_unlock  &trans        &trans        &trans        &trans        &trans
-&trans               &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kt KP_N4  &trans      &bootloader     &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans               &trans        &trans        &trans        &trans     &trans      &trans          &trans                                                  &bt BT_CLR_ALL
+&trans               &trans        &trans        &trans        &trans        &trans      &studio_unlock  &trans        &trans        &trans        &trans        &trans
+&trans               &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &trans      &bootloader     &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans               &trans        &trans        &trans        &trans        &trans      &trans          &trans                                                  &bt BT_CLR_ALL
             >;
         };
 
