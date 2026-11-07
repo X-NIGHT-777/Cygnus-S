@@ -415,6 +415,16 @@
             tap-ms = <20>;
         };
 
+    // タップ=キー、ホールド=レイヤーへ移動（離しても滞在）
+        ht_to: hold_tap_to {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_TO";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&to>, <&kp>;        // 1番目=ホールド、2番目=タップ
+        };
+
     };
 
 
@@ -495,10 +505,10 @@
 
         COFFEE {
             bindings = <
-&to L_QWERTY_DEFAULT  &trans  &trans  &trans  &trans                                  &kp N3     &kp T   &kp X  &kp RSHFT    &kp INT3
-&trans                &trans  &trans  &trans  &trans  &trans      &kp Y               &kp Q      &kp U   &kp F  &kp INT6     &sk RCTRL
-&trans                &trans  &trans  &trans  &trans  &trans      &mt LG(V) LC(A)     &kp J      &kp N7  &kp O  &kp RS(DOT)  &sk RSHFT
-&trans                &trans  &trans  &trans  &trans  &trans      &lt L_NUMBER ENTER  &lt L_QWERTY_RIGHT SPACE               &sk RALT
+&to L_QWERTY_DEFAULT  &trans  &trans  &trans  &trans                                     &kp N3     &kp T   &kp X  &kp RSHFT    &kp INT3
+&trans                &trans  &trans  &trans  &trans  &trans      &kp Y                  &kp Q      &kp U   &kp F  &kp INT6     &sk RCTRL
+&trans                &trans  &trans  &trans  &trans  &trans      &mt LG(V) LC(A)        &kp J      &kp N7  &kp O  &kp RS(DOT)  &sk RSHFT
+&trans                &trans  &trans  &trans  &trans  &trans      &ht_to L_NUMBER ENTER  &ht_to L_QWERTY_RIGHT SPACE            &sk RALT
             >;
         };
 
