@@ -320,7 +320,7 @@
 
         // ---- （）：RS(DOT) (32) ...🟥🟥🟥 保留中 🟥🟥🟥
 
-    // BackSpace･Delete：や = N7 (30)
+    // BackSpace･Delete･Undo：や = N7 (30)
         combo_bspc {
             timeout-ms    = <50>;
             key-positions = <30 40>;        // や + ENTER
@@ -331,6 +331,12 @@
             timeout-ms    = <50>;
             key-positions = <30 41>;        // や + SPACE
             bindings      = <&kp DEL>;      // Delete
+            layers        = <L_COFFEE>;
+        };
+        combo_undo {
+            timeout-ms    = <50>;
+            key-positions = <20 30>;        // 、 + や
+            bindings      = <&kp RC(Z)>;    // Undo
             layers        = <L_COFFEE>;
         };
 
