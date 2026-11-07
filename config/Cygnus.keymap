@@ -508,7 +508,7 @@
 &to L_QWERTY_DEFAULT  &trans  &trans  &trans  &trans                                     &kp N3     &kp T   &kp X  &kp RSHFT    &kp INT3
 &trans                &trans  &trans  &trans  &trans  &trans      &kp Y                  &kp Q      &kp U   &kp F  &kp INT6     &sk RCTRL
 &trans                &trans  &trans  &trans  &trans  &trans      &mt LG(V) LC(A)        &kp J      &kp N7  &kp O  &kp RS(DOT)  &sk RSHFT
-&trans                &trans  &trans  &trans  &trans  &trans      &ht_to L_NUMBER ENTER  &ht_to L_QWERTY_RIGHT SPACE            &sk RALT
+&to L_MOUSE           &trans  &trans  &trans  &trans  &trans      &ht_to L_NUMBER ENTER  &ht_to L_QWERTY_RIGHT SPACE            &sk RALT
             >;
         };
 
@@ -586,10 +586,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                &trans          &mmv MOVE_UP    &trans           &trans            &msc SCRL_UP
-&trans  &trans  &trans  &trans  &trans  &trans      &mo L_MOUSE_SLOW  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans            &msc SCRL_DOWN
-&none   &trans  &trans  &trans  &trans  &trans      &mo L_MOUSE_FAST  &mkp MB4        &mkp MB5        &trans           &msc SCRL_LEFT    &msc SCRL_RIGHT
-&trans  &trans  &trans  &trans  &trans  &trans      &mkp RCLK         &mkp LCLK                                                          &mkp MCLK
+&trans  &trans  &trans  &trans  &trans                                &kp LC(LS(TAB))  &mmv MOVE_UP    &kp LC(TAB)      &mkp MCLK         &msc SCRL_UP
+&trans  &trans  &trans  &trans  &trans  &trans      &mo L_MOUSE_SLOW  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans            &msc SCRL_DOWN
+&none   &trans  &trans  &trans  &trans  &trans      &mo L_MOUSE_FAST  &mkp MB4         &mkp MB5        &trans           &msc SCRL_LEFT    &msc SCRL_RIGHT
+&trans  &trans  &trans  &trans  &trans  &trans      &mkp RCLK         &mkp LCLK                                                           &to L_COFFEE
             >;
         };
 
