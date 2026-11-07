@@ -63,7 +63,7 @@
         };
         combo_u {
             timeout-ms    = <50>;
-            key-positions = <5 20>;             // あ(5) + INT6  → う
+            key-positions = <5 20>;             // あ(5) + 、 → う
             bindings      = <&kp N4>;
             layers        = <L_COFFEE>;
         };
@@ -75,7 +75,7 @@
         };
         combo_o {
             timeout-ms    = <50>;
-            key-positions = <5 32>;             // あ(5) + 。    → お
+            key-positions = <5 32>;             // あ(5) + 。 → お
             bindings      = <&kp N6>;
             layers        = <L_COFFEE>;
         };
@@ -89,7 +89,7 @@
         };
         combo_ku {
             timeout-ms    = <50>;
-            key-positions = <6 20>;             // か(6) + INT6  → く
+            key-positions = <6 20>;             // か(6) + 、 → く
             bindings      = <&kp H>;
             layers        = <L_COFFEE>;
         };
@@ -101,7 +101,7 @@
         };
         combo_ko {
             timeout-ms    = <50>;
-            key-positions = <6 32>;             // か(6) + 。    → こ
+            key-positions = <6 32>;             // か(6) + 。 → こ
             bindings      = <&kp B>;
             layers        = <L_COFFEE>;
         };
@@ -115,7 +115,7 @@
         };
         combo_su {
             timeout-ms    = <50>;
-            key-positions = <7 20>;             // さ(7) + INT6  → す
+            key-positions = <7 20>;             // さ(7) + 、 → す
             bindings      = <&kp R>;
             layers        = <L_COFFEE>;
         };
@@ -127,7 +127,7 @@
         };
         combo_so {
             timeout-ms    = <50>;
-            key-positions = <7 32>;             // さ(7) + 。    → そ
+            key-positions = <7 32>;             // さ(7) + 。 → そ
             bindings      = <&kp C>;
             layers        = <L_COFFEE>;
         };
@@ -141,7 +141,7 @@
         };
         combo_tsu {
             timeout-ms    = <50>;
-            key-positions = <17 20>;            // た(17) + INT6  → つ
+            key-positions = <17 20>;            // た(17) + 、 → つ
             bindings      = <&kp Z>;
             layers        = <L_COFFEE>;
         };
@@ -153,7 +153,7 @@
         };
         combo_to {
             timeout-ms    = <50>;
-            key-positions = <17 32>;            // た(17) + 。    → と
+            key-positions = <17 32>;            // た(17) + 。 → と
             bindings      = <&kp S>;
             layers        = <L_COFFEE>;
         };
@@ -167,7 +167,7 @@
         };
         combo_nu {
             timeout-ms    = <50>;
-            key-positions = <18 20>;            // な(18) + INT6  → ぬ
+            key-positions = <18 20>;            // な(18) + 、 → ぬ
             bindings      = <&kp N1>;
             layers        = <L_COFFEE>;
         };
@@ -179,7 +179,7 @@
         };
         combo_no {
             timeout-ms    = <50>;
-            key-positions = <18 32>;            // な(18) + 。    → の
+            key-positions = <18 32>;            // な(18) + 。 → の
             bindings      = <&kp K>;
             layers        = <L_COFFEE>;
         };
@@ -193,7 +193,7 @@
         };
         combo_fu {
             timeout-ms    = <50>;
-            key-positions = <19 20>;            // は(19) + INT6  → ふ
+            key-positions = <19 20>;            // は(19) + 、 → ふ
             bindings      = <&kp N2>;
             layers        = <L_COFFEE>;
         };
@@ -205,7 +205,7 @@
         };
         combo_ho {
             timeout-ms    = <50>;
-            key-positions = <19 32>;            // は(19) + 。    → ほ
+            key-positions = <19 32>;            // は(19) + 。 → ほ
             bindings      = <&kp MINUS>;
             layers        = <L_COFFEE>;
         };
@@ -219,7 +219,7 @@
         };
         combo_mu {
             timeout-ms    = <50>;
-            key-positions = <29 20>;            // ま(29) + INT6  → む
+            key-positions = <29 20>;            // ま(29) + 、 → む
             bindings      = <&kp NON_US_HASH>;
             layers        = <L_COFFEE>;
         };
@@ -231,7 +231,7 @@
         };
         combo_mo {
             timeout-ms    = <50>;
-            key-positions = <29 32>;            // ま(29) + 。    → も
+            key-positions = <29 32>;            // ま(29) + 。 → も
             bindings      = <&kp M>;
             layers        = <L_COFFEE>;
         };
@@ -239,13 +239,13 @@
     // ---- や行 (30) ----
         combo_yu {
             timeout-ms    = <50>;
-            key-positions = <30 20>;            // や(30) + INT6  → ゆ
+            key-positions = <30 20>;            // や(30) + 、 → ゆ
             bindings      = <&kp N8>;
             layers        = <L_COFFEE>;
         };
         combo_yo {
             timeout-ms    = <50>;
-            key-positions = <30 32>;            // や(30) + 。    → よ
+            key-positions = <30 32>;            // や(30) + 。 → よ
             bindings      = <&kp N9>;
             layers        = <L_COFFEE>;
         };
@@ -259,7 +259,7 @@
         };
         combo_ru {
             timeout-ms    = <50>;
-            key-positions = <31 20>;            // ら(31) + INT6  → る
+            key-positions = <31 20>;            // ら(31) + 、 → る
             bindings      = <&kp PERIOD>;
             layers        = <L_COFFEE>;
         };
@@ -271,7 +271,7 @@
         };
         combo_ro {
             timeout-ms    = <50>;
-            key-positions = <31 32>;            // ら(31) + 。    → ろ
+            key-positions = <31 32>;            // ら(31) + 。 → ろ
             bindings      = <&kp INT1>;
             layers        = <L_COFFEE>;
         };
@@ -279,14 +279,14 @@
     // ---- わ行：N0 ----
         combo_wa {
             timeout-ms    = <50>;
-            key-positions = <16 40>;            // ん + ENTER
-            bindings      = <&kp N0>;           // わ
+            key-positions = <16 40>;            // ん + ENTER → わ
+            bindings      = <&kp N0>;
             layers        = <L_COFFEE>;
         };
         combo_wo {
             timeout-ms    = <50>;
-            key-positions = <16 41>;            // ん + SPACE
-            bindings      = <&kp LS(N0)>;       // を
+            key-positions = <16 41>;            // ん + SPACE → を
+            bindings      = <&kp LS(N0)>;
             layers        = <L_COFFEE>;
         };
 
@@ -307,14 +307,14 @@
     // ---- 「 」：INT6 (20) ---- 
         combo_kagi_open {
             timeout-ms    = <50>;
-            key-positions = <20 40>;          // INT6 + ENTER
-            bindings      = <&kp RS(RBKT)>;   // 「
+            key-positions = <20 40>;          // 、 + ENTER → 「
+            bindings      = <&kp RS(RBKT)>;
             layers        = <L_COFFEE>;
         };
         combo_kagi_close {
             timeout-ms    = <50>;
-            key-positions = <20 41>;        // INT6 + SPACE
-            bindings      = <&kp RS(NUHS)>; // 」
+            key-positions = <20 41>;        // 、 + SPACE → 」
+            bindings      = <&kp RS(NUHS)>;
             layers        = <L_COFFEE>;
         };
 
@@ -323,59 +323,59 @@
     // BackSpace･Delete･Undo：や = N7 (30)
         combo_bspc {
             timeout-ms    = <50>;
-            key-positions = <30 40>;        // や + ENTER
-            bindings      = <&kp BSPC>;     // BackSpace
+            key-positions = <30 40>;        // や + ENTER → BackSpace
+            bindings      = <&kp BSPC>;
             layers        = <L_COFFEE>;
         };
         combo_del {
             timeout-ms    = <50>;
-            key-positions = <30 41>;        // や + SPACE
-            bindings      = <&kp DEL>;      // Delete
+            key-positions = <30 41>;        // や + SPACE → Delete
+            bindings      = <&kp DEL>;
             layers        = <L_COFFEE>;
         };
         combo_undo {
             timeout-ms    = <50>;
-            key-positions = <20 30>;        // 、 + や
-            bindings      = <&kp RC(Z)>;    // Undo
+            key-positions = <20 30>;        // や + 、 → Undo
+            bindings      = <&kp RC(Z)>;
             layers        = <L_COFFEE>;
         };
 
     // ---- ！･？ = Y (16) ----
         combo_exclam {
             timeout-ms    = <50>;
-            key-positions = <16 20>;            // ん + 、
-            bindings      = <&kp RS(N1)>;       // ！
+            key-positions = <16 20>;            // ん + 、 → ！
+            bindings      = <&kp RS(N1)>;
             layers        = <L_COFFEE>;
         };
         combo_question {
             timeout-ms    = <50>;
-            key-positions = <16 32>;            // ん + 。
-            bindings      = <&kp RS(FSLH)>;     // ？   🟥🟥🟥 (要確認)...現状｢・」が出力 🟥🟥🟥
+            key-positions = <16 32>;            // ん + 。 → ？   🟥🟥🟥 (要確認)...現状｢・」が出力 🟥🟥🟥
+            bindings      = <&kp RS(FSLH)>;
             layers        = <L_COFFEE>;
         };
 
-    // ---- ←･→･↑･↓ = LC(A) (28) ----
+    // ---- ←･→･↑･↓ = TAB (28) ----
         combo_cursor_left {
             timeout-ms    = <50>;
-            key-positions = <28 40>;            // LC(A) + ENTER → ← (長押し: Home)
+            key-positions = <28 40>;            // TAB(28) + ENTER → ← (長押し: Home)
             bindings      = <&mt HOME LEFT>;
             layers        = <L_COFFEE>;
         };
         combo_cursor_right {
             timeout-ms    = <50>;
-            key-positions = <28 41>;            // LC(A) + SPACE → → (長押し: End)
+            key-positions = <28 41>;            // TAB(28) + SPACE → → (長押し: End)
             bindings      = <&mt END RIGHT>;
             layers        = <L_COFFEE>;
         };
         combo_cursor_up {
             timeout-ms    = <50>;
-            key-positions = <28 20>;            // LC(A) + INT6  → ↑
+            key-positions = <28 20>;            // TAB(28) + 、 → ↑
             bindings      = <&kp UP>;
             layers        = <L_COFFEE>;
         };
         combo_cursor_down {
             timeout-ms    = <50>;
-            key-positions = <28 32>;            // LC(A) + 。    → ↓
+            key-positions = <28 32>;            // TAB(28) + 。 → ↓
             bindings      = <&kp DOWN>;
             layers        = <L_COFFEE>;
         };
@@ -507,7 +507,7 @@
             bindings = <
 &to L_QWERTY_DEFAULT  &trans  &trans  &trans  &trans                                     &kp N3     &kp T   &kp X  &kp RSHFT    &kp INT3
 &trans                &trans  &trans  &trans  &trans  &trans      &kp Y                  &kp Q      &kp U   &kp F  &kp INT6     &sk RCTRL
-&trans                &trans  &trans  &trans  &trans  &trans      &mt LG(V) LC(A)        &kp J      &kp N7  &kp O  &kp RS(DOT)  &sk RSHFT
+&trans                &trans  &trans  &trans  &trans  &trans      &kp TAB                &kp J      &kp N7  &kp O  &kp RS(DOT)  &sk RSHFT
 &to L_MOUSE           &trans  &trans  &trans  &trans  &trans      &ht_to L_NUMBER ENTER  &ht_to L_QWERTY_RIGHT SPACE            &sk RALT
             >;
         };
