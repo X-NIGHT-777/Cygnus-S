@@ -374,7 +374,7 @@
             layers        = <L_COFFEE>;
         };
 
-    // ---- CTRL+X,C,V,Z : RALT (42) ----       // 🟥🟥🟥 動作チェック 🟥🟥🟥
+    // ---- CTRL+X,C,V, WIN+V : RALT (42) ----       // 🟥🟥🟥 動作チェック 🟥🟥🟥
         combo_copy {
             timeout-ms    = <50>;
             key-positions = <42 40>;            // RALT + ENTER → Ctrl+C (長押し: Ctrl+X)
@@ -383,8 +383,8 @@
         };
         combo_paste {
             timeout-ms    = <50>;
-            key-positions = <42 41>;            // RALT + SPACE → Ctrl+V (長押し: Ctrl+Z)
-            bindings      = <&mt RC(Z) RC(V)>;
+            key-positions = <42 41>;            // RALT + SPACE → Ctrl+V (長押し: win+v)
+            bindings      = <&mt RG(V) RC(V)>;
             layers        = <L_COFFEE>;
         };
 
