@@ -401,13 +401,15 @@ behaviors {
             bindings = <&to>, <&kp>;        // 1番目=ホールド、2番目=タップ
         };
 
-    // ----- Ctrl(sticky)待機中ならコピペ系に切替 -----
-    // 通常: カーソル系 / Ctrl待機中: ショートカット (Ctrlを保持して出力)
+    // ---- Ctrl(sticky)/Shift(sticky)待機中にコマンド系へ切替 ------------------
+    // 判定順: Ctrl待機中 → コピペ系 / Shift待機中 → ウィンドウ操作系 / なし → カーソル系
+
+    // ---- 外側: Ctrl待機中ならコピペ系、それ以外は内側(Shift判定)へ ----
         mm_cursor_left: mm_cursor_left {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_CURSOR_LEFT";
             #binding-cells = <0>;
-            bindings = <&mt HOME LEFT>, <&kp C>;        // 40: ← (長押しHome) / Ctrl+C
+            bindings = <&mm_sft_left>, <&kp C>;         // 40: Ctrl待機=Ctrl+C / それ以外は内側へ
             mods = <(MOD_LCTL|MOD_RCTL)>;
             keep-mods = <(MOD_LCTL|MOD_RCTL)>;          // Ctrlを残す
         };
@@ -416,7 +418,7 @@ behaviors {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_CURSOR_RIGHT";
             #binding-cells = <0>;
-            bindings = <&mt END RIGHT>, <&kp V>;        // 41: → (長押しEnd) / Ctrl+V
+            bindings = <&mm_sft_right>, <&kp V>;        // 41: Ctrl待機=Ctrl+V / それ以外は内側へ
             mods = <(MOD_LCTL|MOD_RCTL)>;
             keep-mods = <(MOD_LCTL|MOD_RCTL)>;
         };
@@ -425,7 +427,7 @@ behaviors {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_CURSOR_UP";
             #binding-cells = <0>;
-            bindings = <&mt LC(Z) UP>, <&kp X>;         // 20: ↑ (長押しCtrl+Z) / Ctrl+X
+            bindings = <&mm_sft_up>, <&kp X>;           // 20: Ctrl待機=Ctrl+X / それ以外は内側へ
             mods = <(MOD_LCTL|MOD_RCTL)>;
             keep-mods = <(MOD_LCTL|MOD_RCTL)>;
         };
@@ -434,8 +436,41 @@ behaviors {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_CURSOR_DOWN";
             #binding-cells = <0>;
-            bindings = <&mt LC(A) DOWN>, <&kp LG(V)>;   // 32: ↓ (長押しCtrl+A) / Win+V
+            bindings = <&mm_sft_down>, <&kp LG(V)>;     // 32: Ctrl待機=Win+V / それ以外は内側へ
             mods = <(MOD_LCTL|MOD_RCTL)>;               // keep-modsなし → Ctrlを外してWin+Vだけ出す
+        };
+
+    // ---- 内側: Shift待機中ならウィンドウ操作系、なければカーソル系 ----
+        mm_sft_left: mm_sft_left {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_SFT_LEFT";
+            #binding-cells = <0>;
+            bindings = <&mt HOME LEFT>, <&kp LC(LS(TAB))>;  // 40: ← (長押しHome) / Ctrl+Shift+Tab
+            mods = <(MOD_LSFT|MOD_RSFT)>;                   // keep-modsなし → Shiftを外して明示指定を出す
+        };
+
+        mm_sft_right: mm_sft_right {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_SFT_RIGHT";
+            #binding-cells = <0>;
+            bindings = <&mt END RIGHT>, <&kp LC(TAB)>;      // 41: → (長押しEnd) / Ctrl+Tab
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_sft_up: mm_sft_up {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_SFT_UP";
+            #binding-cells = <0>;
+            bindings = <&mt LC(Z) UP>, <&kp LG(TAB)>;       // 20: ↑ (長押しCtrl+Z) / Win+Tab
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_sft_down: mm_sft_down {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_SFT_DOWN";
+            #binding-cells = <0>;
+            bindings = <&mt LC(A) DOWN>, <&kp LG(D)>;       // 32: ↓ (長押しCtrl+A) / Win+D
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
     };
