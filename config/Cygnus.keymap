@@ -370,7 +370,7 @@
 
 
 
-behaviors {
+    behaviors {
 
         ROTATE: ROTATE {
             compatible = "zmk,behavior-sensor-rotate-var";
@@ -409,35 +409,35 @@ behaviors {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_CURSOR_LEFT";
             #binding-cells = <0>;
-            bindings = <&mm_sft_left>, <&kp C>;         // 40: Ctrl待機=Ctrl+C / それ以外は内側へ
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LCTL|MOD_RCTL)>;          // Ctrlを残す
+            bindings = <&mm_sft_left>, <&kp C>;             // 40: Ctrl待機=Ctrl+C / それ以外は内側へ
+            mods = <(MOD_RCTL)>;
+            keep-mods = <(MOD_RCTL)>;                       // Ctrlを残す
         };
 
         mm_cursor_right: mm_cursor_right {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_CURSOR_RIGHT";
             #binding-cells = <0>;
-            bindings = <&mm_sft_right>, <&kp V>;        // 41: Ctrl待機=Ctrl+V / それ以外は内側へ
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LCTL|MOD_RCTL)>;
+            bindings = <&mm_sft_right>, <&kp V>;            // 41: Ctrl待機=Ctrl+V / それ以外は内側へ
+            mods = <(MOD_RCTL)>;
+            keep-mods = <(MOD_RCTL)>;
         };
 
         mm_cursor_up: mm_cursor_up {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_CURSOR_UP";
             #binding-cells = <0>;
-            bindings = <&mm_sft_up>, <&kp X>;           // 20: Ctrl待機=Ctrl+X / それ以外は内側へ
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LCTL|MOD_RCTL)>;
+            bindings = <&mm_sft_up>, <&kp X>;               // 20: Ctrl待機=Ctrl+X / それ以外は内側へ
+            mods = <(MOD_RCTL)>;
+            keep-mods = <(MOD_RCTL)>;
         };
 
         mm_cursor_down: mm_cursor_down {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_CURSOR_DOWN";
             #binding-cells = <0>;
-            bindings = <&mm_sft_down>, <&kp LG(V)>;     // 32: Ctrl待機=Win+V / それ以外は内側へ
-            mods = <(MOD_LCTL|MOD_RCTL)>;               // keep-modsなし → Ctrlを外してWin+Vだけ出す
+            bindings = <&mm_sft_down>, <&kp RG(V)>;         // 32: Ctrl待機=Win+V / それ以外は内側へ
+            mods = <(MOD_RCTL)>;                            // keep-modsなし → Ctrlを外してWin+Vだけ出す
         };
 
     // ---- 内側: Shift待機中ならウィンドウ操作系、なければカーソル系 ----
@@ -445,32 +445,32 @@ behaviors {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SFT_LEFT";
             #binding-cells = <0>;
-            bindings = <&mt HOME LEFT>, <&kp LC(LS(TAB))>;  // 40: ← (長押しHome) / Ctrl+Shift+Tab
-            mods = <(MOD_LSFT|MOD_RSFT)>;                   // keep-modsなし → Shiftを外して明示指定を出す
+            bindings = <&mt HOME LEFT>, <&kp RC(RS(TAB))>;  // 40: ← (長押しHome) / Ctrl+Shift+Tab
+            mods = <(MOD_RSFT)>;                            // keep-modsなし → Shiftを外して明示指定を出す
         };
 
         mm_sft_right: mm_sft_right {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SFT_RIGHT";
             #binding-cells = <0>;
-            bindings = <&mt END RIGHT>, <&kp LC(TAB)>;      // 41: → (長押しEnd) / Ctrl+Tab
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&mt END RIGHT>, <&kp RC(TAB)>;      // 41: → (長押しEnd) / Ctrl+Tab
+            mods = <(MOD_RSFT)>;
         };
 
         mm_sft_up: mm_sft_up {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SFT_UP";
             #binding-cells = <0>;
-            bindings = <&mt LC(Z) UP>, <&kp LG(TAB)>;       // 20: ↑ (長押しCtrl+Z) / Win+Tab
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&mt RC(Z) UP>, <&kp RG(TAB)>;       // 20: ↑ (長押しCtrl+Z) / Win+Tab
+            mods = <(MOD_RSFT)>;
         };
 
         mm_sft_down: mm_sft_down {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SFT_DOWN";
             #binding-cells = <0>;
-            bindings = <&mt LC(A) DOWN>, <&kp LG(D)>;       // 32: ↓ (長押しCtrl+A) / Win+D
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&mt RC(A) DOWN>, <&kp RG(D)>;       // 32: ↓ (長押しCtrl+A) / Win+D
+            mods = <(MOD_RSFT)>;
         };
 
     };
