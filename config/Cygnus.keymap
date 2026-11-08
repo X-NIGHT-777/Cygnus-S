@@ -370,7 +370,7 @@
 
 
 
-    behaviors {
+behaviors {
 
         ROTATE: ROTATE {
             compatible = "zmk,behavior-sensor-rotate-var";
@@ -399,6 +399,43 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             bindings = <&to>, <&kp>;        // 1番目=ホールド、2番目=タップ
+        };
+
+    // ----- Ctrl(sticky)待機中ならコピペ系に切替 -----
+    // 通常: カーソル系 / Ctrl待機中: ショートカット (Ctrlを保持して出力)
+        mm_cursor_left: mm_cursor_left {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_CURSOR_LEFT";
+            #binding-cells = <0>;
+            bindings = <&mt HOME LEFT>, <&kp C>;        // 40: ← (長押しHome) / Ctrl+C
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+            keep-mods = <(MOD_LCTL|MOD_RCTL)>;          // Ctrlを残す
+        };
+
+        mm_cursor_right: mm_cursor_right {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_CURSOR_RIGHT";
+            #binding-cells = <0>;
+            bindings = <&mt END RIGHT>, <&kp V>;        // 41: → (長押しEnd) / Ctrl+V
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+            keep-mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        mm_cursor_up: mm_cursor_up {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_CURSOR_UP";
+            #binding-cells = <0>;
+            bindings = <&mt LC(Z) UP>, <&kp X>;         // 20: ↑ (長押しCtrl+Z) / Ctrl+X
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+            keep-mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        mm_cursor_down: mm_cursor_down {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_CURSOR_DOWN";
+            #binding-cells = <0>;
+            bindings = <&mt LC(A) DOWN>, <&kp LG(V)>;   // 32: ↓ (長押しCtrl+A) / Win+V
+            mods = <(MOD_LCTL|MOD_RCTL)>;               // keep-modsなし → Ctrlを外してWin+Vだけ出す
         };
 
     };
