@@ -403,8 +403,8 @@
         };
 
     // ======================================================================
-    // A. combo(28+各キー)用: Ctrl/Shift/RALT(sticky)待機中にコマンド系へ切替
-    //    判定順: Ctrl待機 → コピペ系 / Shift待機 → ウィンドウ操作系 / RALT待機 → Ctrl+F / なし → カーソル系
+    // A. combo(28+各キー)用: Ctrl/右Shift/RALT(sticky)待機中にコマンド系へ切替
+    //    判定順: Ctrl待機 → コピペ系 / 右Shift待機 → ウィンドウ操作系 / RALT待機 → Ctrl+F / なし → カーソル系
     // ======================================================================
 
     // ---- 外側: Ctrl待機中ならコピペ系、それ以外は内側1(Shift判定)へ ----
@@ -449,7 +449,7 @@
             label = "MM_RS_LEFT";
             #binding-cells = <0>;
             bindings = <&mm_alt_left>, <&kp RC(RS(TAB))>;   // 40: 右Shift待機=Ctrl+Shift+Tab / それ以外は内側2へ
-            mods = <(MOD_RSFT)>;                            // keep-modsなし → Shiftを外して明示指定を出す
+            mods = <(MOD_RSFT)>;                            // keep-modsなし → 右Shiftを外して明示指定を出す
         };
 
         mm_rs_right: mm_rs_right {
@@ -510,10 +510,10 @@
         };
 
     // ======================================================================
-    // B. 単独キー(28・40・41番)用: Ctrl/Shift/RALT(sticky)待機中に出力を切替
+    // B. 単独キー(28・40・41番)用: Ctrl/右Shift/RALT(sticky)待機中に出力を切替
     // ======================================================================
 
-    // ---- 28番: Ctrl待機=Tab / Shift・RALT待機=Ctrl+F / それ以外はBackspace ----
+    // ---- 28番: Ctrl待機=Tab / 右Shift・RALT待機=Ctrl+F / それ以外はBackspace ----
         mm_bs: mm_bs {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_BS";
@@ -526,7 +526,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MM_BS_IN";
             #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp RC(F)>;        // 28: BS / 🟦暫定 Shift・RALT待機=Ctrl+F
+            bindings = <&kp BACKSPACE>, <&kp RC(F)>;        // 28: BS / 🟦暫定 右Shift・RALT待機=Ctrl+F
             mods = <(MOD_RSFT|MOD_RALT)>;
         };
 
@@ -555,7 +555,7 @@
             mods = <(MOD_RALT)>;
         };
 
-    // ---- 41番: Ctrl・Shift・RALT待機=Ctrl+F / それ以外はSpace(長押しQWERTY_RIGHT) ----
+    // ---- 41番: Ctrl・右Shift・RALT待機=Ctrl+F / それ以外はSpace(長押しQWERTY_RIGHT) ----
         mm_space: mm_space {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SPACE";
