@@ -335,28 +335,29 @@
         };
 
     // ---- ←･→･↑･↓ = BACKSPACE (28) ----
+    // Ctrl/Shift/RALT(sticky)を先に押すと、behaviors側(A)のmm_*でコマンド系に切替
         combo_cursor_left {
             timeout-ms    = <50>;
-            key-positions = <28 40>;            // 28 + 40 → ← (長押し: Home)
-            bindings      = <&mt HOME LEFT>;
+            key-positions = <28 40>;            // 28 + 40 → ← (長押し: Home) / Ctrl待機: Ctrl+C ほか
+            bindings      = <&mm_cursor_left>;
             layers        = <L_COFFEE>;
         };
         combo_cursor_right {
             timeout-ms    = <50>;
-            key-positions = <28 41>;            // 28 + 41 → → (長押し: End)
-            bindings      = <&mt END RIGHT>;
+            key-positions = <28 41>;            // 28 + 41 → → (長押し: End) / Ctrl待機: Ctrl+V ほか
+            bindings      = <&mm_cursor_right>;
             layers        = <L_COFFEE>;
         };
         combo_cursor_up {
             timeout-ms    = <50>;
-            key-positions = <28 20>;            // 28 + 20 → ↑ (長押し: Ctrl+Z)
-            bindings      = <&mt LC(Z) UP>;
+            key-positions = <28 20>;            // 28 + 20 → ↑ (長押し: Ctrl+Z) / Ctrl待機: Ctrl+X ほか
+            bindings      = <&mm_cursor_up>;
             layers        = <L_COFFEE>;
         };
         combo_cursor_down {
             timeout-ms    = <50>;
-            key-positions = <28 32>;            // 28 + 32 → ↓ (長押し: Ctrl+A)
-            bindings      = <&mt LC(A) DOWN>;
+            key-positions = <28 32>;            // 28 + 32 → ↓ (長押し: Ctrl+A) / Ctrl待機: Win+V ほか
+            bindings      = <&mm_cursor_down>;
             layers        = <L_COFFEE>;
         };
 
