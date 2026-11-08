@@ -338,25 +338,25 @@
     // 右Ctrl/右Shift/右Alt(sticky)を先に押すと、behaviors側(A)のmm_*でコマンド系に切替
         combo_cursor_left {
             timeout-ms    = <50>;
-            key-positions = <28 40>;            // 28 + 40 → ← (長押し: Home) / Ctrl待機: Ctrl+C ほか
+            key-positions = <28 40>;            // 28 + 40 → ← (長押し: Home) / 右Ctrl待機: Ctrl+C ほか
             bindings      = <&mm_cursor_left>;
             layers        = <L_COFFEE>;
         };
         combo_cursor_right {
             timeout-ms    = <50>;
-            key-positions = <28 41>;            // 28 + 41 → → (長押し: End) / Ctrl待機: Ctrl+V ほか
+            key-positions = <28 41>;            // 28 + 41 → → (長押し: End) / 右Ctrl待機: Ctrl+V ほか
             bindings      = <&mm_cursor_right>;
             layers        = <L_COFFEE>;
         };
         combo_cursor_up {
             timeout-ms    = <50>;
-            key-positions = <28 20>;            // 28 + 20 → ↑ (長押し: Ctrl+Z) / Ctrl待機: Ctrl+X ほか
+            key-positions = <28 20>;            // 28 + 20 → ↑ (長押し: Ctrl+Z) / 右Ctrl待機: Ctrl+X ほか
             bindings      = <&mm_cursor_up>;
             layers        = <L_COFFEE>;
         };
         combo_cursor_down {
             timeout-ms    = <50>;
-            key-positions = <28 32>;            // 28 + 32 → ↓ (長押し: Ctrl+A) / Ctrl待機: Win+V ほか
+            key-positions = <28 32>;            // 28 + 32 → ↓ (長押し: Ctrl+A) / 右Ctrl待機: Win+V ほか
             bindings      = <&mm_cursor_down>;
             layers        = <L_COFFEE>;
         };
@@ -405,9 +405,10 @@
     // ======================================================================
     // A. combo(28+各キー)用: 右Ctrl/右Shift/右Alt(sticky)待機中にコマンド系へ切替
     //    判定順: 右Ctrl待機 → コピペ系 / 右Shift待機 → ウィンドウ操作系 / 右Alt待機 → Ctrl+F / なし → カーソル系
+    //    命名: 外側(comboから呼ぶ入口)=機能名 mm_cursor_* / 内側=判定する修飾キー mm_rs_*(右Shift)・mm_ra_*(右Alt)
     // ======================================================================
 
-    // ---- 外側: 右Ctrl待機中ならコピペ系、それ以外は内側1(右Shift判定)へ ----
+    // ---- 外側(入口): 右Ctrl待機中ならコピペ系、それ以外は内側1(右Shift判定)へ ----
         mm_cursor_left: mm_cursor_left {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_CURSOR_LEFT";
@@ -443,12 +444,12 @@
             mods = <(MOD_RCTL)>;                            // keep-modsなし → 右Ctrlを外してWin+Vだけ出す
         };
 
-    // ---- 内側1: 右Shift待機中ならウィンドウ操作系、なければ内側2(右Alt判定)へ ----
+    // ---- 内側1(RS): 右Shift待機中ならウィンドウ操作系、なければ内側2(右Alt判定)へ ----
         mm_rs_left: mm_rs_left {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_RS_LEFT";
             #binding-cells = <0>;
-            bindings = <&mm_alt_left>, <&kp RC(RS(TAB))>;   // 40: 右Shift待機=Ctrl+Shift+Tab / それ以外は内側2へ
+            bindings = <&mm_ra_left>, <&kp RC(RS(TAB))>;    // 40: 右Shift待機=Ctrl+Shift+Tab / それ以外は内側2へ
             mods = <(MOD_RSFT)>;                            // keep-modsなし → 右Shiftを外して明示指定を出す
         };
 
@@ -456,7 +457,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MM_RS_RIGHT";
             #binding-cells = <0>;
-            bindings = <&mm_alt_right>, <&kp RC(TAB)>;      // 41: 右Shift待機=Ctrl+Tab / それ以外は内側2へ
+            bindings = <&mm_ra_right>, <&kp RC(TAB)>;       // 41: 右Shift待機=Ctrl+Tab / それ以外は内側2へ
             mods = <(MOD_RSFT)>;
         };
 
@@ -464,7 +465,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MM_RS_UP";
             #binding-cells = <0>;
-            bindings = <&mm_alt_up>, <&kp RG(TAB)>;         // 20: 右Shift待機=Win+Tab / それ以外は内側2へ
+            bindings = <&mm_ra_up>, <&kp RG(TAB)>;          // 20: 右Shift待機=Win+Tab / それ以外は内側2へ
             mods = <(MOD_RSFT)>;
         };
 
@@ -472,38 +473,38 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MM_RS_DOWN";
             #binding-cells = <0>;
-            bindings = <&mm_alt_down>, <&kp RG(D)>;         // 32: 右Shift待機=Win+D / それ以外は内側2へ
+            bindings = <&mm_ra_down>, <&kp RG(D)>;          // 32: 右Shift待機=Win+D / それ以外は内側2へ
             mods = <(MOD_RSFT)>;
         };
 
-    // ---- 内側2: 右Alt待機中ならCtrl+F、なければカーソル系 ----
-        mm_alt_left: mm_alt_left {
+    // ---- 内側2(RA): 右Alt待機中ならCtrl+F、なければカーソル系 ----
+        mm_ra_left: mm_ra_left {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_ALT_LEFT";
+            label = "MM_RA_LEFT";
             #binding-cells = <0>;
             bindings = <&mt HOME LEFT>, <&kp RC(F)>;        // 40: ← (長押しHome) / 🟦暫定 Ctrl+F 出力
             mods = <(MOD_RALT)>;                            // keep-modsなし → 右Altを外してCtrl+Fだけ出す
         };
 
-        mm_alt_right: mm_alt_right {
+        mm_ra_right: mm_ra_right {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_ALT_RIGHT";
+            label = "MM_RA_RIGHT";
             #binding-cells = <0>;
             bindings = <&mt END RIGHT>, <&kp RC(F)>;        // 41: → (長押しEnd) / 🟦暫定 Ctrl+F 出力
             mods = <(MOD_RALT)>;
         };
 
-        mm_alt_up: mm_alt_up {
+        mm_ra_up: mm_ra_up {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_ALT_UP";
+            label = "MM_RA_UP";
             #binding-cells = <0>;
             bindings = <&mt RC(Z) UP>, <&kp RC(F)>;         // 20: ↑ (長押しCtrl+Z) / 🟦暫定 Ctrl+F 出力
             mods = <(MOD_RALT)>;
         };
 
-        mm_alt_down: mm_alt_down {
+        mm_ra_down: mm_ra_down {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_ALT_DOWN";
+            label = "MM_RA_DOWN";
             #binding-cells = <0>;
             bindings = <&mt RC(A) DOWN>, <&kp RC(F)>;       // 32: ↓ (長押しCtrl+A) / 🟦暫定 Ctrl+F 出力
             mods = <(MOD_RALT)>;
@@ -511,6 +512,7 @@
 
     // ======================================================================
     // B. 単独キー(28・40・41番)用: 右Ctrl/右Shift/右Alt(sticky)待機中に出力を切替
+    //    命名: 入口(キーマップから呼ぶ)=機能名 mm_bs・mm_enter・mm_space / 内側=判定する修飾キー
     // ======================================================================
 
     // ---- 28番: 右Ctrl待機=Tab / 右Shift・右Alt待機=Ctrl+F / それ以外はBackspace ----
@@ -543,13 +545,13 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MM_ENTER_RS";
             #binding-cells = <0>;
-            bindings = <&mm_enter_alt>, <&kp RC(F)>;        // 40: 右Shift待機=🟦暫定 Ctrl+F / それ以外は内側2へ
+            bindings = <&mm_enter_ra>, <&kp RC(F)>;         // 40: 右Shift待機=🟦暫定 Ctrl+F / それ以外は内側2へ
             mods = <(MOD_RSFT)>;
         };
 
-        mm_enter_alt: mm_enter_alt {
+        mm_enter_ra: mm_enter_ra {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_ENTER_ALT";
+            label = "MM_ENTER_RA";
             #binding-cells = <0>;
             bindings = <&ht_to L_NUMBER ENTER>, <&kp F8>;   // 40: Enter(長押しNUMBER) / 右Alt待機=F8
             mods = <(MOD_RALT)>;
