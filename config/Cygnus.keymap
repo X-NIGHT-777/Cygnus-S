@@ -239,8 +239,8 @@
     // ---- や行 (30) ----
         combo_yu {
             timeout-ms    = <50>;
-            key-positions = <30 20>;            // や(30) + 、 → ゆ (長押し: Undo)
-            bindings      = <&ht_kp RC(Z) N8>;  // 1番目=長押し(Undo)、2番目=タップ(ゆ)
+            key-positions = <30 20>;            // や(30) + 、 → ゆ
+            bindings      = <&kp N8>;
             layers        = <L_COFFEE>;
         };
         combo_yo {
@@ -318,22 +318,7 @@
             layers        = <L_COFFEE>;
         };
 
-    // ---- （ ）：RS(DOT) (32)   🟥🟥🟥 保留中 🟥🟥🟥
-
-    // BackSpace･Delete･Undo：や = N7 (30)
-        combo_bspc {
-            timeout-ms    = <50>;
-            key-positions = <30 40>;        // や + ENTER → BackSpace
-            bindings      = <&kp BSPC>;
-            layers        = <L_COFFEE>;
-        };
-        combo_del {
-            timeout-ms    = <50>;
-            key-positions = <30 41>;        // や + SPACE → Delete
-            bindings      = <&kp DEL>;
-            layers        = <L_COFFEE>;
-        };
-        // Undoは、[や行]の[combo_yu]にまとめて記述
+    // ---- （ ）：RS(DOT) (32)   🟥🟥🟥 保留中 (マクロが必要な模様) 🟥🟥🟥
 
     // ---- ！･？ = Y (16) ----
         combo_exclam {
@@ -349,43 +334,29 @@
             layers        = <L_COFFEE>;
         };
 
-    // ---- ←･→･↑･↓ = TAB (28) ----
+    // ---- ←･→･↑･↓ = BACKSPACE (28) ----
         combo_cursor_left {
             timeout-ms    = <50>;
-            key-positions = <28 40>;            // TAB(28) + ENTER → ← (長押し: Home)
+            key-positions = <28 40>;            // 28 + 40 → ← (長押し: Home)
             bindings      = <&mt HOME LEFT>;
             layers        = <L_COFFEE>;
         };
         combo_cursor_right {
             timeout-ms    = <50>;
-            key-positions = <28 41>;            // TAB(28) + SPACE → → (長押し: End)
+            key-positions = <28 41>;            // 28 + 41 → → (長押し: End)
             bindings      = <&mt END RIGHT>;
             layers        = <L_COFFEE>;
         };
         combo_cursor_up {
             timeout-ms    = <50>;
-            key-positions = <28 20>;            // TAB(28) + 、 → ↑
-            bindings      = <&kp UP>;
+            key-positions = <28 20>;            // 28 + 20 → ↑ (長押し: Ctrl+Z)
+            bindings      = <&mt LC(Z) UP>;
             layers        = <L_COFFEE>;
         };
         combo_cursor_down {
             timeout-ms    = <50>;
-            key-positions = <28 32>;            // TAB(28) + 。 → ↓
-            bindings      = <&kp DOWN>;
-            layers        = <L_COFFEE>;
-        };
-
-    // ---- CTRL+X,C,V, WIN+V : RALT (42) ----   🟥🟥🟥 動作チェック 🟥🟥🟥
-        combo_copy {
-            timeout-ms    = <50>;
-            key-positions = <42 40>;            // RALT + ENTER → Ctrl+C (長押し: Ctrl+X)
-            bindings      = <&mt RC(X) RC(C)>;
-            layers        = <L_COFFEE>;
-        };
-        combo_paste {
-            timeout-ms    = <50>;
-            key-positions = <42 41>;            // RALT + SPACE → Ctrl+V (長押し: win+v)
-            bindings      = <&mt RG(V) RC(V)>;
+            key-positions = <28 32>;            // 28 + 32 → ↓ (長押し: Ctrl+A)
+            bindings      = <&mt LC(A) DOWN>;
             layers        = <L_COFFEE>;
         };
 
