@@ -401,8 +401,8 @@
             bindings = <&to>, <&kp>;        // 1番目=ホールド、2番目=タップ
         };
 
-    // ---- Ctrl(sticky)/Shift(sticky)待機中にコマンド系へ切替 ------------------
-    // 判定順: Ctrl待機中 → コピペ系 / Shift待機中 → ウィンドウ操作系 / なし → カーソル系
+    // ---- Ctrl/Shift/RALT(sticky)待機中にコマンド系へ切替 ----------------------
+    // 判定順: Ctrl待機中 → コピペ系 / Shift待機中 → ウィンドウ操作系 / RALT待機中 → Ctrl+F / なし → カーソル系
 
     // ---- 外側: Ctrl待機中ならコピペ系、それ以外は内側(Shift判定)へ ----
         mm_cursor_left: mm_cursor_left {
@@ -440,12 +440,12 @@
             mods = <(MOD_RCTL)>;                            // keep-modsなし → Ctrlを外してWin+Vだけ出す
         };
 
-    // ---- 内側: Shift待機中ならウィンドウ操作系、なければカーソル系 ----
+    // ---- 内側1: Shift待機中ならウィンドウ操作系、なければ内側2(Alt判定)へ ----
         mm_sft_left: mm_sft_left {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SFT_LEFT";
             #binding-cells = <0>;
-            bindings = <&mt HOME LEFT>, <&kp RC(RS(TAB))>;  // 40: ← (長押しHome) / Ctrl+Shift+Tab
+            bindings = <&mm_alt_left>, <&kp RC(RS(TAB))>;   // 40: Shift待機=Ctrl+Shift+Tab / それ以外は内側2へ
             mods = <(MOD_RSFT)>;                            // keep-modsなし → Shiftを外して明示指定を出す
         };
 
@@ -453,7 +453,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SFT_RIGHT";
             #binding-cells = <0>;
-            bindings = <&mt END RIGHT>, <&kp RC(TAB)>;      // 41: → (長押しEnd) / Ctrl+Tab
+            bindings = <&mm_alt_right>, <&kp RC(TAB)>;      // 41: Shift待機=Ctrl+Tab / それ以外は内側2へ
             mods = <(MOD_RSFT)>;
         };
 
@@ -461,7 +461,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SFT_UP";
             #binding-cells = <0>;
-            bindings = <&mt RC(Z) UP>, <&kp RG(TAB)>;       // 20: ↑ (長押しCtrl+Z) / Win+Tab
+            bindings = <&mm_alt_up>, <&kp RG(TAB)>;         // 20: Shift待機=Win+Tab / それ以外は内側2へ
             mods = <(MOD_RSFT)>;
         };
 
@@ -469,8 +469,41 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SFT_DOWN";
             #binding-cells = <0>;
-            bindings = <&mt RC(A) DOWN>, <&kp RG(D)>;       // 32: ↓ (長押しCtrl+A) / Win+D
+            bindings = <&mm_alt_down>, <&kp RG(D)>;         // 32: Shift待機=Win+D / それ以外は内側2へ
             mods = <(MOD_RSFT)>;
+        };
+
+    // ---- 内側2: RALT待機中ならCtrl+F、なければカーソル系 ----
+        mm_alt_left: mm_alt_left {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_ALT_LEFT";
+            #binding-cells = <0>;
+            bindings = <&mt HOME LEFT>, <&kp RC(F)>;        // 40: ← (長押しHome) / Ctrl+F
+            mods = <(MOD_RALT)>;                            // keep-modsなし → Altを外してCtrl+Fだけ出す
+        };
+
+        mm_alt_right: mm_alt_right {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_ALT_RIGHT";
+            #binding-cells = <0>;
+            bindings = <&mt END RIGHT>, <&kp RC(F)>;        // 41: → (長押しEnd) / Ctrl+F
+            mods = <(MOD_RALT)>;
+        };
+
+        mm_alt_up: mm_alt_up {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_ALT_UP";
+            #binding-cells = <0>;
+            bindings = <&mt RC(Z) UP>, <&kp RC(F)>;         // 20: ↑ (長押しCtrl+Z) / Ctrl+F
+            mods = <(MOD_RALT)>;
+        };
+
+        mm_alt_down: mm_alt_down {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_ALT_DOWN";
+            #binding-cells = <0>;
+            bindings = <&mt RC(A) DOWN>, <&kp RC(F)>;       // 32: ↓ (長押しCtrl+A) / Ctrl+F
+            mods = <(MOD_RALT)>;
         };
 
     };
