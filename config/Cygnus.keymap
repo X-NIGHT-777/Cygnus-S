@@ -318,7 +318,7 @@
             layers        = <L_COFFEE>;
         };
 
-    // ---- （ ）：RS(DOT) (32)   🟥🟥🟥 保留中 (マクロが必要な模様) 🟥🟥🟥
+    // ---- （ ）：RS(DOT) (32)   🟥🟥🟥 保留中...マクロが必要な模様 🟥🟥🟥
 
     // ---- ！･？ = Y (16) ----
         combo_exclam {
@@ -329,7 +329,7 @@
         };
         combo_question {
             timeout-ms    = <50>;
-            key-positions = <16 32>;            // ん + 。 → ？   🟥🟥🟥 (要確認)...現状｢・」が出力 🟥🟥🟥
+            key-positions = <16 32>;            // ん + 。 → ？   🟥🟥🟥 要確認...現状｢・」が出力 🟥🟥🟥
             bindings      = <&kp RS(FSLH)>;
             layers        = <L_COFFEE>;
         };
