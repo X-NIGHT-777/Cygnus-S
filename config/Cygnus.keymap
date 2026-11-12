@@ -756,13 +756,6 @@
     // ======================================================================
     // C. combo(28+は行)用: 右Ctrl(sticky)待機中は半濁点(ぱ行)、なければ濁点(ば行)
     // ======================================================================
-        mm_ba: mm_ba {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_BA";
-            #binding-cells = <0>;
-            bindings = <&dkt F>, <&hdk F>;                  // は: ば / 右Ctrl待機=ぱ
-            mods = <(MOD_RCTL)>;                            // keep-modsなし → 右Ctrlを外して出力
-        };
 
         mm_bi: mm_bi {
             compatible = "zmk,behavior-mod-morph";
@@ -772,27 +765,11 @@
             mods = <(MOD_RCTL)>;
         };
 
-        mm_bu: mm_bu {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_BU";
-            #binding-cells = <0>;
-            bindings = <&dkt N2>, <&hdk N2>;                // ふ: ぶ / 右Ctrl待機=ぷ
-            mods = <(MOD_RCTL)>;
-        };
-
         mm_be: mm_be {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_BE";
             #binding-cells = <0>;
             bindings = <&dkt EQUAL>, <&hdk EQUAL>;          // へ: べ / 右Ctrl待機=ぺ
-            mods = <(MOD_RCTL)>;
-        };
-
-        mm_bo: mm_bo {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_BO";
-            #binding-cells = <0>;
-            bindings = <&dkt MINUS>, <&hdk MINUS>;          // ほ: ぼ / 右Ctrl待機=ぽ
             mods = <(MOD_RCTL)>;
         };
 
