@@ -1114,10 +1114,10 @@
 
         COFFEE {         // Layer 0
             bindings = <
-&to L_BT_SETTING  &trans  &trans  &trans        &trans                             &kp N3     &mm_kya  &mm_sya  &kp LSHFT    &kp INT3
-&trans            &trans  &trans  &trans        &trans    &trans        &kp Y      &mm_tya    &mm_nya  &mm_hya  &kp INT6     &sk RCTRL
-&trans            &trans  &trans  &trans        &trans    &trans        &mm_bs     &mm_mya    &kp N7   &mm_rya  &kp RS(DOT)  &sk RSHFT
-&to L_MOUSE       &trans  &trans  &kp LS(INT5)  &kp INT5  &kp INT4      &mm_enter  &mm_space                                 &sk RALT
+&to L_BT_SETTING  &trans  &trans  &trans        &trans                                 &kp N3     &mm_kya  &mm_sya  &kp LSHFT    &kp INT3
+&trans            &trans  &trans  &trans        &trans    &trans            &kp Y      &mm_tya    &mm_nya  &mm_hya  &kp INT6     &sk RCTRL
+&trans            &trans  &trans  &trans        &trans    &trans            &mm_bs     &mm_mya    &kp N7   &mm_rya  &kp RS(DOT)  &sk RSHFT
+&to L_MOUSE       &trans  &trans  &kp LS(INT5)  &kp INT5  &kp LC(CAPS)      &mm_enter  &mm_space                                 &sk RALT
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
