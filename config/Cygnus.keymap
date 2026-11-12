@@ -5,34 +5,24 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define L_QWERTY_DEFAULT           0
-#define L_NUM_DEFAULT              1
-#define L_ARROW_DEFAULT            2
-#define L_MOUSE_DEFAULT            3
-#define L_SCROLL_DEFAULT           4
-#define L_FUNCTION_DEFAULT         5
-#define L_BT_SETTING               6
-
 // 珈琲配列
-#define L_COFFEE                   7
-#define L_QWERTY_RIGHT             8
-#define L_QWERTY_LEFT              9
-#define L_NUMBER                  10
-#define L_SIMBOL                  11
-#define L_ARROW                   12
-#define L_FUNCTION                13
-#define L_TRACKBALL               14 
-#define L_SCROLL                  15
-
-// 拗音の小書き文字（JISかな: Shift+7/8/9）
-#define SM_YA  RS(N7)                 // ゃ
-#define SM_YU  RS(N8)                 // ゅ
-#define SM_YO  RS(N9)                 // ょ
+#define L_COFFEE                  0
+#define L_QWERTY_RIGHT            1
+#define L_QWERTY_LEFT             2
+#define L_NUMBER                  3
+#define L_SIMBOL                  4
+#define L_FUNCTION                5
+#define L_TRACKBALL               6
+#define L_SCROLL                  7
+#define L_BT_SETTING              8
 
 // マウスレイヤー
-#define L_MOUSE                   16
-#define L_MOUSE_SLOW              17
-#define L_MOUSE_FAST              18
+#define L_MOUSE                   9
+#define L_MOUSE_SLOW             10
+#define L_MOUSE_FAST             11
+
+// 矢印レイヤー (不要なら削除)
+#define L_ARROW                  12
 
 // カーソル速度（標準は MOVE_UP 等の 600）
 #define SLOW_UP     MOVE_Y(-200)
@@ -44,6 +34,11 @@
 #define FAST_DOWN   MOVE_Y(1800)
 #define FAST_LEFT   MOVE_X(-1800)
 #define FAST_RIGHT  MOVE_X(1800)
+
+// 拗音の小書き文字（JISかな: Shift+7/8/9）
+#define SM_YA  RS(N7)                 // ゃ
+#define SM_YU  RS(N8)                 // ゅ
+#define SM_YO  RS(N9)                 // ょ
 
 
 
@@ -426,13 +421,6 @@
             bindings      = <&mm_bo>;
             layers        = <L_COFFEE>;
         };
-
-
-
-
-
-
-
 
     // ---- 濁点・半濁点：LSHFT (8) ----
         combo_dakuten {
@@ -1120,87 +1108,22 @@
     keymap {
         compatible = "zmk,keymap";
 
-        QWERTY_DEFAULT {
+// -------------------------------------------------------------
+// 🟩🟩🟩 珈琲配列 🟩🟩🟩
+// -------------------------------------------------------------
+
+        COFFEE {         // Layer 0
             bindings = <
-&kp Q             &kp W         &kp E         &kp R                  &kp T                                                                       &kp Y                    &kp U  &kp I      &kp O                  &kp P
-&kp A             &kp S         &kp D         &kp F                  &kp G                         &mkp RCLK                     &kp UP_ARROW    &kp H                    &kp J  &kp K      &lt L_MOUSE_DEFAULT L  &lt L_SCROLL_DEFAULT MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                  &kp B                         &mkp LCLK                     &kp DOWN_ARROW  &kp N                    &kp M  &kp COMMA  &kp DOT                &mt LEFT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt L_BT_SETTING INT4  &lt L_FUNCTION_DEFAULT SPACE  &lt L_ARROW_DEFAULT INT5      &kp BACKSPACE   &lt L_NUM_DEFAULT ENTER                                           &kp DEL
+&to L_BT_SETTING  &trans  &trans  &trans    &trans                         &kp N3     &mm_kya  &mm_sya  &kp LSHFT    &kp INT3
+&trans            &trans  &trans  &trans    &trans  &trans      &kp Y      &mm_tya    &mm_nya  &mm_hya  &kp INT6     &sk RCTRL
+&trans            &trans  &trans  &trans    &trans  &trans      &mm_bs     &mm_mya    &kp N7   &mm_rya  &kp RS(DOT)  &sk RSHFT
+&to L_MOUSE       &trans  &trans  LS(INT5)  INT5    INT4        &mm_enter  &mm_space                                 &sk RALT
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
         };
 
-        NUM_DEFAULT {
-            bindings = <
-&kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                                     &kp CARET         &kp AMPERSAND      &kp TILDE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &trans         &kp UNDERSCORE  &kp EXCLAMATION   &kp AT_SIGN        &kp HASH        &kp DOLLAR            &kp PERCENT
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL      &trans          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp BACKSLASH
-&trans                      &trans           &trans           &trans           &trans        &trans         &trans          &trans                                                                     &kp PIPE
-            >;
-        };
-
-        ARROW_DEFAULT {
-            bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                       &trans  &trans  &trans  &trans  &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans          &trans                  &trans          &trans                   &trans   &trans      &trans  &trans                          &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
-        };
-
-        MOUSE_DEFAULT {
-            bindings = <
-&trans                      &trans                     &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &kp LC(W)                         &kp LC(W)  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &trans                     &trans
-&lt L_SCROLL_DEFAULT SPACE  &lt L_MOUSE_DEFAULT SPACE  &mkp LCLK        &mkp RCLK          &mkp MCLK  &mkp RCLK      &trans  &mkp MCLK  &mkp LCLK        &mkp RCLK          &lt L_MOUSE_DEFAULT SPACE  &lt L_SCROLL_DEFAULT SPACE
-&trans                      &trans                     &trans           &trans             &trans     &mkp LCLK      &trans  &trans     &mkp MB4         &mkp MB5           &trans                     &trans
-&trans                      &trans                     &trans           &trans             &trans     &trans         &trans  &trans                                                                    &trans
-            >;
-        };
-
-        SCROLL_DEFAULT {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&none   &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
-            >;
-        };
-
-        FUNCTION_DEFAULT {
-            bindings = <
-&kp F1   &kp F2  &kp F3  &kp F4  &kp F5                        &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-&kp F6   &kp F7  &kp F8  &kp F9  &kp F10  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&kp F11  &trans  &trans  &trans  &trans   &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
-&kp F12  &trans  &trans  &trans  &trans   &trans      &trans   &trans                          &kp F12
-            >;
-        };
-
-        BT_SETTING {
-            bindings = <
-&to L_COFFEE         &trans        &trans        &trans        &trans                                 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans               &trans        &trans        &trans        &trans        &trans      &studio_unlock  &trans        &trans        &trans        &trans        &trans
-&trans               &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &trans      &bootloader     &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans               &trans        &trans        &trans        &trans        &trans      &trans          &trans                                                  &bt BT_CLR_ALL
-            >;
-        };
-
-// -------------------------------------------------------------
-// 🟩🟩🟩 珈琲配列 🟩🟩🟩
-// -------------------------------------------------------------
-
-        COFFEE {
-            bindings = <
-&to L_QWERTY_DEFAULT  &trans  &trans  &trans  &trans                         &kp N3     &mm_kya  &mm_sya  &kp LSHFT    &kp INT3
-&trans                &trans  &trans  &trans  &trans  &trans      &kp Y      &mm_tya    &mm_nya  &mm_hya  &kp INT6     &sk RCTRL
-&trans                &trans  &trans  &trans  &trans  &trans      &mm_bs     &mm_mya    &kp N7   &mm_rya  &kp RS(DOT)  &sk RSHFT
-&to L_MOUSE           &trans  &trans  &trans  &trans  &trans      &mm_enter  &mm_space                               &sk RALT
-            >;
-        };
-
-        QWERTY_RIGHT {
+        QWERTY_RIGHT {   // Layer 1
             bindings = <
 &trans  &trans  &trans  &trans  &trans                         &kp U      &kp I      &kp O       &kp P          &kp Y
 &trans  &trans  &trans  &trans  &trans  &trans      &kp H      &kp J      &kp K      &kp L       &kp BACKSPACE  &kp RCTRL
@@ -1209,7 +1132,7 @@
             >;
         };
 
-        QWERTY_LEFT {
+        QWERTY_LEFT {    // Layer 2
             bindings = <
 &trans  &trans  &trans  &trans  &trans                         &kp R      &kp E  &kp W  &kp Q  &kp T
 &trans  &trans  &trans  &trans  &trans  &trans      &kp G      &kp F      &kp D  &kp S  &kp A  &kp RCTRL
@@ -1218,7 +1141,7 @@
             >;
         };
 
-        NUMBER {
+        NUMBER {         // Layer 3
             bindings = <
 &trans  &trans  &trans  &trans  &trans                               &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp MINUS   &kp SLASH                            
 &trans  &trans  &trans  &trans  &trans  &trans      &to L_SIMBOL     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS    &kp ASTERISK
@@ -1227,7 +1150,7 @@
             >;
         };
 
-        SIMBOL {
+        SIMBOL {         // Layer 4
             bindings = <
 &trans  &trans  &trans  &trans  &trans                           &kp CARET         &kp AMPERSAND      &kp TILDE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
 &trans  &trans  &trans  &trans  &trans  &trans      &to L_NUMBER &kp EXCLAMATION   &kp AT_SIGN        &kp HASH        &kp DOLLAR            &kp PERCENT
@@ -1236,16 +1159,7 @@
             >;
         };
 
-        ARROW {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                              &kp LC(LS(TAB))         &kp UP_ARROW     &kp LC(TAB)              &kp ESCAPE   &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW   &kp RIGHT_ARROW          &kp END      &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans           &kp LG(LS(RIGHT_ARROW))  &trans       &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans                                                                         &to L_COFFEE
-            >;
-        };
-
-        FUNCTION {    // 🟥🟥🟥 未配置 🟥🟥🟥
+        FUNCTION {       // Layer 5 🟥🟥🟥 未配置 🟥🟥🟥
             bindings = <
 &kp F1   &kp F2  &kp F3  &kp F4  &kp F5                        &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
 &kp F6   &kp F7  &kp F8  &kp F9  &kp F10  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
@@ -1254,7 +1168,7 @@
             >;
         };
 
-        TRACKBALL {   // 🟥🟥🟥 未配置 🟥🟥🟥
+        TRACKBALL {      // Layer 6
             bindings = <
 &trans              &trans     &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &kp LC(W)                                 &kp LC(LS(TAB))  &trans     &kp LC(TAB)  &trans        &trans 
 &lt L_SCROLL SPACE  &kp SPACE  &mkp LCLK        &mkp RCLK          &mkp MCLK  &mkp RCLK      &msc SCRL_UP    &mkp LCLK        &mkp MCLK  &mkp RCLK    &mo L_SCROLL  &trans
@@ -1263,7 +1177,7 @@
             >;
         };
 
-        SCROLL {      // 🟥🟥🟥 未配置 🟥🟥🟥
+        SCROLL {         // Layer 7
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
@@ -1272,7 +1186,18 @@
             >;
         };
 
-        MOUSE {
+        BT_SETTING {     // Layer 8
+            bindings = <
+&to L_COFFEE  &trans        &trans        &trans        &trans                                    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans        &trans        &trans        &trans        &trans        &trans      &studio_unlock  &trans        &trans        &trans        &trans        &trans
+&trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &trans      &bootloader     &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans        &trans        &trans        &trans        &trans        &trans      &trans          &trans                                                  &bt BT_CLR_ALL
+            >;
+        };
+
+    // マウスレイヤー
+
+        MOUSE {          // Layer 9
             bindings = <
 &trans  &trans  &trans  &trans  &trans                         &kp LC(LS(TAB))  &mmv MOVE_UP    &kp LC(TAB)      &msc SCRL_LEFT    &msc SCRL_RIGHT
 &trans  &trans  &trans  &trans  &trans  &trans      &trans     &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mo L_MOUSE_FAST  &msc SCRL_UP
@@ -1281,7 +1206,7 @@
             >;
         };
 
-        MOUSE_SLOW {
+        MOUSE_SLOW {     // Layer 10
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans          &mmv SLOW_UP    &trans           &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &mmv SLOW_LEFT  &mmv SLOW_DOWN  &mmv SLOW_RIGHT  &trans  &trans
@@ -1290,12 +1215,21 @@
             >;
         };
 
-        MOUSE_FAST {
+        MOUSE_FAST {    // Layer 11
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans          &mmv FAST_UP    &trans           &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &mmv FAST_LEFT  &mmv FAST_DOWN  &mmv FAST_RIGHT  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans          &trans          &trans           &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                   &trans
+            >;
+        };
+
+        ARROW {         // Layer 12 🟥🟥🟥 不要の場合削除 🟥🟥🟥
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                              &kp LC(LS(TAB))         &kp UP_ARROW     &kp LC(TAB)              &kp ESCAPE   &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW   &kp RIGHT_ARROW          &kp END      &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans           &kp LG(LS(RIGHT_ARROW))  &trans       &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans                                                                         &to L_COFFEE
             >;
         };
 
