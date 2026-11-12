@@ -95,8 +95,8 @@
         };
         combo_ku {
             timeout-ms    = <50>;
-            key-positions = <6 20>;             // 6 + 20 → く
-            bindings      = <&kp H>;
+            key-positions = <6 20>;             // 6 + 20 → く / 右Shift待機: きゅ
+            bindings      = <&mm_kyu>;
             layers        = <L_COFFEE>;
         };
         combo_ke {
@@ -107,8 +107,8 @@
         };
         combo_ko {
             timeout-ms    = <50>;
-            key-positions = <6 32>;             // 6 + 32 → こ
-            bindings      = <&kp B>;
+            key-positions = <6 32>;             // 6 + 32 → こ / 右Shift待機: きょ
+            bindings      = <&mm_kyo>;
             layers        = <L_COFFEE>;
         };
 
@@ -121,8 +121,8 @@
         };
         combo_su {
             timeout-ms    = <50>;
-            key-positions = <7 20>;             // 7 + 20 → す
-            bindings      = <&kp R>;
+            key-positions = <7 20>;             // 7 + 20 → す / 右Shift待機: しゅ
+            bindings      = <&mm_syu>;
             layers        = <L_COFFEE>;
         };
         combo_se {
@@ -133,8 +133,8 @@
         };
         combo_so {
             timeout-ms    = <50>;
-            key-positions = <7 32>;             // 7 + 32 → そ
-            bindings      = <&kp C>;
+            key-positions = <7 32>;             // 7 + 32 → そ / 右Shift待機: しょ
+            bindings      = <&mm_syo>;
             layers        = <L_COFFEE>;
         };
 
@@ -147,8 +147,8 @@
         };
         combo_tsu {
             timeout-ms    = <50>;
-            key-positions = <17 20>;            // 17 + 20 → つ
-            bindings      = <&kp Z>;
+            key-positions = <17 20>;            // 17 + 20 → つ / 右Shift待機: ちゅ
+            bindings      = <&mm_tyu>;
             layers        = <L_COFFEE>;
         };
         combo_te {
@@ -159,8 +159,8 @@
         };
         combo_to {
             timeout-ms    = <50>;
-            key-positions = <17 32>;            // 17 + 32 → と
-            bindings      = <&kp S>;
+            key-positions = <17 32>;            // 17 + 32 → と / 右Shift待機: ちょ
+            bindings      = <&mm_tyo>;
             layers        = <L_COFFEE>;
         };
 
@@ -173,8 +173,8 @@
         };
         combo_nu {
             timeout-ms    = <50>;
-            key-positions = <18 20>;            // 18 + 20 → ぬ
-            bindings      = <&kp N1>;
+            key-positions = <18 20>;            // 18 + 20 → ぬ / 右Shift待機: にゅ
+            bindings      = <&mm_nyu>;
             layers        = <L_COFFEE>;
         };
         combo_ne {
@@ -185,8 +185,8 @@
         };
         combo_no {
             timeout-ms    = <50>;
-            key-positions = <18 32>;            // 18 + 32 → の
-            bindings      = <&kp K>;
+            key-positions = <18 32>;            // 18 + 32 → の / 右Shift待機: にょ
+            bindings      = <&mm_nyo>;
             layers        = <L_COFFEE>;
         };
 
@@ -199,8 +199,8 @@
         };
         combo_fu {
             timeout-ms    = <50>;
-            key-positions = <19 20>;            // 19 + 20 → ふ
-            bindings      = <&kp N2>;
+            key-positions = <19 20>;            // 19 + 20 → ふ / 右Shift待機: ひゅ
+            bindings      = <&mm_hyu>;
             layers        = <L_COFFEE>;
         };
         combo_he {
@@ -211,8 +211,8 @@
         };
         combo_ho {
             timeout-ms    = <50>;
-            key-positions = <19 32>;            // 19 + 32 → ほ
-            bindings      = <&kp MINUS>;
+            key-positions = <19 32>;            // 19 + 32 → ほ / 右Shift待機: ひょ
+            bindings      = <&mm_hyo>;
             layers        = <L_COFFEE>;
         };
 
@@ -225,8 +225,8 @@
         };
         combo_mu {
             timeout-ms    = <50>;
-            key-positions = <29 20>;            // 29 + 20 → む
-            bindings      = <&kp NON_US_HASH>;
+            key-positions = <29 20>;            // 29 + 20 → む / 右Shift待機: みゅ
+            bindings      = <&mm_myu>;
             layers        = <L_COFFEE>;
         };
         combo_me {
@@ -237,8 +237,8 @@
         };
         combo_mo {
             timeout-ms    = <50>;
-            key-positions = <29 32>;            // 29 + 32 → も
-            bindings      = <&kp M>;
+            key-positions = <29 32>;            // 29 + 32 → も / 右Shift待機: みょ
+            bindings      = <&mm_myo>;
             layers        = <L_COFFEE>;
         };
 
@@ -265,8 +265,8 @@
         };
         combo_ru {
             timeout-ms    = <50>;
-            key-positions = <31 20>;            // 31 + 20 → る
-            bindings      = <&kp PERIOD>;
+            key-positions = <31 20>;            // 31 + 20 → る / 右Shift待機: りゅ
+            bindings      = <&mm_ryu>;
             layers        = <L_COFFEE>;
         };
         combo_re {
@@ -277,8 +277,8 @@
         };
         combo_ro {
             timeout-ms    = <50>;
-            key-positions = <31 32>;            // 31 + 32 → ろ
-            bindings      = <&kp INT1>;
+            key-positions = <31 32>;            // 31 + 32 → ろ / 右Shift待機: りょ
+            bindings      = <&mm_ryo>;
             layers        = <L_COFFEE>;
         };
 
@@ -302,8 +302,8 @@
     // ---- が行 (6) ----
         combo_ga {
             timeout-ms    = <50>;
-            key-positions = <28 6>;             // 28 + 6 → が
-            bindings      = <&dkt T>;
+            key-positions = <28 6>;             // 28 + 6 → が / 右Shift待機: ぎゃ
+            bindings      = <&mm_gya>;
             layers        = <L_COFFEE>;
         };
         combo_gi {
@@ -314,8 +314,8 @@
         };
         combo_gu {
             timeout-ms    = <50>;
-            key-positions = <28 6 20>;          // 28 + 6 + 20 → ぐ
-            bindings      = <&dkt H>;
+            key-positions = <28 6 20>;          // 28 + 6 + 20 → ぐ / 右Shift待機: ぎゅ
+            bindings      = <&mm_gyu>;
             layers        = <L_COFFEE>;
         };
         combo_ge {
@@ -326,16 +326,16 @@
         };
         combo_go {
             timeout-ms    = <50>;
-            key-positions = <28 6 32>;          // 28 + 6 + 32 → ご
-            bindings      = <&dkt B>;
+            key-positions = <28 6 32>;          // 28 + 6 + 32 → ご / 右Shift待機: ぎょ
+            bindings      = <&mm_gyo>;
             layers        = <L_COFFEE>;
         };
 
     // ---- ざ行 (7) ----
         combo_za {
             timeout-ms    = <50>;
-            key-positions = <28 7>;             // 28 + 7 → ざ
-            bindings      = <&dkt X>;
+            key-positions = <28 7>;             // 28 + 7 → ざ / 右Shift待機: じゃ
+            bindings      = <&mm_zya>;
             layers        = <L_COFFEE>;
         };
         combo_ji {
@@ -346,8 +346,8 @@
         };
         combo_zu {
             timeout-ms    = <50>;
-            key-positions = <28 7 20>;          // 28 + 7 + 20 → ず
-            bindings      = <&dkt R>;
+            key-positions = <28 7 20>;          // 28 + 7 + 20 → ず / 右Shift待機: じゅ
+            bindings      = <&mm_zyu>;
             layers        = <L_COFFEE>;
         };
         combo_ze {
@@ -358,16 +358,16 @@
         };
         combo_zo {
             timeout-ms    = <50>;
-            key-positions = <28 7 32>;          // 28 + 7 + 32 → ぞ
-            bindings      = <&dkt C>;
+            key-positions = <28 7 32>;          // 28 + 7 + 32 → ぞ / 右Shift待機: じょ
+            bindings      = <&mm_zyo>;
             layers        = <L_COFFEE>;
         };
 
     // ---- だ行 (17) ----
         combo_da {
             timeout-ms    = <50>;
-            key-positions = <28 17>;            // 28 + 17 → だ
-            bindings      = <&dkt Q>;
+            key-positions = <28 17>;            // 28 + 17 → だ / 右Shift待機: ぢゃ
+            bindings      = <&mm_dya>;
             layers        = <L_COFFEE>;
         };
         combo_di {
@@ -378,8 +378,8 @@
         };
         combo_du {
             timeout-ms    = <50>;
-            key-positions = <28 17 20>;         // 28 + 17 + 20 → づ
-            bindings      = <&dkt Z>;
+            key-positions = <28 17 20>;         // 28 + 17 + 20 → づ / 右Shift待機: ぢゅ
+            bindings      = <&mm_dyu>;
             layers        = <L_COFFEE>;
         };
         combo_de {
@@ -390,8 +390,8 @@
         };
         combo_do {
             timeout-ms    = <50>;
-            key-positions = <28 17 32>;         // 28 + 17 + 32 → ど
-            bindings      = <&dkt S>;
+            key-positions = <28 17 32>;         // 28 + 17 + 32 → ど / 右Shift待機: ぢょ
+            bindings      = <&mm_dyo>;
             layers        = <L_COFFEE>;
         };
 
