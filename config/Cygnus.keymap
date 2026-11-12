@@ -709,10 +709,10 @@
 
         TRACKBALL {   // 🟥🟥🟥 未配置 🟥🟥🟥
             bindings = <
-&trans                      &trans                     &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &kp LC(W)                         &kp LC(W)  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &trans                     &trans
-&lt L_SCROLL_DEFAULT SPACE  &lt L_MOUSE_DEFAULT SPACE  &mkp LCLK        &mkp RCLK          &mkp MCLK  &mkp RCLK      &trans  &mkp MCLK  &mkp LCLK        &mkp RCLK          &lt L_MOUSE_DEFAULT SPACE  &lt L_SCROLL_DEFAULT SPACE
-&trans                      &trans                     &trans           &trans             &trans     &mkp LCLK      &trans  &trans     &mkp MB4         &mkp MB5           &trans                     &trans
-&trans                      &trans                     &trans           &trans             &trans     &trans         &trans  &trans                                                                    &trans
+&trans              &trans     &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &kp LC(W)                      &kp LC(W)  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &trans     &trans
+&lt L_SCROLL SPACE  &kp SPACE  &mkp LCLK        &mkp RCLK          &mkp MCLK  &mkp RCLK  &trans  &mkp MCLK  &mkp LCLK        &mkp RCLK          &kp SPACE  &lt L_SCROLL SPACE
+&trans              &trans     &trans           &trans             &trans     &mkp LCLK  &trans  &trans     &mkp MB4         &mkp MB5           &trans     &trans
+&trans              &trans     &trans           &trans             &trans     &trans     &trans  &trans                                                    &trans
             >;
         };
 
