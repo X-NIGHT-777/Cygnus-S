@@ -709,10 +709,10 @@
 
         TRACKBALL {   // 🟥🟥🟥 未配置 🟥🟥🟥
             bindings = <
-&trans              &trans     &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &kp LC(W)                      &kp LC(W)  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &trans     &trans
-&lt L_SCROLL SPACE  &kp SPACE  &mkp LCLK        &mkp RCLK          &mkp MCLK  &mkp RCLK  &trans  &mkp MCLK  &mkp LCLK        &mkp RCLK          &kp SPACE  &lt L_SCROLL SPACE
-&trans              &trans     &trans           &trans             &trans     &mkp LCLK  &trans  &trans     &mkp MB4         &mkp MB5           &trans     &trans
-&trans              &trans     &trans           &trans             &trans     &trans     &trans  &trans                                                    &trans
+&trans              &trans     &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &kp LC(W)                                 &kp LC(LS(TAB))  &trans     &kp LC(TAB)  &trans        &trans 
+&lt L_SCROLL SPACE  &kp SPACE  &mkp LCLK        &mkp RCLK          &mkp MCLK  &mkp RCLK      &msc SCRL_UP    &mkp LCLK        &mkp MCLK  &mkp RCLK    &mo L_SCROLL  &trans
+&trans              &trans     &trans           &trans             &trans     &mkp LCLK      &msc SCRL_DOWN  &mkp MB4         &mkp MB5   &kp LC(W)    &trans        &trans
+&trans              &trans     &trans           &trans             &trans     &trans         &trans          &trans                                                 &trans
             >;
         };
 
@@ -727,10 +727,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                &kp LC(LS(TAB))  &mmv MOVE_UP    &kp LC(TAB)      &mkp MCLK         &msc SCRL_UP
-&trans  &trans  &trans  &trans  &trans  &trans      &mo L_MOUSE_SLOW  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans            &msc SCRL_DOWN
-&none   &trans  &trans  &trans  &trans  &trans      &mo L_MOUSE_FAST  &mkp MB4         &mkp MB5        &trans           &msc SCRL_LEFT    &msc SCRL_RIGHT
-&trans  &trans  &trans  &trans  &trans  &trans      &mkp RCLK         &mkp LCLK                                                           &to L_COFFEE
+&trans  &trans  &trans  &trans  &trans                         &kp LC(LS(TAB))  &mmv MOVE_UP    &kp LC(TAB)      &msc SCRL_LEFT    &msc SCRL_RIGHT
+&trans  &trans  &trans  &trans  &trans  &trans      &trans     &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mo L_MOUSE_FAST  &msc SCRL_UP
+&none   &trans  &trans  &trans  &trans  &trans      &mkp MCLK  &mkp MB4         &mkp MB5        &trans           &mo L_MOUSE_SLOW  &msc SCRL_DOWN
+&trans  &trans  &trans  &trans  &trans  &trans      &mkp RCLK                   &mkp LCLK                                          &to L_COFFEE
             >;
         };
 
