@@ -24,6 +24,11 @@
 #define L_TRACKBALL               14 
 #define L_SCROLL                  15
 
+// 拗音の小書き文字（JISかな: Shift+7/8/9）
+#define SM_YA  RS(N7)                 // ゃ
+#define SM_YU  RS(N8)                 // ゅ
+#define SM_YO  RS(N9)                 // ょ
+
 // マウスレイヤー
 #define L_MOUSE                   16
 #define L_MOUSE_SLOW              17
@@ -525,6 +530,39 @@
             bindings = <&macro_param_1to1>, <&macro_tap &kp MACRO_PLACEHOLDER &kp RIGHT_BRACKET>;
         };
 
+    // 拗音: 渡した2キーを順に打つ（例: &yoon G SM_YA → きゃ）
+        yoon: yoon {
+            compatible = "zmk,behavior-macro-two-param";
+            label = "YOON";
+            #binding-cells = <2>;
+            wait-ms = <10>;
+            tap-ms  = <10>;
+            bindings = <&macro_param_1to1>, <&macro_tap &kp MACRO_PLACEHOLDER>,
+                       <&macro_param_2to1>, <&macro_tap &kp MACRO_PLACEHOLDER>;
+        };
+
+    // 濁音拗音: 1キー目 + ゛(LEFT_BRACKET) + 2キー目（例: &yoon_dk G SM_YA → ぎゃ）
+        yoon_dk: yoon_dk {
+            compatible = "zmk,behavior-macro-two-param";
+            label = "YOON_DK";
+            #binding-cells = <2>;
+            wait-ms = <10>;
+            tap-ms  = <10>;
+            bindings = <&macro_param_1to1>, <&macro_tap &kp MACRO_PLACEHOLDER &kp LEFT_BRACKET>,
+                       <&macro_param_2to1>, <&macro_tap &kp MACRO_PLACEHOLDER>;
+        };
+
+    // 半濁音拗音: 1キー目 + ゜(RIGHT_BRACKET) + 2キー目（例: &yoon_hd V SM_YA → ぴゃ）
+        yoon_hd: yoon_hd {
+            compatible = "zmk,behavior-macro-two-param";
+            label = "YOON_HD";
+            #binding-cells = <2>;
+            wait-ms = <10>;
+            tap-ms  = <10>;
+            bindings = <&macro_param_1to1>, <&macro_tap &kp MACRO_PLACEHOLDER &kp RIGHT_BRACKET>,
+                       <&macro_param_2to1>, <&macro_tap &kp MACRO_PLACEHOLDER>;
+        };
+
     };
 
 
@@ -758,6 +796,337 @@
             mods = <(MOD_RCTL)>;
         };
 
+    // ======================================================================
+    // D. 拗音(1): 行キー単独(6/7/17/18/19/29/31番)用 → キーマップのCOFFEEレイヤーから直接呼ぶ
+    //    右Shift(sticky)待機中は拗音(ゃ)、なければ元の清音
+    // ======================================================================
+        mm_kya: mm_kya {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_KYA";
+            #binding-cells = <0>;
+            bindings = <&kp T>, <&yoon G SM_YA>;            // 6: か / 右Shift待機=きゃ
+            mods = <(MOD_RSFT)>;                            // keep-modsなし → 右Shiftを外して出力
+        };
+
+        mm_sya: mm_sya {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_SYA";
+            #binding-cells = <0>;
+            bindings = <&kp X>, <&yoon D SM_YA>;            // 7: さ / 右Shift待機=しゃ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_tya: mm_tya {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_TYA";
+            #binding-cells = <0>;
+            bindings = <&kp Q>, <&yoon A SM_YA>;            // 17: た / 右Shift待機=ちゃ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_nya: mm_nya {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_NYA";
+            #binding-cells = <0>;
+            bindings = <&kp U>, <&yoon I SM_YA>;            // 18: な / 右Shift待機=にゃ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_hya: mm_hya {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_HYA";
+            #binding-cells = <0>;
+            bindings = <&kp F>, <&yoon V SM_YA>;            // 19: は / 右Shift待機=ひゃ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_mya: mm_mya {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_MYA";
+            #binding-cells = <0>;
+            bindings = <&kp J>, <&yoon N SM_YA>;            // 29: ま / 右Shift待機=みゃ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_rya: mm_rya {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_RYA";
+            #binding-cells = <0>;
+            bindings = <&kp O>, <&yoon L SM_YA>;            // 31: ら / 右Shift待機=りゃ
+            mods = <(MOD_RSFT)>;
+        };
+
+    // ======================================================================
+    // E. 拗音(2): 行キー+20番(ゅ)/32番(ょ)のcombo用 → 既存の清音comboから呼ぶ
+    //    右Shift(sticky)待機中は拗音、なければ元の清音(く・こ ほか)
+    // ======================================================================
+        mm_kyu: mm_kyu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_KYU";
+            #binding-cells = <0>;
+            bindings = <&kp H>, <&yoon G SM_YU>;            // 6+20: く / 右Shift待機=きゅ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_kyo: mm_kyo {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_KYO";
+            #binding-cells = <0>;
+            bindings = <&kp B>, <&yoon G SM_YO>;            // 6+32: こ / 右Shift待機=きょ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_syu: mm_syu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_SYU";
+            #binding-cells = <0>;
+            bindings = <&kp R>, <&yoon D SM_YU>;            // 7+20: す / 右Shift待機=しゅ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_syo: mm_syo {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_SYO";
+            #binding-cells = <0>;
+            bindings = <&kp C>, <&yoon D SM_YO>;            // 7+32: そ / 右Shift待機=しょ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_tyu: mm_tyu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_TYU";
+            #binding-cells = <0>;
+            bindings = <&kp Z>, <&yoon A SM_YU>;            // 17+20: つ / 右Shift待機=ちゅ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_tyo: mm_tyo {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_TYO";
+            #binding-cells = <0>;
+            bindings = <&kp S>, <&yoon A SM_YO>;            // 17+32: と / 右Shift待機=ちょ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_nyu: mm_nyu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_NYU";
+            #binding-cells = <0>;
+            bindings = <&kp N1>, <&yoon I SM_YU>;           // 18+20: ぬ / 右Shift待機=にゅ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_nyo: mm_nyo {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_NYO";
+            #binding-cells = <0>;
+            bindings = <&kp K>, <&yoon I SM_YO>;            // 18+32: の / 右Shift待機=にょ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_hyu: mm_hyu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_HYU";
+            #binding-cells = <0>;
+            bindings = <&kp N2>, <&yoon V SM_YU>;           // 19+20: ふ / 右Shift待機=ひゅ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_hyo: mm_hyo {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_HYO";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&yoon V SM_YO>;        // 19+32: ほ / 右Shift待機=ひょ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_myu: mm_myu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_MYU";
+            #binding-cells = <0>;
+            bindings = <&kp NON_US_HASH>, <&yoon N SM_YU>;  // 29+20: む / 右Shift待機=みゅ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_myo: mm_myo {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_MYO";
+            #binding-cells = <0>;
+            bindings = <&kp M>, <&yoon N SM_YO>;            // 29+32: も / 右Shift待機=みょ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_ryu: mm_ryu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_RYU";
+            #binding-cells = <0>;
+            bindings = <&kp PERIOD>, <&yoon L SM_YU>;       // 31+20: る / 右Shift待機=りゅ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_ryo: mm_ryo {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_RYO";
+            #binding-cells = <0>;
+            bindings = <&kp INT1>, <&yoon L SM_YO>;         // 31+32: ろ / 右Shift待機=りょ
+            mods = <(MOD_RSFT)>;
+        };
+
+    // ======================================================================
+    // F. 濁音拗音: ⌫(28番)+行キー[+母音キー]のcombo用（が・ざ・だ行）
+    //    右Shift(sticky)待機中は濁音拗音、なければ元の濁音
+    // ======================================================================
+        mm_gya: mm_gya {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_GYA";
+            #binding-cells = <0>;
+            bindings = <&dkt T>, <&yoon_dk G SM_YA>;        // 28+6: が / 右Shift待機=ぎゃ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_gyu: mm_gyu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_GYU";
+            #binding-cells = <0>;
+            bindings = <&dkt H>, <&yoon_dk G SM_YU>;        // 28+6+20: ぐ / 右Shift待機=ぎゅ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_gyo: mm_gyo {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_GYO";
+            #binding-cells = <0>;
+            bindings = <&dkt B>, <&yoon_dk G SM_YO>;        // 28+6+32: ご / 右Shift待機=ぎょ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_zya: mm_zya {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_ZYA";
+            #binding-cells = <0>;
+            bindings = <&dkt X>, <&yoon_dk D SM_YA>;        // 28+7: ざ / 右Shift待機=じゃ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_zyu: mm_zyu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_ZYU";
+            #binding-cells = <0>;
+            bindings = <&dkt R>, <&yoon_dk D SM_YU>;        // 28+7+20: ず / 右Shift待機=じゅ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_zyo: mm_zyo {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_ZYO";
+            #binding-cells = <0>;
+            bindings = <&dkt C>, <&yoon_dk D SM_YO>;        // 28+7+32: ぞ / 右Shift待機=じょ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_dya: mm_dya {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_DYA";
+            #binding-cells = <0>;
+            bindings = <&dkt Q>, <&yoon_dk A SM_YA>;        // 28+17: だ / 右Shift待機=ぢゃ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_dyu: mm_dyu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_DYU";
+            #binding-cells = <0>;
+            bindings = <&dkt Z>, <&yoon_dk A SM_YU>;        // 28+17+20: づ / 右Shift待機=ぢゅ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_dyo: mm_dyo {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_DYO";
+            #binding-cells = <0>;
+            bindings = <&dkt S>, <&yoon_dk A SM_YO>;        // 28+17+32: ど / 右Shift待機=ぢょ
+            mods = <(MOD_RSFT)>;
+        };
+
+    // ======================================================================
+    // G. ば行・ぱ行・びゃ行・ぴゃ行: ⌫(28番)+は(19番)[+母音キー]のcombo用
+    //    ※前回の mm_ba / mm_bu / mm_bo をこの定義に【置き換え】（mm_bi / mm_be はそのまま）
+    //    入口(mm_b*)=右Ctrl判定 → 内側(mm_rs_*)=右Shift判定
+    //    なし=ば行 / 右Shift=びゃ行 / 右Ctrl=ぱ行 / 右Ctrl→右Shift=ぴゃ行
+    // ======================================================================
+        mm_ba: mm_ba {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_BA";
+            #binding-cells = <0>;
+            bindings = <&mm_rs_ba>, <&mm_rs_pa>;            // 28+19: 右Ctrl待機なし=内側(ば系) / あり=内側(ぱ系)
+            mods = <(MOD_RCTL)>;                            // keep-modsなし → 右Ctrlを外して出力
+        };
+
+        mm_bu: mm_bu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_BU";
+            #binding-cells = <0>;
+            bindings = <&mm_rs_bu>, <&mm_rs_pu>;            // 28+19+20: 右Ctrl待機なし=内側(ぶ系) / あり=内側(ぷ系)
+            mods = <(MOD_RCTL)>;
+        };
+
+        mm_bo: mm_bo {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_BO";
+            #binding-cells = <0>;
+            bindings = <&mm_rs_bo>, <&mm_rs_po>;            // 28+19+32: 右Ctrl待機なし=内側(ぼ系) / あり=内側(ぽ系)
+            mods = <(MOD_RCTL)>;
+        };
+
+        mm_rs_ba: mm_rs_ba {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_RS_BA";
+            #binding-cells = <0>;
+            bindings = <&dkt F>, <&yoon_dk V SM_YA>;        // は: ば / 右Shift待機=びゃ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_rs_pa: mm_rs_pa {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_RS_PA";
+            #binding-cells = <0>;
+            bindings = <&hdk F>, <&yoon_hd V SM_YA>;        // は: ぱ / 右Shift待機=ぴゃ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_rs_bu: mm_rs_bu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_RS_BU";
+            #binding-cells = <0>;
+            bindings = <&dkt N2>, <&yoon_dk V SM_YU>;       // ふ: ぶ / 右Shift待機=びゅ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_rs_pu: mm_rs_pu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_RS_PU";
+            #binding-cells = <0>;
+            bindings = <&hdk N2>, <&yoon_hd V SM_YU>;       // ふ: ぷ / 右Shift待機=ぴゅ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_rs_bo: mm_rs_bo {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_RS_BO";
+            #binding-cells = <0>;
+            bindings = <&dkt MINUS>, <&yoon_dk V SM_YO>;    // ほ: ぼ / 右Shift待機=びょ
+            mods = <(MOD_RSFT)>;
+        };
+
+        mm_rs_po: mm_rs_po {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_RS_PO";
+            #binding-cells = <0>;
+            bindings = <&hdk MINUS>, <&yoon_hd V SM_YO>;    // ほ: ぽ / 右Shift待機=ぴょ
+            mods = <(MOD_RSFT)>;
+        };
+
+
     // ---- 41番: 右Ctrl・右Shift・右Alt待機=Ctrl+F / それ以外はSpace(長押しQWERTY_RIGHT) ----
         mm_space: mm_space {
             compatible = "zmk,behavior-mod-morph";
@@ -847,10 +1216,10 @@
 
         COFFEE {
             bindings = <
-&to L_QWERTY_DEFAULT  &trans  &trans  &trans  &trans                         &kp N3     &kp T   &kp X  &kp LSHFT    &kp INT3
-&trans                &trans  &trans  &trans  &trans  &trans      &kp Y      &kp Q      &kp U   &kp F  &kp INT6     &sk RCTRL
-&trans                &trans  &trans  &trans  &trans  &trans      &mm_bs     &kp J      &kp N7  &kp O  &kp RS(DOT)  &sk RSHFT
-&to L_MOUSE           &trans  &trans  &trans  &trans  &trans      &mm_enter  &mm_space                              &sk RALT
+&to L_QWERTY_DEFAULT  &trans  &trans  &trans  &trans                         &kp N3     &mm_kya  &mm_sya  &kp LSHFT    &kp INT3
+&trans                &trans  &trans  &trans  &trans  &trans      &kp Y      &mm_tya    &mm_nya  &mm_hya  &kp INT6     &sk RCTRL
+&trans                &trans  &trans  &trans  &trans  &trans      &mm_bs     &mm_mya    &kp N7   &mm_rya  &kp RS(DOT)  &sk RSHFT
+&to L_MOUSE           &trans  &trans  &trans  &trans  &trans      &mm_enter  &mm_space                               &sk RALT
             >;
         };
 
