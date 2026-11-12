@@ -54,6 +54,7 @@
     combos {
         compatible = "zmk,combos";
 
+    // ---- 50音 ----
     // ---- あ行 (5) ----
         combo_i {
             timeout-ms    = <50>;
@@ -290,6 +291,144 @@
             layers        = <L_COFFEE>;
         };
 
+    // ---- 濁点系：BACKSPACE (28) + 清音キー [+ 母音キー] ----
+    // 母音キー: 40=い段(⏎) / 20=う段(、) / 41=え段(␣) / 32=お段(。)
+
+    // ---- が行 (6) ----
+        combo_ga {
+            timeout-ms    = <50>;
+            key-positions = <28 6>;             // 28 + 6 → が
+            bindings      = <&dkt T>;
+            layers        = <L_COFFEE>;
+        };
+        combo_gi {
+            timeout-ms    = <50>;
+            key-positions = <28 6 40>;          // 28 + 6 + 40 → ぎ
+            bindings      = <&dkt G>;
+            layers        = <L_COFFEE>;
+        };
+        combo_gu {
+            timeout-ms    = <50>;
+            key-positions = <28 6 20>;          // 28 + 6 + 20 → ぐ
+            bindings      = <&dkt H>;
+            layers        = <L_COFFEE>;
+        };
+        combo_ge {
+            timeout-ms    = <50>;
+            key-positions = <28 6 41>;          // 28 + 6 + 41 → げ
+            bindings      = <&dkt SQT>;
+            layers        = <L_COFFEE>;
+        };
+        combo_go {
+            timeout-ms    = <50>;
+            key-positions = <28 6 32>;          // 28 + 6 + 32 → ご
+            bindings      = <&dkt B>;
+            layers        = <L_COFFEE>;
+        };
+
+    // ---- ざ行 (7) ----
+        combo_za {
+            timeout-ms    = <50>;
+            key-positions = <28 7>;             // 28 + 7 → ざ
+            bindings      = <&dkt X>;
+            layers        = <L_COFFEE>;
+        };
+        combo_ji {
+            timeout-ms    = <50>;
+            key-positions = <28 7 40>;          // 28 + 7 + 40 → じ
+            bindings      = <&dkt D>;
+            layers        = <L_COFFEE>;
+        };
+        combo_zu {
+            timeout-ms    = <50>;
+            key-positions = <28 7 20>;          // 28 + 7 + 20 → ず
+            bindings      = <&dkt R>;
+            layers        = <L_COFFEE>;
+        };
+        combo_ze {
+            timeout-ms    = <50>;
+            key-positions = <28 7 41>;          // 28 + 7 + 41 → ぜ
+            bindings      = <&dkt P>;
+            layers        = <L_COFFEE>;
+        };
+        combo_zo {
+            timeout-ms    = <50>;
+            key-positions = <28 7 32>;          // 28 + 7 + 32 → ぞ
+            bindings      = <&dkt C>;
+            layers        = <L_COFFEE>;
+        };
+
+    // ---- だ行 (17) ----
+        combo_da {
+            timeout-ms    = <50>;
+            key-positions = <28 17>;            // 28 + 17 → だ
+            bindings      = <&dkt Q>;
+            layers        = <L_COFFEE>;
+        };
+        combo_di {
+            timeout-ms    = <50>;
+            key-positions = <28 17 40>;         // 28 + 17 + 40 → ぢ
+            bindings      = <&dkt A>;
+            layers        = <L_COFFEE>;
+        };
+        combo_du {
+            timeout-ms    = <50>;
+            key-positions = <28 17 20>;         // 28 + 17 + 20 → づ
+            bindings      = <&dkt Z>;
+            layers        = <L_COFFEE>;
+        };
+        combo_de {
+            timeout-ms    = <50>;
+            key-positions = <28 17 41>;         // 28 + 17 + 41 → で
+            bindings      = <&dkt W>;
+            layers        = <L_COFFEE>;
+        };
+        combo_do {
+            timeout-ms    = <50>;
+            key-positions = <28 17 32>;         // 28 + 17 + 32 → ど
+            bindings      = <&dkt S>;
+            layers        = <L_COFFEE>;
+        };
+
+    // ---- ば行・ぱ行 (19) ※右Ctrl(sticky)を先に押すとぱ行 ----
+        combo_ba {
+            timeout-ms    = <50>;
+            key-positions = <28 19>;            // 28 + 19 → ば / 右Ctrl待機: ぱ
+            bindings      = <&mm_ba>;
+            layers        = <L_COFFEE>;
+        };
+        combo_bi {
+            timeout-ms    = <50>;
+            key-positions = <28 19 40>;         // 28 + 19 + 40 → び / 右Ctrl待機: ぴ
+            bindings      = <&mm_bi>;
+            layers        = <L_COFFEE>;
+        };
+        combo_bu {
+            timeout-ms    = <50>;
+            key-positions = <28 19 20>;         // 28 + 19 + 20 → ぶ / 右Ctrl待機: ぷ
+            bindings      = <&mm_bu>;
+            layers        = <L_COFFEE>;
+        };
+        combo_be {
+            timeout-ms    = <50>;
+            key-positions = <28 19 41>;         // 28 + 19 + 41 → べ / 右Ctrl待機: ぺ
+            bindings      = <&mm_be>;
+            layers        = <L_COFFEE>;
+        };
+        combo_bo {
+            timeout-ms    = <50>;
+            key-positions = <28 19 32>;         // 28 + 19 + 32 → ぼ / 右Ctrl待機: ぽ
+            bindings      = <&mm_bo>;
+            layers        = <L_COFFEE>;
+        };
+
+
+
+
+
+
+
+
     // ---- 濁点・半濁点：LSHFT (8) ----
         combo_dakuten {
             timeout-ms    = <50>;
@@ -366,7 +505,26 @@
 
 
     macros {
-    // Macroエリア
+    // 濁点: 渡したキー + ゛(LEFT_BRACKET)
+        dkt: dkt {
+            compatible = "zmk,behavior-macro-one-param";
+            label = "DKT";
+            #binding-cells = <1>;
+            wait-ms = <10>;
+            tap-ms  = <10>;
+            bindings = <&macro_param_1to1>, <&macro_tap &kp MACRO_PLACEHOLDER &kp LEFT_BRACKET>;
+        };
+
+    // 半濁点: 渡したキー + ゜(RIGHT_BRACKET)
+        hdk: hdk {
+            compatible = "zmk,behavior-macro-one-param";
+            label = "HDK";
+            #binding-cells = <1>;
+            wait-ms = <10>;
+            tap-ms  = <10>;
+            bindings = <&macro_param_1to1>, <&macro_tap &kp MACRO_PLACEHOLDER &kp RIGHT_BRACKET>;
+        };
+
     };
 
 
@@ -555,6 +713,49 @@
             #binding-cells = <0>;
             bindings = <&ht_to L_NUMBER ENTER>, <&kp F8>;   // 40: Enter(長押しNUMBER) / 右Alt待機=F8
             mods = <(MOD_RALT)>;
+        };
+
+    // ======================================================================
+    // C. combo(28+は行)用: 右Ctrl(sticky)待機中は半濁点(ぱ行)、なければ濁点(ば行)
+    // ======================================================================
+        mm_ba: mm_ba {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_BA";
+            #binding-cells = <0>;
+            bindings = <&dkt F>, <&hdk F>;                  // は: ば / 右Ctrl待機=ぱ
+            mods = <(MOD_RCTL)>;                            // keep-modsなし → 右Ctrlを外して出力
+        };
+
+        mm_bi: mm_bi {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_BI";
+            #binding-cells = <0>;
+            bindings = <&dkt V>, <&hdk V>;                  // ひ: び / 右Ctrl待機=ぴ
+            mods = <(MOD_RCTL)>;
+        };
+
+        mm_bu: mm_bu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_BU";
+            #binding-cells = <0>;
+            bindings = <&dkt N2>, <&hdk N2>;                // ふ: ぶ / 右Ctrl待機=ぷ
+            mods = <(MOD_RCTL)>;
+        };
+
+        mm_be: mm_be {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_BE";
+            #binding-cells = <0>;
+            bindings = <&dkt EQUAL>, <&hdk EQUAL>;          // へ: べ / 右Ctrl待機=ぺ
+            mods = <(MOD_RCTL)>;
+        };
+
+        mm_bo: mm_bo {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_BO";
+            #binding-cells = <0>;
+            bindings = <&dkt MINUS>, <&hdk MINUS>;          // ほ: ぼ / 右Ctrl待機=ぽ
+            mods = <(MOD_RCTL)>;
         };
 
     // ---- 41番: 右Ctrl・右Shift・右Alt待機=Ctrl+F / それ以外はSpace(長押しQWERTY_RIGHT) ----
