@@ -1168,7 +1168,7 @@
 
         NUMBER {         // Layer 3
             bindings = <
-&trans  &trans  &trans  &trans  &trans                             &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp PERIOD                          
+&trans  &trans  &trans  &trans  &trans                             &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp PERIOD
 &trans  &trans  &trans  &trans  &trans  &trans      &to L_SIMBOL   &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS     &kp PLUS
 &trans  &trans  &trans  &trans  &trans  &trans      &kp BACKSPACE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH     &kp EQUAL
 &trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER      &kp SPACE                                               &to L_COFFEE
