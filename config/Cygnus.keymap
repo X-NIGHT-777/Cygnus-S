@@ -436,7 +436,7 @@
             layers        = <L_COFFEE>;
         };
 
-    // ---- 「 」：INT6 (20) ----
+    // ---- 「 」：、(20) ----
         combo_kagi_open {
             timeout-ms    = <50>;
             key-positions = <20 40>;            // 20 + 40 → 「
@@ -1055,7 +1055,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MM_RS_PA";
             #binding-cells = <0>;
-            bindings = <&hdk F>, <&yoon_hd V SM_YA>;        // は: ぱ / 右Shift待機=ぴゃ
+            bindings = <&hdk F>, <&mm_pya>;                 // は: ぱ / 右Shift待機=ぴゃ(右Ctrlも同時マスクするmm_pyaへ)
             mods = <(MOD_RSFT)>;
         };
 
@@ -1071,7 +1071,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MM_RS_PU";
             #binding-cells = <0>;
-            bindings = <&hdk N2>, <&yoon_hd V SM_YU>;       // ふ: ぷ / 右Shift待機=ぴゅ
+            bindings = <&hdk N2>, <&mm_pyu>;                // ふ: ぷ / 右Shift待機=ぴゅ(右Ctrlも同時マスクするmm_pyuへ)
             mods = <(MOD_RSFT)>;
         };
 
@@ -1087,8 +1087,33 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MM_RS_PO";
             #binding-cells = <0>;
-            bindings = <&hdk MINUS>, <&yoon_hd V SM_YO>;    // ほ: ぽ / 右Shift待機=ぴょ
+            bindings = <&hdk MINUS>, <&mm_pyo>;             // ほ: ぽ / 右Shift待機=ぴょ(右Ctrlも同時マスクするmm_pyoへ)
             mods = <(MOD_RSFT)>;
+        };
+
+    // ---- 右Ctrl+右Shift 両方押下時専用（両方をマスクして出力。ここに来る時点で両方押されている）----
+        mm_pya: mm_pya {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_PYA";
+            #binding-cells = <0>;
+            bindings = <&yoon_hd V SM_YA>, <&yoon_hd V SM_YA>;  // 28+19: 右Ctrl→右Shift待機=ぴゃ
+            mods = <(MOD_RCTL|MOD_RSFT)>;                       // 両方マスク
+        };
+
+        mm_pyu: mm_pyu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_PYU";
+            #binding-cells = <0>;
+            bindings = <&yoon_hd V SM_YU>, <&yoon_hd V SM_YU>;  // 28+19+20: 右Ctrl→右Shift待機=ぴゅ
+            mods = <(MOD_RCTL|MOD_RSFT)>;
+        };
+
+        mm_pyo: mm_pyo {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_PYO";
+            #binding-cells = <0>;
+            bindings = <&yoon_hd V SM_YO>, <&yoon_hd V SM_YO>;  // 28+19+32: 右Ctrl→右Shift待機=ぴょ
+            mods = <(MOD_RCTL|MOD_RSFT)>;
         };
 
 
@@ -1115,7 +1140,7 @@
         COFFEE {         // Layer 0
             bindings = <
 &to L_BT_SETTING  &trans  &trans  &trans        &trans                              &kp N3     &mm_kya  &mm_sya  &kp LSHFT    &kp INT3
-&trans            &trans  &trans  &trans        &trans    &trans         &kp Y      &mm_tya    &mm_nya  &mm_hya  &kp INT6     &sk RCTRL
+&trans            &trans  &trans  &trans        &trans    &trans         &kp Y      &mm_tya    &mm_nya  &mm_hya  &kp RS(COMMA)  &sk RCTRL
 &trans            &trans  &trans  &trans        &trans    &trans         &mm_bs     &mm_mya    &kp N7   &mm_rya  &kp RS(DOT)  &sk RSHFT
 &to L_MOUSE       &trans  &trans  &kp LS(INT5)  &kp INT5  &kp LANG1      &mm_enter  &mm_space                                 &sk RALT
             >;
@@ -1143,10 +1168,10 @@
 
         NUMBER {         // Layer 3
             bindings = <
-&trans  &trans  &trans  &trans  &trans                             &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp MINUS
-&trans  &trans  &trans  &trans  &trans  &trans      &to L_SIMBOL   &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp PERIOD    &kp PLUS
-&trans  &trans  &trans  &trans  &trans  &trans      &kp BACKSPACE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH     &kp EQUAL
-&trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER      &kp SPACE                                               &to L_COFFEE
+&trans  &trans  &trans  &trans  &trans                            &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS   &kp SLASH                            
+&trans  &trans  &trans  &trans  &trans  &trans      &to L_SIMBOL  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp PLUS    &kp ASTERISK
+&trans  &trans  &trans  &trans  &trans  &trans      &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD  &kp EQUAL
+&trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER     &kp SPACE                                             &to L_COFFEE
             >;
         };
 
