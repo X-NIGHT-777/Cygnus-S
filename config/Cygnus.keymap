@@ -21,9 +21,6 @@
 #define L_MOUSE_SLOW             10
 #define L_MOUSE_FAST             11
 
-// 矢印レイヤー (不要なら削除)
-#define L_ARROW                  12
-
 // カーソル速度（標準は MOVE_UP 等の 600）
 #define SLOW_UP     MOVE_Y(-200)
 #define SLOW_DOWN   MOVE_Y(200)
@@ -1255,15 +1252,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &mmv FAST_LEFT  &mmv FAST_DOWN  &mmv FAST_RIGHT  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans          &trans          &trans           &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                   &trans
-            >;
-        };
-
-        ARROW {         // Layer 12 🟥🟥🟥 不要の場合削除 🟥🟥🟥
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                              &kp LC(LS(TAB))         &kp UP_ARROW     &kp LC(TAB)              &kp ESCAPE   &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW   &kp RIGHT_ARROW          &kp END      &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans           &kp LG(LS(RIGHT_ARROW))  &trans       &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans                                                                         &to L_COFFEE
             >;
         };
 
