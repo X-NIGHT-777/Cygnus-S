@@ -1165,10 +1165,10 @@
 
         COFFEE {         // Layer 0
             bindings = <
-&to L_BT_SETTING  &trans  &trans  &trans        &trans                              &kp N3     &mm_kya  &mm_sya  &kp LSHFT    &kp INT3
+&to L_BT_SETTING  &trans  &trans  &trans        &trans                              &kp N3     &mm_kya  &mm_sya  &kp LSHFT      &kp INT3
 &trans            &trans  &trans  &trans        &trans    &trans         &kp Y      &mm_tya    &mm_nya  &mm_hya  &kp RS(COMMA)  &sk RCTRL
-&trans            &trans  &trans  &trans        &trans    &trans         &mm_bs     &mm_mya    &kp N7   &mm_rya  &kp RS(DOT)  &sk RSHFT
-&to L_MOUSE       &trans  &trans  &kp LS(INT5)  &kp INT5  &kp LANG1      &mm_enter  &mm_space                                 &sk RALT
+&trans            &trans  &trans  &trans        &trans    &trans         &mm_bs     &mm_mya    &kp N7   &mm_rya  &kp RS(DOT)    &sk RSHFT
+&to L_MOUSE       &trans  &trans  &kp LS(INT5)  &kp INT5  &kp LANG1      &mm_enter  &mm_space                                   &sk RALT
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -1194,10 +1194,10 @@
 
         NUMBER {         // Layer 3
             bindings = <
-&trans  &trans  &trans  &trans  &trans                             &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp PERIOD
-&trans  &trans  &trans  &trans  &trans  &trans      &to L_SIMBOL   &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS     &kp PLUS
-&trans  &trans  &trans  &trans  &trans  &trans      &kp BACKSPACE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH     &kp EQUAL
-&trans  &trans  &trans  &trans  &trans  &trans      &kp LS(INT5)   &kp SPACE                                               &to_coffee
+&trans  &trans  &trans  &trans  &trans                             &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &ht_kp MINUS PLUS
+&trans  &trans  &trans  &trans  &trans  &trans      &to L_SIMBOL   &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp PERIOD    &kp EQUAL
+&trans  &trans  &trans  &trans  &trans  &trans      &kp BACKSPACE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH     &kp LS(INT5)
+&trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER      &kp SPACE                                               &to_coffee
             >;
         };
 
