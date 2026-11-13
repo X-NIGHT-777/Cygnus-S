@@ -1117,13 +1117,22 @@
         };
 
 
-    // ---- 41番: 右Ctrl・右Shift・右Alt待機=Ctrl+F / それ以外はSpace(長押しQWERTY_RIGHT) ----
+        // ---- 41番: 右Ctrl・右Alt待機=Ctrl+F / 右Shift待機=全角スペース / それ以外はSpace(長押しQWERTY_RIGHT) ----
+        //      判定順: 右Ctrl・右Alt待機 → Ctrl+F / 右Shift待機 → Shift+Space / なし → Space
         mm_space: mm_space {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SPACE";
             #binding-cells = <0>;
-            bindings = <&ht_to L_QWERTY_RIGHT SPACE>, <&kp RC(F)>;  // 41: Space(長押しQWERTY_RIGHT) / 🟦暫定 待機中=Ctrl+F
-            mods = <(MOD_RCTL|MOD_RSFT|MOD_RALT)>;
+            bindings = <&mm_space_rs>, <&kp RC(F)>;             // 41: 右Ctrl・右Alt待機=🟦暫定 Ctrl+F / それ以外は内側へ
+            mods = <(MOD_RCTL|MOD_RALT)>;                       // keep-modsなし → 待機中の修飾キーを外してCtrl+Fだけ出す
+        };
+
+        mm_space_rs: mm_space_rs {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_SPACE_RS";
+            #binding-cells = <0>;
+            bindings = <&ht_to L_QWERTY_RIGHT SPACE>, <&kp LS(SPACE)>;  // 41: Space(長押しQWERTY_RIGHT) / 右Shift待機=Shift+Space(全角スペース)
+            mods = <(MOD_RSFT)>;                                // keep-modsなし → 右Shiftを外してShift+Spaceだけ出す
         };
 
     };
