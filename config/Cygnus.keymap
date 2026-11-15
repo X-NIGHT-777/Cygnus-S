@@ -423,16 +423,16 @@
             layers        = <L_COFFEE>;
         };
 
-    // ---- 濁点・半濁点：LSHFT (8) ----
+    // ---- 濁点・半濁点：LSHFT (9) ----
         combo_dakuten {
             timeout-ms    = <50>;
-            key-positions = <8 40>;             // 8 + 40 → ゛
+            key-positions = <9 40>;             // 9 + 40 → ゛
             bindings      = <&kp LEFT_BRACKET>;
             layers        = <L_COFFEE>;
         };
         combo_handakuten {
             timeout-ms    = <50>;
-            key-positions = <8 41>;             // 8 + 41 → ゜
+            key-positions = <9 41>;             // 9 + 41 → ゜
             bindings      = <&kp RIGHT_BRACKET>;
             layers        = <L_COFFEE>;
         };
@@ -479,16 +479,16 @@
             layers        = <L_COFFEE>;
         };
 
-    // ---- ～ ＝：ー (9) ----
+    // ---- ～ ＝：ー (8) ----
         combo_tilde {
             timeout-ms    = <50>;
-            key-positions = <9 40>;             // 9 + 40 → ～
+            key-positions = <8 40>;             // 8 + 40 → ～
             bindings      = <&tilde>;
             layers        = <L_COFFEE>;
         };
         combo_equal {
             timeout-ms    = <50>;
-            key-positions = <9 41>;             // 9 + 41 → ＝
+            key-positions = <8 41>;             // 8 + 41 → ＝
             bindings      = <&equal_full>;
             layers        = <L_COFFEE>;
         };
@@ -1267,7 +1267,7 @@
 
         COFFEE {         // Layer 0
             bindings = <
-&to L_BT_SETTING  &trans  &trans  &trans        &trans                              &kp N3     &mm_kya  &mm_sya  &kp LSHFT      &ht_kp LANG1 INT3
+&to L_BT_SETTING  &trans  &trans  &trans        &trans                              &kp N3     &mm_kya  &mm_sya  &kp INT3       &ht_kp LANG1 LSHFT
 &trans            &trans  &trans  &trans        &trans    &trans         &kp Y      &mm_tya    &mm_nya  &mm_hya  &kp RS(COMMA)  &sk RCTRL
 &trans            &trans  &trans  &trans        &trans    &trans         &mm_bs     &mm_mya    &kp N7   &mm_rya  &kp RS(DOT)    &sk RSHFT
 &to L_MOUSE       &trans  &trans  &kp LS(INT5)  &kp INT5  &kp LANG1      &mm_enter  &mm_space                                   &sk RALT
