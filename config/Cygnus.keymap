@@ -451,7 +451,19 @@
             layers        = <L_COFFEE>;
         };
 
-    // ---- （ ）：RS(DOT) (32)   🟥🟥🟥 保留中...マクロが必要な模様 🟥🟥🟥
+        // ---- （ ）：。(32) ----
+        combo_paren_open {
+            timeout-ms    = <50>;
+            key-positions = <32 40>;            // 32 + 40 → （
+            bindings      = <&paren_open>;
+            layers        = <L_COFFEE>;
+        };
+        combo_paren_close {
+            timeout-ms    = <50>;
+            key-positions = <32 41>;            // 32 + 41 → ）
+            bindings      = <&paren_close>;
+            layers        = <L_COFFEE>;
+        };
 
     // ---- ！･？ = Y (16) ----
         combo_exclam {
@@ -528,6 +540,26 @@
             tap-ms  = <10>;
             bindings = <&macro_param_1to1>, <&macro_tap &kp MACRO_PLACEHOLDER>,
                        <&macro_param_2to1>, <&macro_tap &kp MACRO_PLACEHOLDER>;
+        };
+
+    // 全角（: 全角英数に切替 → ( → かな(LANG1)に戻す
+        paren_open: paren_open {
+            compatible = "zmk,behavior-macro";
+            label = "PAREN_OPEN";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms  = <10>;
+            bindings = <&macro_tap &kp LS(INT5)>, <&macro_tap &kp RS(N8)>, <&macro_tap &kp LANG1>;
+        };
+
+    // 全角）: 全角英数に切替 → ) → かな(LANG1)に戻す
+        paren_close: paren_close {
+            compatible = "zmk,behavior-macro";
+            label = "PAREN_CLOSE";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms  = <10>;
+            bindings = <&macro_tap &kp LS(INT5)>, <&macro_tap &kp RS(N9)>, <&macro_tap &kp LANG1>;
         };
 
     // 濁音拗音: 1キー目 + ゛(LEFT_BRACKET) + 2キー目（例: &yoon_dk G SM_YA → ぎゃ）
