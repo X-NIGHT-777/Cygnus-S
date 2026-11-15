@@ -705,6 +705,16 @@
             bindings = <&to_ime_off>, <&kp>;    // 1番目=ホールド(移動+INT5)、2番目=タップ
         };
 
+    // タップ=スティッキーキー、ホールド=別キー（左Shiftをスティッキーにしつつ、長押しで別の動作を出す用）
+        ht_sk: hold_tap_sk {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_SK";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <250>;
+            bindings = <&kp>, <&sk>;        // 1番目=ホールド(kp)、2番目=タップ(sk)
+        };
+
     // ======================================================================
     // A. combo(28+各キー)用: 右Ctrl/右Shift/右Alt(sticky)待機中にコマンド系へ切替
     //    判定順: 右Ctrl待機 → コピペ系 / 右Shift待機 → ウィンドウ操作系 / 右Alt待機 → Ctrl+F / なし → カーソル系
@@ -1267,7 +1277,7 @@
 
         COFFEE {         // Layer 0
             bindings = <
-&to L_BT_SETTING  &trans  &trans  &trans  &trans                         &kp N3     &mm_kya  &mm_sya  &kp INT3       &ht_kp LANG1 LSHFT
+&to L_BT_SETTING  &trans  &trans  &trans  &trans                         &kp N3     &mm_kya  &mm_sya  &kp INT3       &ht_sk LANG1 LSHFT
 &trans            &trans  &trans  &trans  &trans  &trans      &kp Y      &mm_tya    &mm_nya  &mm_hya  &kp RS(COMMA)  &sk RCTRL
 &trans            &trans  &trans  &trans  &trans  &trans      &mm_bs     &mm_mya    &kp N7   &mm_rya  &kp RS(DOT)    &sk RSHFT
 &to L_MOUSE       &trans  &trans  &trans  &trans  &trans      &mm_enter  &mm_space                                   &sk RALT
