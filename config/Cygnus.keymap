@@ -531,6 +531,42 @@
             bindings = <&macro_param_1to1>, <&macro_tap &kp MACRO_PLACEHOLDER &kp RIGHT_BRACKET>;
         };
 
+    // 全角（: 全角英数に切替 → Shift+8 → かな(LANG1)に戻す（待ち時間を明示）
+        paren_open: paren_open {
+            compatible = "zmk,behavior-macro";
+            label = "PAREN_OPEN";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms  = <30>;
+            bindings = <&macro_tap &kp LS(INT5)>,           // 全角英数へ切替
+                       <&macro_wait_time 80>,               // IMEの切替待ち
+                       <&macro_press &kp RSHFT>,
+                       <&macro_wait_time 30>,               // Shiftが先に効くのを待つ
+                       <&macro_tap &kp N8>,
+                       <&macro_wait_time 30>,
+                       <&macro_release &kp RSHFT>,
+                       <&macro_wait_time 50>,
+                       <&macro_tap &kp LANG1>;              // かなに戻す
+        };
+
+    // 全角）: 全角英数に切替 → Shift+9 → かな(LANG1)に戻す（待ち時間を明示）
+        paren_close: paren_close {
+            compatible = "zmk,behavior-macro";
+            label = "PAREN_CLOSE";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms  = <30>;
+            bindings = <&macro_tap &kp LS(INT5)>,           // 全角英数へ切替
+                       <&macro_wait_time 80>,               // IMEの切替待ち
+                       <&macro_press &kp RSHFT>,
+                       <&macro_wait_time 30>,               // Shiftが先に効くのを待つ
+                       <&macro_tap &kp N9>,
+                       <&macro_wait_time 30>,
+                       <&macro_release &kp RSHFT>,
+                       <&macro_wait_time 50>,
+                       <&macro_tap &kp LANG1>;              // かなに戻す
+        };
+
     // 拗音: 渡した2キーを順に打つ（例: &yoon G SM_YA → きゃ）
         yoon: yoon {
             compatible = "zmk,behavior-macro-two-param";
@@ -540,26 +576,6 @@
             tap-ms  = <10>;
             bindings = <&macro_param_1to1>, <&macro_tap &kp MACRO_PLACEHOLDER>,
                        <&macro_param_2to1>, <&macro_tap &kp MACRO_PLACEHOLDER>;
-        };
-
-    // 全角（: 全角英数に切替 → ( → かな(LANG1)に戻す
-        paren_open: paren_open {
-            compatible = "zmk,behavior-macro";
-            label = "PAREN_OPEN";
-            #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms  = <10>;
-            bindings = <&macro_tap &kp LS(INT5)>, <&macro_tap &kp RS(N8)>, <&macro_tap &kp LANG1>;
-        };
-
-    // 全角）: 全角英数に切替 → ) → かな(LANG1)に戻す
-        paren_close: paren_close {
-            compatible = "zmk,behavior-macro";
-            label = "PAREN_CLOSE";
-            #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms  = <10>;
-            bindings = <&macro_tap &kp LS(INT5)>, <&macro_tap &kp RS(N9)>, <&macro_tap &kp LANG1>;
         };
 
     // 濁音拗音: 1キー目 + ゛(LEFT_BRACKET) + 2キー目（例: &yoon_dk G SM_YA → ぎゃ）
