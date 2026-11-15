@@ -479,6 +479,20 @@
             layers        = <L_COFFEE>;
         };
 
+    // ---- ～ ＝：ー (9) ----
+        combo_tilde {
+            timeout-ms    = <50>;
+            key-positions = <9 40>;             // 9 + 40 → ～
+            bindings      = <&tilde>;
+            layers        = <L_COFFEE>;
+        };
+        combo_equal {
+            timeout-ms    = <50>;
+            key-positions = <9 41>;             // 9 + 41 → ＝
+            bindings      = <&equal_full>;
+            layers        = <L_COFFEE>;
+        };
+
     // ---- ←･→･↑･↓ = BACKSPACE (28) ----
     // 右Ctrl/右Shift/右Alt(sticky)を先に押すと、behaviors側(A)のmm_*でコマンド系に切替
         combo_cursor_left {
@@ -561,6 +575,42 @@
                        <&macro_press &kp RSHFT>,
                        <&macro_wait_time 30>,               // Shiftが先に効くのを待つ
                        <&macro_tap &kp N9>,
+                       <&macro_wait_time 30>,
+                       <&macro_release &kp RSHFT>,
+                       <&macro_wait_time 50>,
+                       <&macro_tap &kp LANG1>;              // かなに戻す
+        };
+
+    // 全角～: 全角英数に切替 → Shift+^(EQUAL) → かな(LANG1)に戻す
+        tilde: tilde {
+            compatible = "zmk,behavior-macro";
+            label = "TILDE";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms  = <30>;
+            bindings = <&macro_tap &kp LS(INT5)>,           // 全角英数へ切替
+                       <&macro_wait_time 80>,               // IMEの切替待ち
+                       <&macro_press &kp RSHFT>,
+                       <&macro_wait_time 30>,               // Shiftが先に効くのを待つ
+                       <&macro_tap &kp EQUAL>,
+                       <&macro_wait_time 30>,
+                       <&macro_release &kp RSHFT>,
+                       <&macro_wait_time 50>,
+                       <&macro_tap &kp LANG1>;              // かなに戻す
+        };
+
+    // 全角＝: 全角英数に切替 → Shift+-(MINUS) → かな(LANG1)に戻す
+        equal_full: equal_full {
+            compatible = "zmk,behavior-macro";
+            label = "EQUAL_FULL";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms  = <30>;
+            bindings = <&macro_tap &kp LS(INT5)>,           // 全角英数へ切替
+                       <&macro_wait_time 80>,               // IMEの切替待ち
+                       <&macro_press &kp RSHFT>,
+                       <&macro_wait_time 30>,               // Shiftが先に効くのを待つ
+                       <&macro_tap &kp MINUS>,
                        <&macro_wait_time 30>,
                        <&macro_release &kp RSHFT>,
                        <&macro_wait_time 50>,
