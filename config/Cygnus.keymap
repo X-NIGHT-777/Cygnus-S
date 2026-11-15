@@ -1296,12 +1296,14 @@
 
         NUMBER {         // Layer 3
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                                         &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0             &ht_kp LS(INT5) AT_SIGN
-&trans  &trans  &trans  &trans  &trans  &trans      &ht_kp RIGHT_PARENTHESIS LEFT_PARENTHESIS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &ht_kp SLASH PERIOD      &ht_kp PLUS MINUS 
-&trans  &trans  &trans  &trans  &trans  &trans      &kp BACKSPACE                              &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &ht_kp EQUAL UNDERSCORE  &ht_kp PERCENT AMPERSAND
-&trans  &trans  &trans  &trans  &trans  &trans      &to L_SIMBOL                               &kp SPACE                                                          &to_coffee
+&trans  &trans  &trans  &trans  &trans                                    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0             　 &ht_kp LS(INT5) LEFT_BRACKET
+&trans  &trans  &trans  &trans  &trans  &trans      &ht_kp LS(N9) LS(N8)  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &ht_kp SLASH PERIOD       　&ht_kp LS(MINUS) LS(INT1)
+&trans  &trans  &trans  &trans  &trans  &trans      &kp BACKSPACE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &ht_kp LS(SEMICOLON) MINUS  &ht_kp PERCENT LS(N6)
+&trans  &trans  &trans  &trans  &trans  &trans      &to L_SIMBOL          &kp SPACE                                                           　&to_coffee
             >;
         };
+
+            // PERIOD= .｜SLASH= /｜MINUS= -｜LS(INT1)= _｜LS(N8)= (｜LS(N9)= )｜LS(MINUS)= =｜PERCENT= %｜LS(N6)= &｜LS(SEMICOLON)= +｜LEFT_BRACKET= @
 
         SIMBOL {         // Layer 4
             bindings = <
