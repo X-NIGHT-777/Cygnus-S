@@ -465,20 +465,6 @@
             layers        = <L_COFFEE>;
         };
 
-    // ---- ！･？ = Y (16) ----
-        combo_exclam {
-            timeout-ms    = <50>;
-            key-positions = <16 20>;            // 16 + 20 → ！
-            bindings      = <&kp RS(N1)>;
-            layers        = <L_COFFEE>;
-        };
-        combo_question {
-            timeout-ms    = <50>;
-            key-positions = <16 32>;            // 16 + 32 → ？
-            bindings      = <&kp RS(FSLH)>;
-            layers        = <L_COFFEE>;
-        };
-
     // ---- ～ ＝：ー (8) ----
         combo_tilde {
             timeout-ms    = <50>;
@@ -490,6 +476,20 @@
             timeout-ms    = <50>;
             key-positions = <8 41>;             // 8 + 41 → ＝
             bindings      = <&equal_full>;
+            layers        = <L_COFFEE>;
+        };
+
+    // ---- ！･？ = Y (16) ----
+        combo_exclam {
+            timeout-ms    = <50>;
+            key-positions = <16 20>;            // 16 + 20 → ！（全角英数経由）
+            bindings      = <&exclam_full>;
+            layers        = <L_COFFEE>;
+        };
+        combo_question {
+            timeout-ms    = <50>;
+            key-positions = <16 32>;            // 16 + 32 → ？（全角英数経由）
+            bindings      = <&question_full>;
             layers        = <L_COFFEE>;
         };
 
@@ -611,6 +611,42 @@
                        <&macro_press &kp RSHFT>,
                        <&macro_wait_time 30>,               // Shiftが先に効くのを待つ
                        <&macro_tap &kp MINUS>,
+                       <&macro_wait_time 30>,
+                       <&macro_release &kp RSHFT>,
+                       <&macro_wait_time 50>,
+                       <&macro_tap &kp LANG1>;              // かなに戻す
+        };
+
+    // 全角！: 全角英数に切替 → Shift+1 → かな(LANG1)に戻す
+        exclam_full: exclam_full {
+            compatible = "zmk,behavior-macro";
+            label = "EXCLAM_FULL";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms  = <30>;
+            bindings = <&macro_tap &kp LS(INT5)>,           // 全角英数へ切替
+                       <&macro_wait_time 80>,               // IMEの切替待ち
+                       <&macro_press &kp RSHFT>,
+                       <&macro_wait_time 30>,               // Shiftが先に効くのを待つ
+                       <&macro_tap &kp N1>,
+                       <&macro_wait_time 30>,
+                       <&macro_release &kp RSHFT>,
+                       <&macro_wait_time 50>,
+                       <&macro_tap &kp LANG1>;              // かなに戻す
+        };
+
+    // 全角？: 全角英数に切替 → Shift+/ → かな(LANG1)に戻す
+        question_full: question_full {
+            compatible = "zmk,behavior-macro";
+            label = "QUESTION_FULL";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms  = <30>;
+            bindings = <&macro_tap &kp LS(INT5)>,           // 全角英数へ切替
+                       <&macro_wait_time 80>,               // IMEの切替待ち
+                       <&macro_press &kp RSHFT>,
+                       <&macro_wait_time 30>,               // Shiftが先に効くのを待つ
+                       <&macro_tap &kp SLASH>,
                        <&macro_wait_time 30>,
                        <&macro_release &kp RSHFT>,
                        <&macro_wait_time 50>,
