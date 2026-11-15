@@ -1290,7 +1290,7 @@
 &trans  &trans  &trans  &trans  &trans                                   &kp R      &kp E  &kp W  &kp Q  &kp T
 &trans  &trans  &trans  &trans  &trans  &trans      &kp G                &kp F      &kp D  &kp S  &kp A  &kp RCTRL
 &none   &trans  &trans  &trans  &trans  &trans      &kp B                &kp V      &kp C  &kp X  &kp Z  &kp RSHFT
-&trans  &trans  &trans  &trans  &trans  &trans      &&to L_QWERTY_RIGHT  &kp SPACE                       &to_coffee
+&trans  &trans  &trans  &trans  &trans  &trans      &to L_QWERTY_RIGHT  &kp SPACE                       &to_coffee
             >;
         };
 
