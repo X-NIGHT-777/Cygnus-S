@@ -650,15 +650,15 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MM_RS_LEFT";
             #binding-cells = <0>;
-            bindings = <&mm_ra_left>, <&kp RC(RS(TAB))>;    // 40: 右Shift待機=Ctrl+Shift+Tab / それ以外は内側2へ
-            mods = <(MOD_RSFT)>;                            // keep-modsなし → 右Shiftを外して明示指定を出す
+            bindings = <&mm_ra_left>, <&kp RC(F)>;          // 40: 右Shift待機=🟦暫定 Ctrl+F / それ以外は内側2へ
+            mods = <(MOD_RSFT)>;                            // keep-modsなし → 右Shiftを外してCtrl+Fだけ出す
         };
 
         mm_rs_right: mm_rs_right {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_RS_RIGHT";
             #binding-cells = <0>;
-            bindings = <&mm_ra_right>, <&kp RC(TAB)>;       // 41: 右Shift待機=Ctrl+Tab / それ以外は内側2へ
+            bindings = <&mm_ra_right>, <&kp RC(F)>;         // 41: 右Shift待機=🟦暫定 Ctrl+F / それ以外は内側2へ
             mods = <(MOD_RSFT)>;
         };
 
@@ -733,7 +733,7 @@
             mods = <(MOD_RSFT|MOD_RALT)>;
         };
 
-    // ---- 40番: 右Ctrl待機=ESC / 右Shift待機=Ctrl+F / 右Alt待機=F8 / それ以外はEnter(長押しNUMBER) ----
+    // ---- 40番: 右Ctrl待機=ESC / 右Shift待機=F8 / 右Alt待機=Ctrl+F / それ以外はEnter(長押しNUMBER) ----
         mm_enter: mm_enter {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_ENTER";
@@ -746,7 +746,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MM_ENTER_RS";
             #binding-cells = <0>;
-            bindings = <&mm_enter_ra>, <&kp RC(F)>;         // 40: 右Shift待機=🟦暫定 Ctrl+F / それ以外は内側2へ
+            bindings = <&mm_enter_ra>, <&kp F8>;            // 40: 右Shift待機=F8 / それ以外は内側2へ
             mods = <(MOD_RSFT)>;
         };
 
@@ -754,7 +754,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MM_ENTER_RA";
             #binding-cells = <0>;
-            bindings = <&ht_to L_NUMBER ENTER>, <&kp F8>;   // 40: Enter(長押しNUMBER) / 右Alt待機=F8
+            bindings = <&ht_to L_NUMBER ENTER>, <&kp RC(F)>; // 40: Enter(長押しNUMBER) / 右Alt待機=🟦暫定 Ctrl+F
             mods = <(MOD_RALT)>;
         };
 
