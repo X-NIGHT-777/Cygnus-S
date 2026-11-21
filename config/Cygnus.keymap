@@ -1373,7 +1373,7 @@
         TRACKBALL {      // Layer 6
             bindings = <
 &trans  &trans  &trans  &trans  &trans                               &kp LC(LS(TAB))  &mkp MCLK     &kp LC(TAB)  &none   &none
-&trans  &trans  &trans  &trans  &trans  &trans        &none          &mkp LCLK        &mo L_SCROLL  &mkp RCLK    &none   &none
+&trans  &trans  &trans  &trans  &trans  &trans        &none          &mkp LCLK        &mo L_SCROLL  &mkp RCLK    &none   &kp RCTRL 
 &trans  &trans  &trans  &trans  &trans  &trans        &kp BACKSPACE  &mkp MB4         &kp LC(W)     &mkp MB5     &none   &none
 &trans  &trans  &trans  &trans  &trans  &trans        &kp ENTER      &kp SPACE                                           &to_coffee
             >;
