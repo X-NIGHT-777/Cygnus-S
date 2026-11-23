@@ -500,25 +500,25 @@
             timeout-ms    = <50>;
             key-positions = <28 40>;            // 28 + 40 → ← (長押し: Home) / 右Ctrl待機: Ctrl+C ほか
             bindings      = <&mm_cursor_left>;
-            layers        = <L_COFFEE>;
+            layers        = <L_COFFEE L_TRACKBALL>;
         };
         combo_cursor_right {
             timeout-ms    = <50>;
             key-positions = <28 41>;            // 28 + 41 → → (長押し: End) / 右Ctrl待機: Ctrl+V ほか
             bindings      = <&mm_cursor_right>;
-            layers        = <L_COFFEE>;
+            layers        = <L_COFFEE L_TRACKBALL>;
         };
         combo_cursor_up {
             timeout-ms    = <50>;
             key-positions = <28 20>;            // 28 + 20 → ↑ (長押し: Ctrl+Z) / 右Ctrl待機: Ctrl+X ほか
             bindings      = <&mm_cursor_up>;
-            layers        = <L_COFFEE>;
+            layers        = <L_COFFEE L_TRACKBALL>;
         };
         combo_cursor_down {
             timeout-ms    = <50>;
             key-positions = <28 32>;            // 28 + 32 → ↓ (長押し: Ctrl+A) / 右Ctrl待機: Win+V ほか
             bindings      = <&mm_cursor_down>;
-            layers        = <L_COFFEE>;
+            layers        = <L_COFFEE L_TRACKBALL>;
         };
 
     };
