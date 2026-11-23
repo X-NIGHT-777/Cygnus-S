@@ -754,7 +754,7 @@
 
     // ======================================================================
     // A. combo(28+各キー)用: 右Ctrl/右Shift/右Alt(sticky)待機中にコマンド系へ切替
-    //    判定順: 右Ctrl待機 → コピペ系 / 右Shift待機 → ウィンドウ操作系 / 右Alt待機 → Ctrl+F / なし → カーソル系
+    //    判定順: 右Ctrl待機 → コピペ系 / 右Shift待機 → Shift+カーソル(範囲選択) / 右Alt待機 → Win+Tab・Ctrl+F / なし → カーソル系
     //    命名: 外側(comboから呼ぶ入口)=機能名 mm_cursor_* / 内側=判定する修飾キー mm_rs_*(右Shift)・mm_ra_*(右Alt)
     // ======================================================================
 
@@ -794,45 +794,49 @@
             mods = <(MOD_RCTL)>;                            // keep-modsなし → 右Ctrlを外してWin+Vだけ出す
         };
 
-    // ---- 内側1(RS): 右Shift待機中ならウィンドウ操作系、なければ内側2(右Alt判定)へ ----
+    // ---- 内側1(RS): 右Shift待機中はShift+カーソル(範囲選択)、なければ内側2(右Alt判定)へ ----
         mm_rs_left: mm_rs_left {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_RS_LEFT";
             #binding-cells = <0>;
-            bindings = <&mm_ra_left>, <&kp RC(F)>;          // 40: 右Shift待機=🟦暫定 Ctrl+F / それ以外は内側2へ
-            mods = <(MOD_RSFT)>;                            // keep-modsなし → 右Shiftを外してCtrl+Fだけ出す
+            bindings = <&mm_ra_left>, <&kp LEFT>;           // 40: 右Shift待機=Shift+← / それ以外は内側2へ
+            mods = <(MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;                       // 右Shiftを残す → Shift+LEFT
         };
 
         mm_rs_right: mm_rs_right {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_RS_RIGHT";
             #binding-cells = <0>;
-            bindings = <&mm_ra_right>, <&kp RC(F)>;         // 41: 右Shift待機=🟦暫定 Ctrl+F / それ以外は内側2へ
+            bindings = <&mm_ra_right>, <&kp RIGHT>;         // 41: 右Shift待機=Shift+→ / それ以外は内側2へ
             mods = <(MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
         };
 
         mm_rs_up: mm_rs_up {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_RS_UP";
             #binding-cells = <0>;
-            bindings = <&mm_ra_up>, <&kp RG(TAB)>;          // 20: 右Shift待機=Win+Tab / それ以外は内側2へ
+            bindings = <&mm_ra_up>, <&kp UP>;               // 20: 右Shift待機=Shift+↑ / それ以外は内側2へ
             mods = <(MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
         };
 
         mm_rs_down: mm_rs_down {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_RS_DOWN";
             #binding-cells = <0>;
-            bindings = <&mm_ra_down>, <&kp RG(D)>;          // 32: 右Shift待機=Win+D / それ以外は内側2へ
+            bindings = <&mm_ra_down>, <&kp DOWN>;           // 32: 右Shift待機=Shift+↓ / それ以外は内側2へ
             mods = <(MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
         };
 
-    // ---- 内側2(RA): 右Alt待機中ならCtrl+F、なければカーソル系 ----
+    // ---- 内側2(RA): 右Alt待機中はコマンド系、なければカーソル系 ----
         mm_ra_left: mm_ra_left {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_RA_LEFT";
             #binding-cells = <0>;
-            bindings = <&mt HOME LEFT>, <&kp RC(F)>;        // 40: ← (長押しHome) / 🟦暫定 Ctrl+F 出力
+            bindings = <&mt HOME LEFT>, <&kp RC(F)>;        // 40: ← (長押しHome) / 右Alt待機=🟦暫定 Ctrl+F
             mods = <(MOD_RALT)>;                            // keep-modsなし → 右Altを外してCtrl+Fだけ出す
         };
 
@@ -840,7 +844,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MM_RA_RIGHT";
             #binding-cells = <0>;
-            bindings = <&mt END RIGHT>, <&kp RC(F)>;        // 41: → (長押しEnd) / 🟦暫定 Ctrl+F 出力
+            bindings = <&mt END RIGHT>, <&kp RC(F)>;        // 41: → (長押しEnd) / 右Alt待機=🟦暫定 Ctrl+F
             mods = <(MOD_RALT)>;
         };
 
@@ -848,15 +852,15 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MM_RA_UP";
             #binding-cells = <0>;
-            bindings = <&mt RC(Z) UP>, <&kp RC(F)>;         // 20: ↑ (長押しCtrl+Z) / 🟦暫定 Ctrl+F 出力
-            mods = <(MOD_RALT)>;
+            bindings = <&mt RC(Z) UP>, <&kp RG(TAB)>;       // 20: ↑ (長押しCtrl+Z) / 右Alt待機=Win+Tab
+            mods = <(MOD_RALT)>;                            // keep-modsなし → 右Altを外してWin+Tabだけ出す
         };
 
         mm_ra_down: mm_ra_down {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_RA_DOWN";
             #binding-cells = <0>;
-            bindings = <&mt RC(A) DOWN>, <&kp RC(F)>;       // 32: ↓ (長押しCtrl+A) / 🟦暫定 Ctrl+F 出力
+            bindings = <&mt RC(A) DOWN>, <&kp RG(TAB)>;     // 32: ↓ (長押しCtrl+A) / 右Alt待機=Win+Tab
             mods = <(MOD_RALT)>;
         };
 
