@@ -754,7 +754,7 @@
 
     // ======================================================================
     // A. combo(28+各キー)用: 右Ctrl/右Shift/右Alt(sticky)待機中にコマンド系へ切替
-    //    判定順: 右Ctrl待機 → コピペ系 / 右Shift待機 → Shift+カーソル(範囲選択) / 右Alt待機 → Win+Tab・Ctrl+F / なし → カーソル系
+    //    判定順: 右Ctrl待機 → コピペ系 / 右Shift待機 → Shift+カーソル(範囲選択) / 右Alt待機 → Win+Tab・Win+D・Ctrl+F / なし → カーソル系
     //    命名: 外側(comboから呼ぶ入口)=機能名 mm_cursor_* / 内側=判定する修飾キー mm_rs_*(右Shift)・mm_ra_*(右Alt)
     // ======================================================================
 
@@ -860,8 +860,8 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MM_RA_DOWN";
             #binding-cells = <0>;
-            bindings = <&mt RC(A) DOWN>, <&kp RG(TAB)>;     // 32: ↓ (長押しCtrl+A) / 右Alt待機=Win+Tab
-            mods = <(MOD_RALT)>;
+            bindings = <&mt RC(A) DOWN>, <&kp RG(D)>;       // 32: ↓ (長押しCtrl+A) / 右Alt待機=Win+D
+            mods = <(MOD_RALT)>;                            // keep-modsなし → 右Altを外してWin+Dだけ出す
         };
 
     // ======================================================================
